@@ -1,0 +1,232 @@
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+/* variables */
+
+
+
+/*/////////// MAIN PAGE //////////*/
+
+/* -------desktop------- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(233, 233, 233);
+    background-color: #494764;
+    background-image: url(media/bg-rain.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+}
+.desktop {
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    grid-template-rows: repeat(11, 1fr); 
+    height: 100vh;
+}
+button {
+    background-color: transparent;
+    align-items: center;
+    justify-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+/* -------icon styling------- */
+.icon img {
+    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.473));
+    height: 50px;
+    width: 50px;
+}
+.icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 80px;
+    height: auto;
+}
+.icon:hover {
+    outline: 1px solid rgba(180, 209, 212, 0.349);
+    background-color: rgba(143, 188, 197, 0.308);
+}
+.label {
+    text-align: center;
+    text-shadow: #000000 0px 0px 3px;
+    padding-top: 5px;
+}
+.nowrap {
+    white-space: nowrap;
+}
+
+
+/* icon grid positions */
+#recycle-icon {
+    grid-column-start: 25;
+    grid-row-start: 10;
+}
+
+
+/* -------taskbar------- */
+.taskbar {
+    background-color: rgba(18, 12, 24, 0.603);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-align {
+    display: flex;
+}
+.right-align {
+    display: inline-flex;
+    text-align: center;
+    margin-right: 10px;
+}
+#start-button svg {
+    margin: 5px 15px;
+}
+#start-button:hover,
+.task-icon:hover {
+    background-color: rgba(255, 255, 255, 0.116);
+    transition: background-color 0.2s;
+}
+#start-button:hover #windows-logo path {
+    fill: rgb(241, 176, 187);
+    transition: fill 0.3s ease;
+}
+.task-icon, #start {
+    background-color: transparent;
+    transition: background-color 0.5s
+}
+
+/* date/time display */
+#datetime {
+    font-size: .8rem;
+    margin-right: 10px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: .7;
+}
+
+/* searchbar */
+.search-container {
+    position: relative;
+    width: 300px;
+}
+.search-container input {
+    width: 100%;
+    padding: 15px 40px;
+    border: 1px solid #7c7b7b7e;
+    background-color: #353535;
+    height: 40px;
+    font-size: 1rem;
+    color: white;
+}
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.699);
+    font-size: 1rem;
+}
+.search-container img {
+    height: 30px;
+    position: absolute;
+    transform: scaleX(-1) translateX(-5px) translateY(7px);
+}
+
+/* -------window settings------- */
+.window {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 10;
+    overflow: hidden;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.384);
+}
+.resizer {
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.13);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: nwse-resize;
+}
+
+/* -------start menu------- */
+.start-menu {
+    display: none;
+    position: absolute;
+    bottom: 40px;
+    left: 0px;
+    height: 500px;
+    width: 450px;
+    background-color: rgba(18, 12, 24, 0.603);
+    backdrop-filter: blur(15px);
+    z-index: 100;
+}
+.start-menu.open {
+    display: block;
+}
+.start-icon-container {
+    display: grid;
+    grid-template-areas: 
+    "placeholder1 weather weather"
+    "calculator weather weather";
+    margin: 25px;
+    gap: 10px;
+}
+.start-icon {
+    height: 120px;
+    width: 100%;
+    background-color: rgba(187, 166, 166, 0.116);
+}
+.start-icon {
+    position: relative;
+}
+
+.start-icon:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.start-icon > * {
+    position: relative;
+    z-index: 2;
+}
+#placeholder1 {
+    grid-area: placeholder1;
+}
+#mini-weather-icon {
+    height: 100%;
+    width: 100%;
+    grid-area: weather;
+}
+#calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: calculator;
+}
+
+

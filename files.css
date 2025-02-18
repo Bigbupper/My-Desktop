@@ -1,0 +1,170 @@
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: none;
+    user-select: none;
+}
+
+/* variables */
+:root {
+    /* colors */
+    --menu-bar: rgb(24, 24, 24);
+    --main-bg: rgb(32, 32, 32);
+    --header: rgb(43, 43, 43);
+    --window-label-text: rgb(170, 170, 170);
+    --border-color:  rgb(59, 59, 59);
+
+}
+
+/* ////////////////// FILES WINDOW ///////////////// */ 
+/* needs overhaul 
+    - redesign the window rather than making a copy of default
+    - i hate the default files explorer
+ */
+
+#files-window {
+    background-color: var(--main-bg);
+    width: 600px;
+    height: 300px;
+    border: .5px solid var(--border-color);
+    /* resizing constraints */
+    min-width: 200px;
+    max-width: 800px;
+    min-height: 150px;
+    max-height: 600px;
+}
+.window.open {
+    display: block;
+}
+
+/* window header */
+#files-header {
+    display: flex;
+    background-color: var(--header);
+    color: var(--window-label-text);
+    height: 34px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    letter-spacing: 0.5px;
+}
+.files-header-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.files-header-label img {
+    vertical-align: middle;
+    display: inline-block; 
+}
+.files-header-label p {
+    margin-top: 3px;
+}
+
+/* header buttons */
+.window-command-button {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.window-command-button:hover {
+    background-color: grey;
+}
+
+/* menu bar */
+.files-menu-bar {
+    display: flex;
+    background-color: var(--menu-bar);
+    align-items: center;
+    height: 45px;
+    padding: 0 5px;
+}
+#arrow-left, 
+#arrow-right, 
+#arrow-up {
+    width: 21px;
+    padding: 10px 5px;
+}
+#chevron-arrow-down {
+    width: 12px;
+    padding: 15px 5px;
+}
+
+/* searchbar */
+.files-search-container {
+    position: relative;
+    width: 70%;
+}
+.files-search {
+    padding: 15px 40px;
+    border: 1px solid #79797994;
+    background-color: rgb(27, 27, 27);
+    height: 20px;
+    font-size: .7em;
+}
+.files-search-container img {
+    height: 25px;
+    position: absolute;
+    transform: scalex(-1)translateX(-7px)translateY(3px);
+}
+input::placeholder {
+    color: rgba(255, 255, 255, 0.377);
+    font-size: 1.45em;
+}
+.file-container {
+    height: 78.5%;
+}
+
+
+/* image files */
+.file-icon {
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+}
+.file-icon img {
+    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.473));
+    width: 50px;
+}
+.file-image-container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.file-icon {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    padding: 0px 10px;
+    margin: 10px;
+    align-items: center;
+    justify-items: center;
+    width: 55px;
+    font-size: .9rem;
+}
+.file-icon:hover {
+    background-color: rgba(211, 211, 211, 0.233);
+}
+.file-label {
+    text-align: center;
+    text-shadow: #000000ab 0px 3px 4px;
+    padding: 5px
+}
+
+/* sidebar nav */
+
+
+
+/* bottom item bar */
+.item-bar {
+    background-color: var(--border-color);
+    height: 40px;
+}
+.item-bar p {
+    color: rgba(255, 255, 255, 0.733);
+    font-size: .8em;
+    padding-left: 5px;
+}
