@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="files.css">
     <link rel="stylesheet" href="spotify.css">
     <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="dressup.css">
 </head>
 <body>
 
-    <!--------------- desktop ------------------>
+<!----- desktop ----->
     <div>
         <section class="desktop">
             <button id="files-icon" class="icon" title="Launch File Explorer">
@@ -31,6 +33,10 @@
             <button id="vscode-icon" class="icon" title="Launch Visual Studio Code">
                 <img src="media/vscode-icon.png" alt="vscode-logo" >
                 <p class="label">VScode</p>
+            </button>
+            <button id="dressup-icon" class="icon" title="Launch Dolly Cat DressUp">
+                <img src="media/sly-kitty-icon.png" alt="pixelart game logo" >
+                <p class="label">Dolly Cat</p>
             </button>
             <button id="recycle-icon" class="icon">
                 <img src="media/recycle.png" alt="recycle-bin">
@@ -55,6 +61,7 @@
                 </time>
             </div>
         </section>
+
         <section class="start-menu">
             <div class="start-icon-container">
                 <div class="start-icon" id="placeholder1"></div>
@@ -65,14 +72,16 @@
                     </div>
                     <h2 id="mini-city">City Name</h2>
                 </div>
-                <div class="start-icon" id="calculator">
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 501.333 501.333" xml:space="preserve" width="80px" height="80px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="250.667" style="fill:#c3a7c8;" width="250.667" height="250.667"></rect> <rect style="fill:#e6c7d4;" width="250.667" height="250.667"></rect> <rect y="250.667" style="fill:#71818e;" width="250.667" height="250.667"></rect> <rect x="250.667" y="250.667" style="fill:#8997b8;" width="250.667" height="250.667"></rect> <g> <rect x="58.667" y="114.133" style="fill:#FFFFFF;" width="133.333" height="22.4"></rect> <rect x="114.133" y="58.667" style="fill:#FFFFFF;" width="22.4" height="133.333"></rect> <rect x="309.333" y="114.133" style="fill:#FFFFFF;" width="133.333" height="22.4"></rect> <g transform="matrix(0.7071 0.7071 -0.7071 0.7071 28.867 1.809)"> <rect x="254.408" y="185.18" style="fill:#FFFFFF;" width="157.867" height="22.4"></rect> <rect x="321.608" y="117.98" style="fill:#FFFFFF;" width="22.4" height="157.867"></rect> </g> <rect x="309.333" y="364.8" style="fill:#FFFFFF;" width="133.333" height="22.4"></rect> <rect x="364.8" y="364.8" style="fill:#FFFFFF;" width="22.4" height="22.4"></rect> <rect x="364.8" y="309.333" style="fill:#FFFFFF;" width="22.4" height="22.4"></rect> <rect x="364.8" y="420.267" style="fill:#FFFFFF;" width="22.4" height="22.4"></rect> </g> </g></svg>
+                <div class="start-icon" id="calculator-icon">
+                    <svg viewBox="0 0 48 48" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="cls-1" d="M27.89,26A1.94,1.94,0,0,0,26,27.89V40.55a1.94,1.94,0,0,0,1.94,2H40.55a2,2,0,0,0,2-2V27.89a1.94,1.94,0,0,0-2-1.94Z"></path><path class="cls-1" d="M7.45,5.5a2,2,0,0,0-1.95,2V20.11a1.94,1.94,0,0,0,2,1.94H20.11a1.94,1.94,0,0,0,1.94-1.94V7.45A1.94,1.94,0,0,0,20.11,5.5Z"></path><rect class="cls-1" x="25.95" y="5.5" width="16.55" height="16.55" rx="2.92"></rect><rect class="cls-1" x="5.5" y="25.95" width="16.55" height="16.55" rx="1.95"></rect><line class="cls-1" x1="13.78" y1="8.42" x2="13.78" y2="19.13"></line><line class="cls-1" x1="8.42" y1="13.78" x2="19.13" y2="13.78"></line><line class="cls-1" x1="28.87" y1="31.3" x2="39.58" y2="31.3"></line><line class="cls-1" x1="28.87" y1="37.14" x2="39.58" y2="37.14"></line></g></svg>
                 </div>
             </div>
         </section>
     </div>
 
-<!--------------- files window ------------------>
+<!-- /////////////// DESKTOP APPLICATIONS /////////////// -->
+
+<!----- files window ----->
     <div id="files-window" class="window">
 
         <section class="window-header" id="files-header">
@@ -120,7 +129,7 @@
         </section>
     </div>
 
-<!--------------- spotify window ------------------>
+<!----- spotify window ----->
     <div id="spotify-window" class="window">
         <section class="window-header" id="spotify-header">
             <button class="dot-menu">
@@ -196,7 +205,269 @@
         <div class="resizer"></div>
     </div>
 
-    <!--------- weather tracker --------->
+<!----- Opera Window ----->
+    <div id="opera-window" class="window">
+        <section class="window-header" id="opera-header">
+            <button class="exit-button">
+                <svg id="exit-opera" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </button>
+        </section>
+        <div class="opera base">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+<!----- dressup window ----->
+    <div id="dressup-window" class="window">
+        <section class="window-header" id="dressup-header">
+            <button class="exit-button">
+                <svg id="exit-dressup" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRe</button>po_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </button>
+        </section>
+        <div class="dressup base">
+            <div class="options-container">
+                <section class="skin">
+                    <h2>Skintone</h2>
+                    <div class="item-options" id="skin-options">
+                        <button id="base1" data-skin="base1"></button>
+                        <button id="base2" data-skin="base2"></button>
+                        <button id="base3" data-skin="base3"></button>
+                        <button id="base4" data-skin="base4"></button>
+                    </div>
+                </section>
+                <section class="eyes">
+                    <h2>Eyes</h2>
+                    <div class="item-options" id="eye-options">
+                        <button id="eyes1" data-eyes="eyes1"></button>
+                        <button id="eyes2" data-eyes="eyes2"></button>
+                        <button id="eyes3" data-eyes="eyes3"></button>
+                        <button id="eyes4" data-eyes="eyes4"></button>
+                        <button id="eyes5" data-eyes="eyes5"></button>
+                        <button id="eyes6" data-eyes="eyes6"></button>
+                        <button id="eyes7" data-eyes="eyes7"></button>
+                        <button id="eyes8" data-eyes="eyes8"></button>
+                        <button id="eyes9" data-eyes="eyes9"></button>
+                        <button id="eyes10" data-eyes="eyes10"></button>
+                        <button id="eyes11" data-eyes="eyes11"></button>
+                        <button id="eyes12" data-eyes="eyes12"></button>
+                    </div>
+                </section>
+                <section class="brows">
+                    <h2>Brows</h2>
+                    <div class="item-options" id="brows-options">
+                        <button id="brows1" data-brows="brows1"></button>
+                        <button id="brows2" data-brows="brows2"></button>
+                        <button id="brows3" data-brows="brows3"></button>
+                        <button id="brows4" data-brows="brows4"></button>
+                        <button id="brows5" data-brows="brows5"></button>
+                        <button id="brows6" data-brows="brows6"></button>
+                    </div>
+                </section>
+                <section class="lips">
+                    <h2>Lips</h2>
+                    <div class="item-options" id="lips-options">
+                        <button id="lips1" data-lips="lips1"></button>
+                        <button id="lips2" data-lips="lips2"></button>
+                        <button id="lips3" data-lips="lips3"></button>
+                        <button id="lips4" data-lips="lips4"></button>
+                        <button id="lips5" data-lips="lips5"></button>
+                        <button id="lips6" data-lips="lips6"></button>
+                        <button id="lips7" data-lips="lips7"></button>
+                    </div>
+                </section>
+                <section class="hair">
+                    <h2>Hair</h2>
+                    <div class="item-options" id="hair-options">
+                        <button id="hair1" data-hair="hair1"></button>
+                        <button id="hair2" data-hair="hair2"></button>
+                        <button id="hair3" data-hair="hair3"></button>
+                        <button id="hair4" data-hair="hair4"></button>
+                        <button id="hair5" data-hair="hair5"></button>
+                        <button id="hair6" data-hair="hair6"></button>
+                        <button id="hair7" data-hair="hair7"></button>
+                        <button id="hair8" data-hair="hair8"></button>
+                        <button id="hair9" data-hair="hair9"></button>
+                        <button id="hair10" data-hair="hair10"></button>
+                    </div>
+                </section>
+                <section class="hat">
+                    <h2>Hat</h2>
+                    <div class="item-options" id="hat-options">
+                        <button id="hat1" data-hat="hat1"></button>
+                        <button id="hat2" data-hat="hat2"></button>
+                        <button id="hat3" data-hat="hat3"></button>
+                        <button id="hat4" data-hat="hat4"></button>
+                    </div>
+                </section>
+                <section class="longsleeve">
+                    <h2>Longsleeve</h2>
+                    <div class="item-options" id="longsleeve-options">
+                        <button id="longsleeve1" data-longsleeve="longsleeve1"></button>
+                        <button id="longsleeve2" data-longsleeve="longsleeve2"></button>
+                        <button id="longsleeve3" data-longsleeve="longsleeve3"></button>
+                    </div>
+                </section>
+                <section class="shortsleeve">
+                    <h2>Shortsleeve</h2>
+                    <div class="item-options" id="shortsleeve-options">
+                        <button id="shortsleeve1" data-shortsleeve="shortsleeve1"></button>
+                        <button id="shortsleeve2" data-shortsleeve="shortsleeve2"></button>
+                        <button id="shortsleeve3" data-shortsleeve="shortsleeve3"></button>
+                        <button id="shortsleeve4" data-shortsleeve="shortsleeve4"></button>
+                        <button id="shortsleeve5" data-shortsleeve="shortsleeve5"></button>
+                        <button id="shortsleeve6" data-shortsleeve="shortsleeve6"></button>
+                    </div>
+                </section>
+                <section class="sleeveless">
+                    <h2>Sleeveless</h2>
+                    <div class="item-options" id="sleeveless-options">
+                        <button id="sleeveless1" data-sleeveless="sleeveless1"></button>
+                        <button id="sleeveless2" data-sleeveless="sleeveless2"></button>
+                    </div>
+                </section>
+                <section class="skirt">
+                    <h2>Skirts</h2>
+                    <div class="item-options" id="skirt-options">
+                        <button id="skirt1" data-skirt="skirt1"></button>
+                        <button id="skirt2" data-skirt="skirt2"></button>
+                        <button id="skirt3" data-skirt="skirt3"></button>
+                    </div>
+                </section>
+                <section class="shorts">
+                    <h2>shorts</h2>
+                    <div class="item-options" id="shorts-options">
+                        <button id="shorts1" data-shorts="shorts1"></button>
+                        <button id="shorts2" data-shorts="shorts2"></button>
+                        <button id="shorts3" data-shorts="shorts3"></button>
+                    </div>
+                </section>
+                <section class="pants">
+                    <h2>Pants</h2>
+                    <div class="item-options" id="pants-options">
+                        <button id="pants1" data-pants="pants1"></button>
+                        <button id="pants2" data-pants="pants2"></button>
+                        <button id="pants3" data-pants="pants3"></button>
+                        <button id="pants4" data-pants="pants4"></button>
+                        <button id="pants5" data-pants="pants5"></button>
+                        <button id="pants6" data-pants="pants6"></button>
+                    </div>
+                </section>
+                <section class="socks">
+                    <h2>Socks</h2>
+                    <div class="item-options" id="socks-options">
+                        <button id="socks1" data-socks="socks1"></button>
+                        <button id="socks2" data-socks="socks2"></button>
+                    </div>
+                </section>
+                <section class="shoes">
+                    <h2>Shoes</h2>
+                    <div class="item-options" id="shoes-options">
+                        <button id="shoes1" data-shoes="shoes1"></button>
+                        <button id="shoes2" data-shoes="shoes2"></button>
+                        <button id="shoes3" data-shoes="shoes3"></button>
+                        <button id="shoes4" data-shoes="shoes4"></button>
+                        <button id="shoes5" data-shoes="shoes5"></button>
+                    </div>
+                </section>
+            </div>
+            <div id="character-container">
+                <!-- bases -->
+                <img id="base0-img" src="media/pixel-game-assets/skintones/pixil-layer-base0.png" class="layer">
+                <img id="base1-img" src="media/pixel-game-assets/skintones/pixil-layer-base1.png" class="layer">
+                <img id="base2-img" src="media/pixel-game-assets/skintones/pixil-layer-base2.png" class="layer">
+                <img id="base3-img" src="media/pixel-game-assets/skintones/pixil-layer-base3.png" class="layer">
+                <img id="base4-img" src="media/pixel-game-assets/skintones/pixil-layer-base4.png" class="layer">
+                <!-- lips -->
+                <img id="lips1-img" src="media/pixel-game-assets/lips/pixil-layer-lips1.png" class="layer">
+                <img id="lips2-img" src="media/pixel-game-assets/lips/pixil-layer-lips2.png" class="layer">
+                <img id="lips3-img" src="media/pixel-game-assets/lips/pixil-layer-lips3.png" class="layer">
+                <img id="lips4-img" src="media/pixel-game-assets/lips/pixil-layer-lips4.png" class="layer">
+                <img id="lips5-img" src="media/pixel-game-assets/lips/pixil-layer-lips5.png" class="layer">
+                <img id="lips6-img" src="media/pixel-game-assets/lips/pixil-layer-lips6.png" class="layer">
+                <img id="lips7-img" src="media/pixel-game-assets/lips/pixil-layer-lips7.png" class="layer">
+                <!-- eyes -->
+                <img id="eyes1-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes1.png" class="layer">
+                <img id="eyes2-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes2.png" class="layer">
+                <img id="eyes3-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes3.png" class="layer">
+                <img id="eyes4-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes4.png" class="layer">
+                <img id="eyes5-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes5.png" class="layer">
+                <img id="eyes6-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes6.png" class="layer">
+                <img id="eyes7-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes7.png" class="layer">
+                <img id="eyes8-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes8.png" class="layer">
+                <img id="eyes9-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes9.png" class="layer">
+                <img id="eyes10-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes10.png" class="layer">
+                <img id="eyes11-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes11.png" class="layer">
+                <img id="eyes12-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes12.png" class="layer">
+                <!-- brows -->
+                <img id="brows1-img" src="media/pixel-game-assets/brows/pixil-layer-brows1.png" class="layer">
+                <img id="brows2-img" src="media/pixel-game-assets/brows/pixil-layer-brows2.png" class="layer">
+                <img id="brows3-img" src="media/pixel-game-assets/brows/pixil-layer-brows3.png" class="layer">
+                <img id="brows4-img" src="media/pixel-game-assets/brows/pixil-layer-brows4.png" class="layer">
+                <img id="brows5-img" src="media/pixel-game-assets/brows/pixil-layer-brows5.png" class="layer">
+                <img id="brows6-img" src="media/pixel-game-assets/brows/pixil-layer-brows6.png" class="layer">
+                <!-- hair -->
+                <img id="hair1-img" src="media/pixel-game-assets/hair/pixil-layer-hair1.png" class="layer">
+                <img id="hair2-img" src="media/pixel-game-assets/hair/pixil-layer-hair2.png" class="layer">
+                <img id="hair3-img" src="media/pixel-game-assets/hair/pixil-layer-hair3.png" class="layer">
+                <img id="hair4-img" src="media/pixel-game-assets/hair/pixil-layer-hair4.png" class="layer">
+                <img id="hair5-img" src="media/pixel-game-assets/hair/pixil-layer-hair5.png" class="layer">
+                <img id="hair6-img" src="media/pixel-game-assets/hair/pixil-layer-hair6.png" class="layer">
+                <img id="hair7-img" src="media/pixel-game-assets/hair/pixil-layer-hair7.png" class="layer">
+                <img id="hair8-img" src="media/pixel-game-assets/hair/pixil-layer-hair8.png" class="layer">
+                <img id="hair9-img" src="media/pixel-game-assets/hair/pixil-layer-hair9.png" class="layer">
+                <img id="hair10-img" src="media/pixel-game-assets/hair/pixil-layer-hair10.png" class="layer">
+                <!-- hat -->
+                <img id="hat1-img" src="media/pixel-game-assets/hats/pixil-layer-hat1.png" class="layer">
+                <img id="hat2-img" src="media/pixel-game-assets/hats/pixil-layer-hat2.png" class="layer">
+                <img id="hat3-img" src="media/pixel-game-assets/hats/pixil-layer-hat3.png" class="layer">
+                <img id="hat4-img" src="media/pixel-game-assets/hats/pixil-layer-hat4.png" class="layer">
+                <!-- longsleeve -->
+                <img id="longsleeve1-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve1.png" class="layer">
+                <img id="longsleeve2-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve2.png" class="layer">
+                <img id="longsleeve3-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve3.png" class="layer">
+                <!-- shortsleeve -->
+                <img id="shortsleeve1-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve1.png" class="layer">
+                <img id="shortsleeve2-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve2.png" class="layer">
+                <img id="shortsleeve3-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve3.png" class="layer">
+                <img id="shortsleeve4-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve4.png" class="layer">
+                <img id="shortsleeve5-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve5.png" class="layer">
+                <img id="shortsleeve6-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve6.png" class="layer">
+                <!-- sleeveless -->
+                <img id="sleeveless1-img" src="media/pixel-game-assets/sleeveless/pixil-layer-sleeveless1.png" class="layer">
+                <img id="sleeveless2-img" src="media/pixel-game-assets/sleeveless/pixil-layer-sleeveless2.png" class="layer">
+                <!-- skirt -->
+                <img id="skirt1-img" src="media/pixel-game-assets/skirts/pixil-layer-skirt1.png" class="layer">
+                <img id="skirt2-img" src="media/pixel-game-assets/skirts/pixil-layer-skirt2.png" class="layer">
+                <img id="skirt3-img" src="media/pixel-game-assets/skirts/pixil-layer-skirt3.png" class="layer">
+                <!-- shorts -->
+                <img id="shorts1-img" src="media/pixel-game-assets/shorts/pixil-layer-shorts1.png" class="layer">
+                <img id="shorts2-img" src="media/pixel-game-assets/shorts/pixil-layer-shorts2.png" class="layer">
+                <img id="shorts3-img" src="media/pixel-game-assets/shorts/pixil-layer-shorts3.png" class="layer">
+                <!-- pants -->
+                <img id="pants1-img" src="media/pixel-game-assets/pants/pixil-layer-pants1.png" class="layer">
+                <img id="pants2-img" src="media/pixel-game-assets/pants/pixil-layer-pants2.png" class="layer">
+                <img id="pants3-img" src="media/pixel-game-assets/pants/pixil-layer-pants3.png" class="layer">
+                <img id="pants4-img" src="media/pixel-game-assets/pants/pixil-layer-pants4.png" class="layer">
+                <img id="pants5-img" src="media/pixel-game-assets/pants/pixil-layer-pants5.png" class="layer">
+                <img id="pants6-img" src="media/pixel-game-assets/pants/pixil-layer-pants6.png" class="layer">
+                <!-- socks -->
+                <img id="socks1-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks1.png" class="layer">
+                <img id="socks2-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks2.png" class="layer">
+                <!-- shoes -->
+                <img id="shoes1-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes1.png" class="layer">
+                <img id="shoes2-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes2.png" class="layer">
+                <img id="shoes3-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes3.png" class="layer">
+                <img id="shoes4-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes4.png" class="layer">
+                <img id="shoes5-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes5.png" class="layer">
+            </div>
+            <img id="kitty" src="media/pixel-game-assets/pixil-layer-kitty.png">
+        </div>
+        <div class="resizer"></div>
+    </div>
+
+<!--/////////// START MENU APPLICATIONS //////////-->
+
+<!----- weather tracker ----->
     <div id="weather-window" class="window">
         <div class="weather base">
             <section class="window-header" id="weather-header">
@@ -235,8 +506,41 @@
             </section>
         </div>
     </div>
+
+    <!----- calculator ----->
+    <div id="calculator-window" class="window">
+        <section class="window-header" id="calc-header">
+            <button class="exit-button">
+                <svg id="exit-calc" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </button>
+        </section>
+        <section class="calc base">  
+            <input type="text" class="display" id="display" disabled>
+            <div class="calc-buttons">
+                <button class="clear">C</button>
+                <button class="backspace">←</button>
+                <button class="operator">/</button>
+                <button >7</button>
+                <button >8</button>
+                <button >9</button>
+                <button class="operator">*</button>
+                <button >4</button>
+                <button >5</button>
+                <button >6</button>
+                <button class="operator">-</button>
+                <button >1</button>
+                <button >2</button>
+                <button >3</button>
+                <button class="operator">+</button>
+                <button >.</button>
+                <button >0</button>
+                <button class="equal">=</button>
+            </div>
+        </section>
+    </div>
 </body>
 <script src="desktop.js"></script>
 <script src="spotify.js"></script>
 <script src="weather.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"></script>
 </html>

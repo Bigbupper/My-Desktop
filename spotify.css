@@ -12,8 +12,8 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-/* variables */
-:root {
+/* -------variables------- */
+#spotify-window {
     /* colors */
     --color-primary: black;
     --color-secondary: rgb(26, 26, 26);

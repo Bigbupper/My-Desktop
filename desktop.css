@@ -8,7 +8,9 @@
 }
 
 /* variables */
-
+:root {
+    --exit-hover-color: rgb(192, 27, 27);
+}
 
 
 /*/////////// MAIN PAGE //////////*/
@@ -154,7 +156,10 @@ button {
     left: 100px;
     z-index: 10;
     overflow: hidden;
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.384);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.267);
+}
+.window.open {
+    display: block;
 }
 .resizer {
     width: 10px;
