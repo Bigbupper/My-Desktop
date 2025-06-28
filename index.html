@@ -54,6 +54,7 @@
                     <img src="media/search.png" alt="magnifier-icon">
                     <input type="search" id="search" placeholder="Type here to search"/> 
                 </button>
+                <div id="minimized-windows"></div>
             </div>
             <div class="right-align">
                 <time class="task-icon" id="datetime">
@@ -74,7 +75,7 @@
                     <h2 id="mini-city">City Name</h2>
                 </div>
                 <div class="start-icon" id="calculator-icon">
-                    <svg viewBox="0 0 48 48" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="cls-1" d="M27.89,26A1.94,1.94,0,0,0,26,27.89V40.55a1.94,1.94,0,0,0,1.94,2H40.55a2,2,0,0,0,2-2V27.89a1.94,1.94,0,0,0-2-1.94Z"></path><path class="cls-1" d="M7.45,5.5a2,2,0,0,0-1.95,2V20.11a1.94,1.94,0,0,0,2,1.94H20.11a1.94,1.94,0,0,0,1.94-1.94V7.45A1.94,1.94,0,0,0,20.11,5.5Z"></path><rect class="cls-1" x="25.95" y="5.5" width="16.55" height="16.55" rx="2.92"></rect><rect class="cls-1" x="5.5" y="25.95" width="16.55" height="16.55" rx="1.95"></rect><line class="cls-1" x1="13.78" y1="8.42" x2="13.78" y2="19.13"></line><line class="cls-1" x1="8.42" y1="13.78" x2="19.13" y2="13.78"></line><line class="cls-1" x1="28.87" y1="31.3" x2="39.58" y2="31.3"></line><line class="cls-1" x1="28.87" y1="37.14" x2="39.58" y2="37.14"></line></g></svg>
+                    <img src="media/calculator-icon.png" alt="calculator-icon">
                 </div>
             </div>
         </section>
@@ -90,9 +91,13 @@
                 <img src="media/folder.png" alt="" height="15px" width="15px">
                 <p>File Explorer</p>
             </div>
-            <button class="exit-button">
-                <svg id="exit" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-            </button>
+            <div class="window-controls">
+                <button class="minimize-button">_</button>
+                <button class="maximize-button">🗖</button>
+                <button class="exit-button">
+                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
         </section>
 
         <section class="files-menu-bar">
@@ -138,9 +143,13 @@
                 <span class="dot"></span>
                 <span class="dot"></span>
             </button>
-            <button class="exit-button">
-                <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-            </button>
+            <div class="window-controls">
+                <button class="minimize-button">_</button>
+                <button class="maximize-button">🗖</button>
+                <button class="exit-button">
+                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
         </section>
 
         <div class="spotify base">
@@ -209,21 +218,56 @@
 <!----- Opera Window ----->
     <div id="opera-window" class="window">
         <section class="window-header" id="opera-header">
-            <button class="exit-button">
-                <svg id="exit-opera" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            <div class="tab-list">
+                <button class="tab">
+                    <img src="media/tab-icon.png" alt="my desktop tab icon" id="tab-icon">
+                    <span id="tab-title">Noise Mixer</span>
+                </button>
+                <button class="tab">
+                    <img src="media/tab-icon.png" alt="my desktop tab icon" id="tab-icon">
+                    <span id="tab-title">New Tab</span>
+                </button>
+                <button class="tab">
+                    <img src="media/tab-icon.png" alt="my desktop tab icon" id="tab-icon">
+                    <span id="tab-title">New Tab</span>
+                </button>
+            </div>
+            <div class="window-controls">
+                <button class="minimize-button">_</button>
+                <button class="maximize-button">🗖</button>
+                <button class="exit-button">
+                    <svg id="exit-opera" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="bookmarks">
+            <input type="text" id="url-bar" placeholder="Enter search or web address">
+            <button class="bookmark">
+                <span>Email</span>
+            </button>
+            <button class="bookmark">
+                <span>Github</span>
             </button>
         </section>
         <div class="opera base">
-            <iframe src="" frameborder="0"></iframe>
+            <div class="webpage" id="noise-mixer-page">
+                <iframe src="https://bigbupper.github.io/White-Noise/" frameborder="0"></iframe>
+            </div>
         </div>
+        <div class="resizer"></div>
     </div>
 
 <!----- dressup window ----->
     <div id="dressup-window" class="window">
         <section class="window-header" id="dressup-header">
-            <button class="exit-button">
-                <svg id="exit-dressup" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRe</button>po_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-            </button>
+            <div class="window-controls">
+                <button class="minimize-button">_</button>
+                <button class="maximize-button">🗖</button>
+                <button class="exit-button">
+                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
         </section>
         <div class="dressup base">
             <div class="options-container">
@@ -309,6 +353,9 @@
                         <button id="longsleeve1" data-longsleeve="longsleeve1"></button>
                         <button id="longsleeve2" data-longsleeve="longsleeve2"></button>
                         <button id="longsleeve3" data-longsleeve="longsleeve3"></button>
+                        <button id="longsleeve4" data-longsleeve="longsleeve4"></button>
+                        <button id="longsleeve5" data-longsleeve="longsleeve5"></button>
+                        <button id="longsleeve6" data-longsleeve="longsleeve6"></button>
                     </div>
                 </section>
                 <section class="shortsleeve">
@@ -433,6 +480,9 @@
                 <img id="longsleeve1-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve1.png" class="layer">
                 <img id="longsleeve2-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve2.png" class="layer">
                 <img id="longsleeve3-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve3.png" class="layer">
+                <img id="longsleeve4-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve4.png" class="layer">
+                <img id="longsleeve5-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve5.png" class="layer">
+                <img id="longsleeve6-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve6.png" class="layer">
                 <!-- shortsleeve -->
                 <img id="shortsleeve1-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve1.png" class="layer">
                 <img id="shortsleeve2-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve2.png" class="layer">

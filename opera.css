@@ -1,0 +1,87 @@
+#opera-window {
+    height: 700px;
+    width: 600px;
+    background-color: #140310;
+
+    /* resizing constraints */
+    min-width: 470px;
+    min-height: 350px;
+    max-width: 100vw;
+    max-height: calc(100vh - 39px);
+    border:  5px solid #140310;
+}
+.opera.base {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient();
+    border-radius: var(--border-radius-edges);
+}
+
+/* -------window header------- */
+#opera-header {
+    display: flex;
+    height: 35px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:  2px solid rgb(168, 84, 136);
+}
+#exit-opera {
+    width: 20px;
+    cursor: pointer;
+}
+
+/*----- tabs -----*/
+.tab-list {
+    display: flex;
+    align-items: center;
+    flex: 1; 
+}
+.tab {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 155, 217, 0.144);
+    border-radius: 5px 5px 0px 0px ;
+    height: 30px;
+    padding: 0px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+}
+.tab img {
+    height: 16px;
+    width: 16px;
+    margin-right: 5px;
+}
+
+/*----- url bar -----*/
+#url-bar {
+    height: 30px;
+    width: calc(100% - 10px);
+    margin: 10px 5px 0px 5px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 10px;
+}
+#url-bar:hover {
+    background-color: rgba(255, 155, 217, 0.144);
+}
+/*----- base page settings -----*/
+.webpage {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; 
+}
+.webpage iframe {
+    flex: 1 1 auto;
+    background: white;
+    display: block;
+    border: none;
+
+}
+

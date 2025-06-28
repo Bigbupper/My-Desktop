@@ -2,48 +2,131 @@
 /* --------pop-up windows---------- */
 
 document.addEventListener('DOMContentLoaded', function () {
-    function toggleWindow(iconId, windowId) {
-        const icon = document.getElementById(iconId);
-        const window = document.getElementById(windowId);
-        const header = window.querySelector('.window-header');
-        const exitButton = window.querySelector('.exit-button');
-        const base = window.querySelector('.base');
-        const resizer = window.querySelector('.resizer');
 
-        // Toggle window open/close
-        icon.addEventListener('click', function () {
-            window.classList.toggle('open');
-            bringToFront(window);
+    function desktopWindowSetup(icon, windowElement) {
+        const header = windowElement.querySelector('.window-header');
+        const minimizeButton = windowElement.querySelector('.minimize-button');
+        const maximizeButton = windowElement.querySelector('.maximize-button');
+        const exitButton = windowElement.querySelector('.exit-button');
+        const base = windowElement.querySelector('.base');
+        const resizer = windowElement.querySelector('.resizer');
+        const taskbar = document.getElementById('minimized-windows');
+        let savedState = null;
+
+        // Create taskbar icon
+        const minimizedIcon = document.createElement('img');
+        minimizedIcon.src = icon.querySelector('img').src;
+        minimizedIcon.classList.add('minimize-icon');
+        minimizedIcon.style.display = 'none';
+        taskbar.appendChild(minimizedIcon);
+
+        // Show taskbar icon when window is opened
+        function openWindow() {
+            windowElement.classList.add('open');
+            windowElement.classList.remove('minimized');
+            if (savedState && !windowElement.classList.contains('maximized')) {
+                windowElement.style.width = savedState.width;
+                windowElement.style.height = savedState.height;
+                windowElement.style.left = savedState.left;
+                windowElement.style.top = savedState.top;
+                base.style.height = savedState.baseHeight;
+            }
+            minimizedIcon.style.display = 'flex';
+            bringToFront(windowElement);
+        }
+
+        windowElement.openWindow = openWindow;
+
+        // Minimize window
+        function minimizeWindow() {
+            if (!windowElement.classList.contains('maximized')) {
+                savedState = {
+                    width: windowElement.style.width || windowElement.offsetWidth + 'px',
+                    height: windowElement.style.height || windowElement.offsetHeight + 'px',
+                    left: windowElement.style.left || windowElement.offsetLeft + 'px',
+                    top: windowElement.style.top || windowElement.offsetTop + 'px',
+                    baseHeight: base.style.height || base.offsetHeight + 'px'
+                };
+            }
+            windowElement.classList.remove('open');
+            windowElement.classList.add('minimized');
+        }
+        if (minimizeButton) {
+            minimizeButton.addEventListener('click', minimizeWindow);
+        }
+
+        // Toggle minimize from taskbar icon
+        minimizedIcon.addEventListener('click', () => {
+            if (windowElement.classList.contains('open')) {
+                minimizeWindow();
+            } else {
+                openWindow();
+            }
         });
 
-        // Close window
-        exitButton.addEventListener('click', function () {
-            window.classList.remove('open');
-        });
-        
+        // Maximize window
+        if (maximizeButton) {
+            maximizeButton.addEventListener('click', () => {
+                if (windowElement.classList.contains('maximized')) {
+                    windowElement.classList.remove('maximized');
+                    // Restore previous size and position
+                    if (savedState) {
+                        windowElement.style.width = savedState.width;
+                        windowElement.style.height = savedState.height;
+                        windowElement.style.left = savedState.left;
+                        windowElement.style.top = savedState.top;
+                        base.style.height = savedState.baseHeight;
+                    }
+                } else {
+                    // saved current size and position
+                    savedState = {
+                        width: windowElement.style.width || windowElement.offsetWidth + 'px',
+                        height: windowElement.style.height || windowElement.offsetHeight + 'px',
+                        left: windowElement.style.left || windowElement.offsetLeft + 'px',
+                        top: windowElement.style.top || windowElement.offsetTop + 'px',
+                        baseHeight: base.style.height || base.offsetHeight + 'px'
+                    };
+                    windowElement.classList.add('maximized');
+                    windowElement.style.width = '100%';
+                    windowElement.style.height = 'calc(100% - 40px)'; // Adjust for taskbar height
+                    windowElement.style.left = '0';
+                    windowElement.style.top = '0';
+                    base.style.height = 'calc(100% - 85px)'; // Adjust base height
+                }
+            });
+        }
+
+        // Close window and remove taskbar icon
+        if (exitButton) {
+            exitButton.addEventListener('click', () => {
+                windowElement.classList.remove('open', 'minimized');
+                minimizedIcon.style.display = 'none'
+            });
+        }
+
         // Make window draggable
         header.addEventListener('mousedown', function (e) {
             e.preventDefault();
 
-            let offsetX = e.clientX - window.offsetLeft;
-            let offsetY = e.clientY - window.offsetTop;
+            let offsetX = e.clientX - windowElement.offsetLeft;
+            let offsetY = e.clientY - windowElement.offsetTop;
 
             function moveAt(e) {
-            const parentWidth = window.parentElement.clientWidth,
-                  parentHeight = window.parentElement.clientHeight - 40, // Adjust for taskbar height
-                  windowWidth = window.offsetWidth,
-                  windowHeight = window.offsetHeight,
-                  maxLeft = parentWidth - windowWidth,
-                  maxTop = parentHeight - windowHeight,
-                  newLeft = Math.max(0, Math.min(maxLeft, e.clientX - offsetX)),
-                  newTop = Math.max(0, Math.min(maxTop, e.clientY - offsetY));
-            window.style.left = newLeft + 'px';
-            window.style.top = newTop + 'px';
+                const parentWidth = windowElement.parentElement.clientWidth,
+                    parentHeight = windowElement.parentElement.clientHeight - 40, // Adjust for taskbar height
+                    windowWidth = windowElement.offsetWidth,
+                    windowHeight = windowElement.offsetHeight,
+                    maxLeft = parentWidth - windowWidth,
+                    maxTop = parentHeight - windowHeight,
+                    newLeft = Math.max(0, Math.min(maxLeft, e.clientX - offsetX)),
+                    newTop = Math.max(0, Math.min(maxTop, e.clientY - offsetY));
+                windowElement.style.left = newLeft + 'px';
+                windowElement.style.top = newTop + 'px';
             }
 
             function onMouseUp() {
-            document.removeEventListener('mousemove', moveAt);
-            document.removeEventListener('mouseup', onMouseUp);
+                document.removeEventListener('mousemove', moveAt);
+                document.removeEventListener('mouseup', onMouseUp);
             }
 
             document.addEventListener('mousemove', moveAt);
@@ -51,42 +134,81 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Make window resizable
-        window.addEventListener('mousedown', function (e) {
-            if (e.target.classList.contains('resizer')) {
-            e.preventDefault();
+        if (resizer) {
+            windowElement.addEventListener('mousedown', function (e) {
+                if (e.target.classList.contains('resizer')) {
+                    e.preventDefault();
 
-            let startX = e.clientX;
-            let startY = e.clientY;
-            let startWidth = parseInt(document.defaultView.getComputedStyle(window).width, 10);
-            let startHeight = parseInt(document.defaultView.getComputedStyle(window).height, 10);
+                    let startX = e.clientX;
+                    let startY = e.clientY;
+                    let startWidth = parseInt(document.defaultView.getComputedStyle(windowElement).width, 10);
+                    let startHeight = parseInt(document.defaultView.getComputedStyle(windowElement).height, 10);
 
-            const minWidth = parseInt(document.defaultView.getComputedStyle(window).minWidth, 10);
-            const maxWidth = parseInt(document.defaultView.getComputedStyle(window).maxWidth, 10);
-            const minHeight = parseInt(document.defaultView.getComputedStyle(window).minHeight, 10);
-            const maxHeight = parseInt(document.defaultView.getComputedStyle(window).maxHeight, 10);
+                    const minWidth = parseInt(document.defaultView.getComputedStyle(windowElement).minWidth, 10);
+                    const maxWidth = parseInt(document.defaultView.getComputedStyle(windowElement).maxWidth, 10);
+                    const minHeight = parseInt(document.defaultView.getComputedStyle(windowElement).minHeight, 10);
+                    const maxHeight = parseInt(document.defaultView.getComputedStyle(windowElement).maxHeight, 10);
 
-            function doDrag(e) {
-                const newWidth = Math.max(minWidth, Math.min(maxWidth, startWidth + e.clientX - startX));
-                const newHeight = Math.max(minHeight, Math.min(maxHeight, startHeight + e.clientY - startY));
-                window.style.width = newWidth + 'px';
-                window.style.height = newHeight + 'px';
-                base.style.height = (newHeight - 45) + 'px';
-            }
+                    function doDrag(e) {
+                        const newWidth = Math.max(minWidth, Math.min(maxWidth, startWidth + e.clientX - startX));
+                        const newHeight = Math.max(minHeight, Math.min(maxHeight, startHeight + e.clientY - startY));
+                        windowElement.style.width = newWidth + 'px';
+                        windowElement.style.height = newHeight + 'px';
+                        base.style.height = (newHeight - 45) + 'px';
+                    }
 
-            function stopDrag() {
-                document.removeEventListener('mousemove', doDrag);
-                document.removeEventListener('mouseup', stopDrag);
-            }
+                    function stopDrag() {
+                        document.removeEventListener('mousemove', doDrag);
+                        document.removeEventListener('mouseup', stopDrag);
+                    }
 
-            document.addEventListener('mousemove', doDrag);
-            document.addEventListener('mouseup', stopDrag);
-            }
-        });
+                    document.addEventListener('mousemove', doDrag);
+                    document.addEventListener('mouseup', stopDrag);
+                }
+            });
+        }
 
         // Bring window to front when clicked
-        window.addEventListener('mousedown', function () {
-            bringToFront(window);
+        windowElement.addEventListener('mousedown', function () {
+            bringToFront(windowElement);
         });
+    }
+
+    function openFromDesktop(iconId, windowId) {
+        const icon = document.getElementById(iconId);
+        const windowElement = document.getElementById(windowId);
+        if (!icon || !windowElement) return;
+
+        desktopWindowSetup(icon, windowElement);
+        console.log(windowElement.openWindow);
+
+        icon.addEventListener('dblclick', (e) => {
+            e.preventDefault();
+            
+            // reset position and size
+            windowElement.style.top = '100px';
+            windowElement.style.left = '100px';
+            windowElement.style.width = '';
+            windowElement.style.height = '';
+            windowElement.classList.remove('maximized');
+
+            windowElement.openWindow();
+        });
+    }
+
+    function openFromStart(iconId, windowId) {
+        const icon = document.getElementById(iconId);
+        const windowElement = document.getElementById(windowId);
+        if (!icon || !windowElement) return;
+
+        desktopWindowSetup(icon, windowElement);
+
+        icon.addEventListener('click', (e) => {
+            e.preventDefault();
+            windowElement.openWindow();
+        });
+
+        
     }
 
     function bringToFront(window) {
@@ -95,38 +217,15 @@ document.addEventListener('DOMContentLoaded', function () {
         window.style.zIndex = 10;
     }
 
-    // Window toggles
-    toggleWindow('spotify-icon', 'spotify-window');
-    toggleWindow('files-icon', 'files-window');
-    toggleWindow('mini-weather-icon', 'weather-window');
-    toggleWindow('calculator-icon', 'calculator-window');
-    toggleWindow('dressup-icon', 'dressup-window');
-    // Add more icons and windows as needed
+    // double-click to open
+    openFromDesktop('spotify-icon', 'spotify-window');
+    openFromDesktop('files-icon', 'files-window');
+    openFromDesktop('dressup-icon', 'dressup-window');
+    openFromDesktop('opera-icon', 'opera-window');
 
-
-    /* -------desktop clock------- */
-
-    function updateDateTime() {
-        const now = new Date();
-
-        let hours = now.getHours();
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-
-        const amPm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12 || 12;
-        const timeString = `${hours}:${minutes} ${amPm}`;
-
-        const month = now.getMonth() + 1;
-        const day = now.getDate();
-        const year = now.getFullYear();
-        const dateString = `${month}/${day}/${year}`;
-
-        document.getElementById("time").textContent = timeString;
-        document.getElementById("date").textContent = dateString;
-    }
-
-    updateDateTime();    
-    setInterval(updateDateTime, 1000);
+    // open from start menu
+    openFromStart('mini-weather-icon', 'weather-window');
+    openFromStart('calculator-icon', 'calculator-window');
 
     /* -------start menu------- */
 
@@ -147,6 +246,34 @@ document.addEventListener('DOMContentLoaded', function () {
     startMenu.addEventListener('click', function (e) {
         e.stopPropagation();
     });
+
+
+
+
+    
+    /* -------desktop clock------- */
+
+    function updateDateTime() {
+        const now = new Date();
+
+        let hours = now.getHours();
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+
+        const amPm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12 || 12;
+        const timeString = `${hours}:${minutes} ${amPm}`;
+
+        const month = now.getMonth() + 1;
+        const day = now.getDate();
+        const year = now.getFullYear();
+        const dateString = `${month}/${day}/${year}`;
+
+        document.getElementById("time").textContent = timeString;
+        document.getElementById("date").textContent = dateString;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
 
     /* -------calculator------- */
     const display = document.getElementById("display");
@@ -206,23 +333,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // single choice options (skin, eyes, lips, hair, hat)
     function optionButtons(buttonSelector, imagePrefix, dataAttr) {
         const images = document.querySelectorAll(`#character-container img[id^="${imagePrefix}"]`);
-    
-        document.querySelectorAll(buttonSelector).forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedId = button.getAttribute(dataAttr) + '-img';
-    
-            images.forEach(img => img.style.display = 'none');
-    
-            const activeImage = document.getElementById(selectedId);
-            if (activeImage) activeImage.style.display = 'block';
 
-            // Add selected/remove styling
-            document.querySelectorAll(buttonSelector).forEach(btn => btn.classList.remove('selected'));
-            button.classList.add('selected');
-        });
+        document.querySelectorAll(buttonSelector).forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedId = button.getAttribute(dataAttr) + '-img';
+
+                images.forEach(img => img.style.display = 'none');
+
+                const activeImage = document.getElementById(selectedId);
+                if (activeImage) activeImage.style.display = 'block';
+
+                // Add selected/remove styling
+                document.querySelectorAll(buttonSelector).forEach(btn => btn.classList.remove('selected'));
+                button.classList.add('selected');
+            });
         });
     }
-  
+
     optionButtons('#skin-options button', 'base', 'data-skin');
     optionButtons('#brows-options button', 'brows', 'data-brows');
     optionButtons('#eye-options button', 'eyes', 'data-eyes');
@@ -233,20 +360,20 @@ document.addEventListener('DOMContentLoaded', function () {
     // toggle options (clothing items that can be layered)
     function toggleButtons(buttonSelector, imagePrefix, dataAttr) {
         document.querySelectorAll(buttonSelector).forEach(button => {
-          button.addEventListener('click', () => {
-            const itemId = button.getAttribute(dataAttr) + '-img';
-            const image = document.getElementById(itemId);
-      
-            if (image) {
-              image.style.display = (image.style.display === 'block') ? 'none' : 'block';
-            }
+            button.addEventListener('click', () => {
+                const itemId = button.getAttribute(dataAttr) + '-img';
+                const image = document.getElementById(itemId);
 
-            // Toggle selected styling
-            button.classList.toggle('selected');
-          });
+                if (image) {
+                    image.style.display = (image.style.display === 'block') ? 'none' : 'block';
+                }
+
+                // Toggle selected styling
+                button.classList.toggle('selected');
+            });
         });
-      }
-    
+    }
+
     toggleButtons('#hat-options button', 'hat', 'data-hat');
     toggleButtons('#longsleeve-options button', 'longsleeve', 'data-longsleeve');
     toggleButtons('#shortsleeve-options button', 'shortsleeve', 'data-shortsleeve');
@@ -255,6 +382,5 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleButtons('#shorts-options button', 'shorts', 'data-shorts');
     toggleButtons('#pants-options button', 'pants', 'data-pants');
     toggleButtons('#socks-options button', 'socks', 'data-socks');
-    
-    
+
 });

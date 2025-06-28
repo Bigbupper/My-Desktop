@@ -273,6 +273,15 @@ button.selected {
 #longsleeve3 {
     background-image: url(media/pixel-game-assets/longsleeve/icons/longsleeveicon3.png);
 }
+#longsleeve4 {
+    background-image: url(media/pixel-game-assets/longsleeve/icons/longsleeveicon4.png);
+}
+#longsleeve5 {
+    background-image: url(media/pixel-game-assets/longsleeve/icons/longsleeveicon5.png);
+}
+#longsleeve6 {
+    background-image: url(media/pixel-game-assets/longsleeve/icons/longsleeveicon6.png);
+}
 
 /* shortsleeve shirts */
 #shortsleeve1 {

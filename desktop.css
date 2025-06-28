@@ -84,7 +84,7 @@ button {
     right: 0;
     left: 0;
     display: flex;
-    align-items: center;
+    align-items: center;;
     justify-content: space-between;
 }
 .left-align {
@@ -110,6 +110,19 @@ button {
 .task-icon, #start {
     background-color: transparent;
     transition: background-color 0.5s
+}
+
+#minimized-windows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.minimize-icon {
+    display: flex;
+    height: 30px;
+    margin: 0 5px;
+    cursor: pointer;
 }
 
 /* date/time display */
