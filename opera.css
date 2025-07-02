@@ -1,22 +1,26 @@
 #opera-window {
     height: 700px;
     width: 600px;
-    background-color: #140310;
+    background-color: var(--color-background);
 
     /* resizing constraints */
     min-width: 470px;
     min-height: 350px;
     max-width: 100vw;
     max-height: calc(100vh - 39px);
-    border:  5px solid #140310;
+    border:  5px solid var(--color-background);
+
+    /* variables */
+    --border-radius-edges: 5px;
+    --color-background: #140310;
+    --color-highlight: rgb(168, 84, 136);
+    --color-secondary: rgba(255, 155, 217, 0.144);
 }
 .opera.base {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient();
-    border-radius: var(--border-radius-edges);
 }
 
 /* -------window header------- */
@@ -25,11 +29,15 @@
     height: 35px;
     justify-content: space-between;
     align-items: center;
-    border-bottom:  2px solid rgb(168, 84, 136);
+    border-bottom:  2px solid var(--color-highlight);
 }
 #exit-opera {
     width: 20px;
     cursor: pointer;
+}
+#window-controls button:hover {
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius-edges);
 }
 
 /*----- tabs -----*/
@@ -41,8 +49,8 @@
 .tab {
     display: flex;
     align-items: center;
-    background-color: rgba(255, 155, 217, 0.144);
-    border-radius: 5px 5px 0px 0px ;
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius-edges) var(--border-radius-edges) 0px 0px ;
     height: 30px;
     padding: 0px 10px;
     margin-right: 5px;
@@ -50,32 +58,67 @@
     font-size: 14px;
     color: white;
 }
-.tab img {
-    height: 16px;
-    width: 16px;
-    margin-right: 5px;
+.close-tab {
+    margin-left: 0.5em;
+    cursor: pointer;
+    color: #999;
+    font-weight: bold;
+    font-size: 1em;
 }
+
+.close-tab:hover {
+    color: #e75a4d;
+}
+
 
 /*----- url bar -----*/
 #url-bar {
     height: 30px;
-    width: calc(100% - 10px);
-    margin: 10px 5px 0px 5px;
+    width: 100%;
+    margin: 5px 0px;
     padding: 0px 10px;
-    border-radius: 5px;
+    border-radius: var(--border-radius-edges);
     border: none;
     color: white;
     font-size: 10px;
+    background-color: transparent;
+    transition: ease-in 0.2s;
 }
 #url-bar:hover {
-    background-color: rgba(255, 155, 217, 0.144);
+    background-color: var(--color-secondary);
 }
+
+/*----- bookmark -----*/
+.bookmarks {
+    display: flex;
+}
+.bookmark svg, .tab svg {
+    height: 16px;
+}
+.bookmark span {
+    font-size: 16px;
+    margin-left: 5px;
+}
+.bookmark {
+    display: flex;
+    align-content: center;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--color-highlight);
+    padding: 5px 10px;
+    border-radius: var(--border-radius-edges);
+}
+.bookmark:hover {
+    background-color: var(--color-secondary);
+}
+
 /*----- base page settings -----*/
 .webpage {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     min-height: 0; 
+    margin-top: 10px;
 }
 .webpage iframe {
     flex: 1 1 auto;

@@ -84,7 +84,7 @@ button {
     right: 0;
     left: 0;
     display: flex;
-    align-items: center;;
+    align-items: center;
     justify-content: space-between;
 }
 .left-align {
@@ -112,6 +112,7 @@ button {
     transition: background-color 0.5s
 }
 
+/* minimize icons */
 #minimized-windows {
     display: flex;
     align-items: center;
@@ -120,15 +121,22 @@ button {
 }
 .minimize-icon {
     display: flex;
-    height: 30px;
-    margin: 0 5px;
+    height: 40px;
+    padding: 5px 10px;
     cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.5s;
 }
+.minimize-icon:hover {
+    background-color: rgba(255, 255, 255, 0.116);
+    transition: background-color 0.2s;
+}
+
 
 /* date/time display */
 #datetime {
     font-size: .8rem;
-    margin-right: 10px;
+    padding: 5px 10px;
     height: 40px;
     display: flex;
     flex-direction: column;
@@ -163,16 +171,40 @@ button {
 
 /* -------window settings------- */
 .window {
-    display: none;
+    visibility: hidden;
     position: absolute;
     top: 100px;
     left: 100px;
     z-index: 10;
     overflow: hidden;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.267);
+    transition: 
+        opacity 0.5 ease,
+        width 0.5 ease,
+        height 0.5 ease
+    ;
 }
 .window.open {
-    display: block;
+    visibility: visible;
+}
+.window-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 30px;
+}
+.window-controls button {
+    margin: 0 5px;
+    font-size: 1.45rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.minimize-button,
+.maximize-button {
+    transform: translateY(-4px);
 }
 .resizer {
     width: 10px;

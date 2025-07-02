@@ -247,9 +247,6 @@ document.addEventListener('DOMContentLoaded', function () {
         e.stopPropagation();
     });
 
-
-
-
     
     /* -------desktop clock------- */
 
