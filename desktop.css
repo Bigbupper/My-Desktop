@@ -26,6 +26,12 @@ body {
     background-position: center;
     min-height: 100vh;
 }
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
 .desktop {
     display: grid;
     grid-template-columns: repeat(25, 1fr);
