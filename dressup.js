@@ -1,4 +1,5 @@
     /* ----- dressup game ----- */
+document.addEventListener('DOMContentLoaded', () => {
 
     // single choice options (skin, eyes, lips, hair, hat)
     function optionButtons(buttonSelector, imagePrefix, dataAttr) {
@@ -52,3 +53,27 @@
     toggleButtons('#shorts-options button', 'shorts', 'data-shorts');
     toggleButtons('#pants-options button', 'pants', 'data-pants');
     toggleButtons('#socks-options button', 'socks', 'data-socks');
+
+    // background changer
+    const backgrounds = [
+        'media/pixel-game-assets/pixil-background1.png',
+        'media/pixel-game-assets/pixil-background2.png',
+        'media/pixel-game-assets/pixil-background3.png'
+    ];
+
+    let currentBg = 0;
+    const characterContainer = document.getElementById('character-container');
+
+    function changeBackground(index) {
+        currentBg = (index + backgrounds.length) % backgrounds.length;
+        characterContainer.style.backgroundImage = `url(${backgrounds[currentBg]})`;
+    }
+
+    // event listeners
+    document.getElementById('prev-bg').addEventListener('click', () => changeBackground(currentBg - 1));
+    document.getElementById('next-bg').addEventListener('click', () => changeBackground(currentBg + 1));
+
+    // initialize background
+    changeBackground(currentBg);
+
+});
