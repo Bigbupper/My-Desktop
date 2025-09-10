@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="calculator.css">
     <link rel="stylesheet" href="dressup.css">
     <link rel="stylesheet" href="opera.css">
+    <link rel="stylesheet" href="todolist.css">
+    <link rel="stylesheet" href="clock.css">
 </head>
 <body>
 
@@ -36,7 +38,7 @@
                 <p class="label">VScode</p>
             </button>
             <button id="dressup-icon" class="icon" title="Launch Dolly Cat DressUp">
-                <img src="media/sly-kitty-icon.png" alt="pixelart game logo" >
+                <img src="media/dollycat-icon.png" alt="pixelart game logo" >
                 <p class="label">Dolly Cat</p>
             </button>
             <button id="recycle-icon" class="icon">
@@ -51,31 +53,39 @@
                     <svg id="windows-logo" width="20px" height="20px" viewBox="-0.5 0 257 257" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M0 36.357L104.62 22.11l.045 100.914-104.57.595L0 36.358zm104.57 98.293l.08 101.002L.081 221.275l-.006-87.302 104.494.677zm12.682-114.405L255.968 0v121.74l-138.716 1.1V20.246zM256 135.6l-.033 121.191-138.716-19.578-.194-101.84L256 135.6z" fill="#ffffff"></path></g></svg>
                 </button>
                 <button class="search-container">
-                    <img src="media/search.png" alt="magnifier-icon">
+                    <img src="media/search.png" alt="search icon">
                     <input type="search" id="search" placeholder="Type here to search"/> 
                 </button>
                 <div id="minimized-windows"></div>
             </div>
             <div class="right-align">
-                <time class="task-icon" id="datetime">
-                    <span id="time"></span><br>
-                    <span id="date"></span>
+                <time class="task-icon datetime" id="desktop-datetime">
+                    <span class="time"></span><br>
+                    <span class="date"></span>
                 </time>
             </div>
         </section>
 
         <section class="start-menu">
             <div class="start-icon-container">
-                <div class="start-icon" id="placeholder1"></div>
-                <div class="start-icon" id="mini-weather-icon">
+                <div class="start-icon" id="todolist-icon" title="To-Do List">
+                    <img src="media/icons-start-menu/todo-icon.svg" alt="todolist icon">
+                </div>
+                <div class="start-icon" id="mini-weather-icon" title="Weather Widget">
                     <div class="mini-weather-display">
                         <img src="media/weather/light-rain.svg" alt="light rain">
                         <h1 id="mini-temp">00°c</h1>
                     </div>
                     <h2 id="mini-city">City Name</h2>
                 </div>
-                <div class="start-icon" id="calculator-icon">
-                    <img src="media/calculator-icon.png" alt="calculator-icon">
+                <div class="start-icon" id="calculator-icon" title="Calculator">
+                    <img src="media/icons-start-menu/calc-icon.svg" alt="calculator icon">
+                </div>
+                <div class="start-icon" id="clock-icon" title="Clock">
+                    <img src="media/icons-start-menu/clock-icon.svg" alt="clock icon">
+                </div>
+                <div class="start-icon" id="calander-icon" title="Calander">
+                    <img src="media/icons-start-menu/calander-icon.svg" alt="calander icon">
                 </div>
             </div>
         </section>
@@ -83,7 +93,7 @@
 
 <!-- /////////////// DESKTOP APPLICATIONS /////////////// -->
 
-<!----- files window ----->
+<!----- files window (needs to be updated) ----->
     <div id="files-window" class="window">
 
         <section class="window-header" id="files-header">
@@ -136,6 +146,7 @@
     </div>
 
 <!----- spotify window ----->
+<!-- make song list toggle from dot menu and remove second exit button -->
     <div id="spotify-window" class="window">
         <section class="window-header" id="spotify-header">
             <button class="dot-menu">
@@ -233,6 +244,7 @@
     </div>
 
 <!----- Opera Window ----->
+<!-- audio is still playing when window is closed -->
     <div id="opera-window" class="window">
         <section class="window-header" id="opera-header">
             <div class="tab-list"></div>
@@ -552,6 +564,8 @@
         <div class="resizer"></div>
     </div>
 
+<!-- add recycle bin window -->
+
 <!--/////////// START MENU APPLICATIONS //////////-->
 
 <!----- weather tracker ----->
@@ -597,9 +611,13 @@
 <!----- calculator ----->
     <div id="calculator-window" class="window">
         <section class="window-header" id="calc-header">
-            <button class="exit-button">
-                <svg id="exit-calc" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-            </button>
+            <div class="window-controls">
+                <button class="minimize-button">_</button>
+                <button class="maximize-button">🗖</button>
+                <button class="exit-button">
+                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
         </section>
         <section class="calc base">  
             <input type="text" class="display" id="display" disabled>
@@ -625,11 +643,83 @@
             </div>
         </section>
     </div>
+
+<!-- todo list -->
+    <div id="todo-window" class="window">
+        <section class="window-header" id="todo-header">
+            <div class="window-controls">
+                <button class="minimize-button">_</button>
+                <button class="maximize-button">🗖</button>
+                <button class="exit-button">
+                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
+        </section>
+        <div class="todo base">
+            <h1 id="todo-label">To-Do List</h1>
+            <div id="task-input">
+                <input type="text" id="todo-input" placeholder="add a new task..." spellcheck="false">
+                <button id="add-task-button">+</button>
+            </div>
+            <ul id="task-list">
+                <!-- Tasks added here dynamically -->
+            </ul>
+            <button id="clear-tasklist">clear all</button>
+        </div>
+
+    </div>
+
+<!-- clock app with timer, alarm, stopwatch, and world clock -->
+     <div id="clock-window" class="window">
+        <section class="window-header" id="clock-header">
+            <div class="window-controls">
+                <button class="minimize-button">_</button>
+                <button class="maximize-button">🗖</button>
+                <button class="exit-button">
+                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
+        </section>
+        <div id="clock-tabs">
+            <button class="tab-button active" data-tab="clock">
+                <img src="media/icons-start-menu/clock-tab-icons/clock-icon2.svg" alt="clock tab icon" title="clock">
+            </button>
+            <button class="tab-button" data-tab="alarm">
+                <img src="media/icons-start-menu/clock-tab-icons/alarm.svg" alt="alarm tab icon" title="alarm">
+            </button>
+            <button class="tab-button" data-tab="stopwatch">
+                <img src="media/icons-start-menu/clock-tab-icons/stopwatch-icon.svg" alt="stopwatch tab icon" title="stopwatch">
+            </button>
+            <button class="tab-button" data-tab="timer">
+                <img src="media/icons-start-menu/clock-tab-icons/timer-icon.svg" alt="timer tab icon" title="timer">
+            </button>
+        </div>
+        <div class="clock base">
+            <div class="clock-app">
+                <div id="analog-clock">
+                    <div class="hand hour"></div>
+                    <div class="hand minute"></div>
+                    <div class="hand second"></div>
+                    <div class="center-point"></div>
+                </div>
+                <time class="datetime" id="clock-datetime">
+                        <span class="time"></span><br>
+                        <span class="date"></span>
+                </time>
+            </div>
+            <div class="alarm-app">
+            </div>
+        </div>
+
+    </div>
+<!-- add calander app and calander popup to datetime button on desktop -->
+
 </body>
 <script src="desktop.js"></script>
 <script src="dressup.js"></script>
 <script src="music-player.js"></script>
 <script src="weather.js"></script>
 <script src="opera.js"></script>
+<script src="todolist.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"></script>
-</html>
+</html> 

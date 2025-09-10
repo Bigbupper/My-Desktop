@@ -9,7 +9,24 @@
 
 /* variables */
 :root {
-    --exit-hover-color: rgb(192, 27, 27);
+    /* (default) dark mode global */
+    --exit-hover: rgba(255, 51, 51, 0.37);
+    --desktop-hover: rgba(255, 255, 255, 0.116);
+    --desktop-base: rgba(18, 12, 24, 0.603);
+    --desktop-primary: rgba(132, 145, 202, 0.562);
+    --desktop-highlight: rgba(182, 195, 255, 0.952);
+    --desktop-lowlight: rgba(40, 41, 102, 0.432);
+    --text: white;
+    
+}
+ {
+    --exit-hover: rgba(255, 154, 196, 0.6);
+    --desktop-hover: rgba(223, 195, 250, 0.616);
+    --desktop-base: rgba(169, 134, 204, 0.473);
+    --desktop-primary: rgba(207, 171, 248, 0.568);
+    --desktop-highlight: rgba(241, 211, 253, 0.733);
+    --desktop-lowlight: #ac81c08c;
+    --text: white;
 }
 
 
@@ -83,7 +100,7 @@ button {
 
 /* -------taskbar------- */
 .taskbar {
-    background-color: rgba(18, 12, 24, 0.603);
+    background-color: var(--desktop-base);
     backdrop-filter: blur(15px);
     position: fixed;
     bottom: 0;
@@ -106,7 +123,7 @@ button {
 }
 #start-button:hover,
 .task-icon:hover {
-    background-color: rgba(255, 255, 255, 0.116);
+    background-color: var(--desktop-hover);
     transition: background-color 0.2s;
 }
 #start-button:hover #windows-logo path {
@@ -134,13 +151,13 @@ button {
     transition: background-color 0.5s;
 }
 .minimize-icon:hover {
-    background-color: rgba(255, 255, 255, 0.116);
+    background-color: var(--desktop-hover);
     transition: background-color 0.2s;
 }
 
 
 /* date/time display */
-#datetime {
+#desktop-datetime {
     font-size: .8rem;
     padding: 5px 10px;
     height: 40px;
@@ -198,6 +215,7 @@ button {
     justify-content: flex-end;
     align-items: center;
     height: 30px;
+    padding: 10px;
 }
 .window-controls button {
     margin: 0 5px;
@@ -207,10 +225,11 @@ button {
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    scale: 0.8;
 }
 .minimize-button,
 .maximize-button {
-    transform: translateY(-4px);
+    transform: translate(4px, -4px);
 }
 .resizer {
     width: 10px;
@@ -240,49 +259,56 @@ button {
 .start-icon-container {
     display: grid;
     grid-template-areas: 
-    "placeholder1 weather weather"
-    "calculator weather weather";
+    "todolist weather weather"
+    "calculator weather weather"
+    "clock calandar notes";
     margin: 25px;
     gap: 10px;
 }
-.start-icon {
+ .start-icon {
     height: 120px;
     width: 100%;
-    background-color: rgba(187, 166, 166, 0.116);
-}
-.start-icon {
-    position: relative;
-}
-
-.start-icon:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.2);
-    pointer-events: none;
-    z-index: 1;
+    background-color: var(--desktop-lowlight);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.start-icon:hover {
+    background-color: var(--desktop-hover);
+    transition: all 0.3s ease;
+}
 .start-icon > * {
     position: relative;
     z-index: 2;
 }
-#placeholder1 {
-    grid-area: placeholder1;
+.start-icon img {
+    height: 70px;
+    width: 70px;
+}
+#todolist-icon {
+    grid-area: todolist;
 }
 #mini-weather-icon {
     height: 100%;
     width: 100%;
     grid-area: weather;
 }
-#calculator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.mini-weather-display img {
+    height: 90px;
+}
+#calculator-icon {
     grid-area: calculator;
 }
+#calculator-icon, 
+#todolist-icon, 
+#clock-icon,
+#calander-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
 
 

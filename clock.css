@@ -1,0 +1,110 @@
+#clock-window {
+    padding: 10px, 10px, 0px, 10px;
+    background-color: var(--desktop-base);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+}
+
+/* ----- base ----- */
+
+
+.clock-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 400px;
+}
+
+/* ----- tabs ----- */
+#clock-tabs {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    height: 440px;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: fit-content;
+    background-color: var(--desktop-primary);
+}
+#clock-tabs .tab-button {
+    background: none;
+    border: none;
+    color: var(--text);
+    padding: 10px;
+    cursor: pointer;
+}
+#clock-tabs .tab-button.active {
+    border-left: 4px solid var(--desktop-highlight);
+    font-weight: bold;
+}
+#clock-tabs .tab-button:hover {
+    background-color: var(--desktop-hover);
+}
+.tab-button img {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+/* ----- analog clock ----- */
+#analog-clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 8px solid var(--text);
+    border-radius: 50%;
+}
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: rotate(90deg);
+    background: var(--text);
+    border-radius: 5px;
+}
+.hour {
+    width: 6px;
+    height: 50px;
+}
+.minute {
+    width: 4px;
+    height: 70px;
+}
+.second {
+    width: 2px;
+    height: 90px;
+    background: var(--desktop-highlight);
+}
+.center-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -40%);
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    background: var(--text);
+}
+
+
+/* date/time display */
+#clock-datetime {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+#clock-datetime .time {
+    font-size: 2.5rem;
+    color: var(--text);
+    text-shadow: var(--desktop-lowlight) 0px 0px 3px;
+}
+#clock-datetime .date {
+    font-size: 1.2rem;
+    color: var(--text);
+}

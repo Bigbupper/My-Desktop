@@ -1,0 +1,93 @@
+#todo-window {
+    width: 300px;
+    padding: 10px;
+    background-color: var(--desktop-base);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+}
+
+/* ----- base ----- */
+#todo-label {
+    color: var(--text);
+    text-shadow: var(--color-shadow) 0px 0px 3px;
+    font-size: 1.7rem;
+}
+
+.todo.base {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ----- input area ----- */
+#task-input input{
+    width: 215px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.2rem;
+    color: var(--text);
+    background-color: var(--desktop-primary);
+}
+#task-input input::placeholder {
+    font-size: 1.2rem;
+}
+#task-input input:focus {
+    outline: 2px solid var(--desktop-highlight);
+}
+
+#add-task-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: var(--text);
+    background-color: var(--desktop-primary);
+    cursor: pointer;
+}
+
+/* ----- task list ----- */
+#task-list {
+    height: 200px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+#task-list li {
+    display: flex;
+    gap: 10px;
+    font-size: 1.1rem;
+    background-color: var(--desktop-primary);
+    margin-bottom: 10px;
+    padding: 10px;
+    list-style-type: none;
+    border-radius: 5px;
+}
+
+/* scroll bar styling */
+#task-list::-webkit-scrollbar {
+    width: 10px;
+}
+#task-list::-webkit-scrollbar-thumb {
+    background-color: var(--desktop-highlight);
+    border-radius: 4px;
+}
+#task-list::-webkit-scrollbar-track {
+    background-color: var(--desktop-lowlight);
+    border-radius: 4px;
+}
+
+/* ----- clear ----- */
+
+#clear-tasklist {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--desktop-primary);
+}
+
+
