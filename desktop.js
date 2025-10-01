@@ -229,7 +229,30 @@ document.addEventListener('DOMContentLoaded', function () {
     openFromStart('todolist-icon', 'todo-window');
     openFromStart('clock-icon', 'clock-window');
 
-    /* -------start menu------- */
+    /* -------change color mode------- */
+    const bodyTheme = document.body;
+    const colorModeButton = document.getElementById('color-mode-toggle');
+    let isDarkMode = true; // Start in dark mode
+
+    colorModeButton.addEventListener('click', toggleColorMode);
+
+    function toggleColorMode() {
+        const darkIcons = document.querySelectorAll('.dark-icon');
+        const lightIcons = document.querySelectorAll('.light-icon');
+        if (isDarkMode) {
+            bodyTheme.classList.add('light-mode');
+            bodyTheme.style.backgroundImage = "url('media/light-bg.jpg')";
+            darkIcons.forEach(icon => icon.style.display = "none");
+            lightIcons.forEach(icon => icon.style.display = "block");
+            isDarkMode = false;
+        } else {
+            bodyTheme.classList.remove('light-mode');
+            bodyTheme.style.backgroundImage = "url('media/dark-bg.png')";
+            darkIcons.forEach(icon => icon.style.display = "block");
+            lightIcons.forEach(icon => icon.style.display = "none");
+            isDarkMode = true;
+        }
+    }  /* -------start menu------- */
 
     const startButton = document.getElementById('start-button');
     const startMenu = document.querySelector('.start-menu');
@@ -248,33 +271,6 @@ document.addEventListener('DOMContentLoaded', function () {
     startMenu.addEventListener('click', function (e) {
         e.stopPropagation();
     });
-
-    
-    /* -------desktop clock------- */
-
-    function updateDateTime() {
-        const now = new Date();
-
-        let hours = now.getHours();
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-
-        const amPm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12;
-        const timeString = `${hours}:${minutes} ${amPm}`;
-
-        const month = now.getMonth() + 1;
-        const day = now.getDate();
-        const year = now.getFullYear();
-        const dateString = `${month}/${day}/${year}`;
-
-        document.querySelectorAll(".datetime").forEach(el => {
-            el.querySelector(".time").textContent = timeString;
-            el.querySelector(".date").textContent = dateString;
-        });
-    }
-
-    updateDateTime();
-    setInterval(updateDateTime, 1000);
 
     /* -------calculator------- */
     const display = document.getElementById("display");
@@ -328,24 +324,4 @@ document.addEventListener('DOMContentLoaded', function () {
             display.value = "Invalid Expression";
         }
     }
-
-    function updateClock() {
-        const now = new Date();
-
-        const seconds = now.getSeconds();
-        const minutes = now.getMinutes();
-        const hours = now.getHours();
-
-        const secondDeg = seconds * 6;
-        const minuteDeg = minutes * 6 + seconds * 0.1;
-        const hourDeg = (hours % 12) * 30 + minutes * 0.5;
-
-        document.querySelector(".second").style.transform = `rotate(${secondDeg}deg)`;
-        document.querySelector(".minute").style.transform = `rotate(${minuteDeg}deg)`;
-        document.querySelector(".hour").style.transform = `rotate(${hourDeg}deg)`;
-    }
-
-        setInterval(updateClock, 1000);
-        updateClock();
-
 });

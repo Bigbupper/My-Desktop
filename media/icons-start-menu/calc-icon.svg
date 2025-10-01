@@ -4,43 +4,43 @@
 </mask>
 <g mask="url(#mask0_5_2)">
 <g filter="url(#filter0_i_5_2)">
-<rect x="22" y="3" width="84.5868" height="122.625" rx="11" fill="#DFC4F3"/>
+<path d="M22 14C22 7.92486 26.9249 3 33 3H95.5868C101.662 3 106.587 7.92487 106.587 14V114.625C106.587 120.7 101.662 125.625 95.5868 125.625H33C26.9249 125.625 22 120.7 22 114.625V14Z" fill="#FFB4C4"/>
 </g>
 <g opacity="0.82" filter="url(#filter1_i_5_2)">
-<rect x="65.5" y="58" width="15" height="15" rx="3" fill="#FAD7FF"/>
+<rect x="65.5" y="58" width="15" height="15" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter2_i_5_2)">
-<rect x="83.25" y="58" width="15" height="15" rx="3" fill="#FAD7FF"/>
+<rect x="83.25" y="58" width="15" height="15" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter3_i_5_2)">
-<rect x="47.75" y="58" width="15" height="15" rx="3" fill="#FAD7FF"/>
+<rect x="47.75" y="58" width="15" height="15" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter4_i_5_2)">
-<rect x="30" y="58" width="15" height="15" rx="3" fill="#FAD7FF"/>
+<rect x="30" y="58" width="15" height="15" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter5_i_5_2)">
-<rect x="30" y="78.6667" width="15" height="15" rx="3" fill="#FAD7FF"/>
+<rect x="30" y="78.6667" width="15" height="15" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter6_i_5_2)">
-<rect x="47.75" y="78.6667" width="15" height="15" rx="3" fill="#FAD7FF"/>
+<rect x="47.75" y="78.6667" width="15" height="15" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter7_i_5_2)">
-<rect x="65.5" y="78.6667" width="15" height="15" rx="3" fill="#FAD7FF"/>
+<rect x="65.5" y="78.6667" width="15" height="15" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter8_i_5_2)">
-<rect x="30" y="99.3333" width="15" height="15" rx="3" fill="#FAD7FF"/>
+<rect x="30" y="99.3333" width="15" height="15" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter9_i_5_2)">
-<rect x="47.75" y="99.3333" width="15" height="15" rx="3" fill="#FAD7FF"/>
+<rect x="47.75" y="99.3333" width="15" height="15" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter10_i_5_2)">
-<rect x="65.5" y="99.3333" width="15" height="15" rx="3" fill="#FAD7FF"/>
+<rect x="65.5" y="99.3333" width="15" height="15" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter11_i_5_2)">
-<rect x="83.25" y="78.6667" width="15" height="35" rx="3" fill="#FAD7FF"/>
+<rect x="83.25" y="78.6667" width="15" height="35" rx="3" fill="#FFD7ED"/>
 </g>
 <g opacity="0.82" filter="url(#filter12_i_5_2)">
-<rect x="30" y="14" width="68" height="35" rx="3" fill="#DAFFD5"/>
+<rect x="30" y="14" width="68" height="35" rx="3" fill="#E6FFD9"/>
 </g>
 <g style="mix-blend-mode:color-burn">
 <path d="M53 162.909C104.873 137.4 135.383 101.379 146.755 16" stroke="#B77777" stroke-opacity="0.37" stroke-width="80" stroke-linecap="square"/>
@@ -53,7 +53,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.865385 0 0 0 0 0.66152 0 0 0 0 0.76685 0 0 0 0.17 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter1_i_5_2" x="65.5" y="58" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -62,7 +62,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter2_i_5_2" x="83.25" y="58" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -71,7 +71,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter3_i_5_2" x="47.75" y="58" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -80,7 +80,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter4_i_5_2" x="30" y="58" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -89,7 +89,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.4 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter5_i_5_2" x="30" y="78.6667" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -98,7 +98,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter6_i_5_2" x="47.75" y="78.6667" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -107,7 +107,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter7_i_5_2" x="65.5" y="78.6667" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -116,7 +116,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter8_i_5_2" x="30" y="99.3333" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -125,7 +125,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter9_i_5_2" x="47.75" y="99.3333" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -134,7 +134,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter10_i_5_2" x="65.5" y="99.3333" width="15" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -143,7 +143,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter11_i_5_2" x="83.25" y="78.6667" width="15" height="35" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -152,7 +152,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 <filter id="filter12_i_5_2" x="30" y="14" width="68" height="35" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -161,7 +161,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-2" dy="-2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.686807 0 0 0 0 0.860577 0 0 0 0 0.718665 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.604868 0 0 0 0 0.879808 0 0 0 0 0.655274 0 0 0 0.34 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_2"/>
 </filter>
 </defs>

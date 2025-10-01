@@ -2,22 +2,25 @@
     padding: 10px, 10px, 0px, 10px;
     background-color: var(--desktop-base);
     backdrop-filter: blur(15px);
-    border-radius: 10px;
+    position: absolute;
+    width: 400px;
+    height: 440px;
 }
 
 /* ----- base ----- */
 
-
-.clock-app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 400px;
+.clock.base {
     width: 400px;
+    height: 400px;
+}
+.clock-window-page {
+    display: none;
+}
+.clock-window-page.active {
+    display: flex;
 }
 
-/* ----- tabs ----- */
+/* tabs */
 #clock-tabs {
     display: flex;
     position: absolute;
@@ -28,28 +31,37 @@
     width: fit-content;
     background-color: var(--desktop-primary);
 }
-#clock-tabs .tab-button {
+#clock-tabs .clock-window-tab {
     background: none;
     border: none;
     color: var(--text);
     padding: 10px;
     cursor: pointer;
 }
-#clock-tabs .tab-button.active {
+#clock-tabs .clock-window-tab.active {
     border-left: 4px solid var(--desktop-highlight);
     font-weight: bold;
 }
-#clock-tabs .tab-button:hover {
+#clock-tabs .clock-window-tab:hover {
     background-color: var(--desktop-hover);
 }
-.tab-button img {
+.clock-window-tab img {
     width: 30px;
     height: 30px;
 }
 
 
 
-/* ----- analog clock ----- */
+/* ------- clock app ------- */
+#clock-app {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* analog clock */
 #analog-clock {
     position: relative;
     width: 200px;
@@ -90,7 +102,6 @@
     background: var(--text);
 }
 
-
 /* date/time display */
 #clock-datetime {
     height: 100px;
@@ -107,4 +118,28 @@
 #clock-datetime .date {
     font-size: 1.2rem;
     color: var(--text);
+}
+
+
+/* ----- alarm app----- */
+#alarm-app {
+    height: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+#alarm-app input, #alarm-app button {
+    color: var(--text);
+    background-color: var(--desktop-primary);
+    height: 40px;
+    padding: 0px 15px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+#alarm-list {
+    flex-grow: 1;
+    width: 100%;
+    overflow-y: auto;
+    list-style: none;
+    font-size: 2rem;
 }

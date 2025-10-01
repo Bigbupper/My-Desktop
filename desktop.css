@@ -8,36 +8,42 @@
 }
 
 /* variables */
-:root {
-    /* (default) dark mode global */
-    --exit-hover: rgba(255, 51, 51, 0.37);
-    --desktop-hover: rgba(255, 255, 255, 0.116);
-    --desktop-base: rgba(18, 12, 24, 0.603);
+/* body {
+    --window-control-hover: rgba(255, 51, 51, 0.37);
+    --desktop-hover: rgba(195, 182, 218, 0.452);
+    --desktop-base: rgba(18, 12, 24, 0.774);
     --desktop-primary: rgba(132, 145, 202, 0.562);
-    --desktop-highlight: rgba(182, 195, 255, 0.952);
+    --desktop-highlight: rgba(182, 195, 255, 0.842);
     --desktop-lowlight: rgba(40, 41, 102, 0.432);
-    --text: white;
-    
+    --text: rgb(255, 255, 255);
+} */
+body {
+    --window-control-hover: rgba(255, 51, 51, 0.37);
+    --desktop-hover: rgba(228, 237, 255, 0.212);
+    --desktop-base: rgba(2, 15, 43, 0.753);
+    --desktop-primary: rgb(57, 68, 114);
+    --desktop-highlight: rgba(182, 195, 255, 0.432);
+    --desktop-lowlight: rgba(47, 48, 122, 0.562);
+    --text: rgb(255, 255, 255);
 }
- {
-    --exit-hover: rgba(255, 154, 196, 0.6);
-    --desktop-hover: rgba(223, 195, 250, 0.616);
-    --desktop-base: rgba(169, 134, 204, 0.473);
-    --desktop-primary: rgba(207, 171, 248, 0.568);
-    --desktop-highlight: rgba(241, 211, 253, 0.733);
-    --desktop-lowlight: #ac81c08c;
-    --text: white;
+.light-mode {
+    --window-control-hover: #f897a4;
+    --desktop-hover: rgba(255, 227, 236, 0.233);
+    --desktop-base: rgba(212, 156, 165, 0.761);
+    --desktop-primary: #e9b6b9;
+    --desktop-highlight: rgb(250, 211, 213);
+    --desktop-lowlight: #d17c8896;
+    --text: rgb(255, 255, 255);
 }
-
 
 /*/////////// MAIN PAGE //////////*/
 
 /* -------desktop------- */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(233, 233, 233);
-    background-color: #494764;
-    background-image: url(media/bg-rain.jpg);
+    color: var(--text);
+    background-color: #6a5972;
+    background-image: url(media/dark-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -78,8 +84,11 @@ button {
     height: auto;
 }
 .icon:hover {
-    outline: 1px solid rgba(180, 209, 212, 0.349);
-    background-color: rgba(143, 188, 197, 0.308);
+    /* outline: 1px solid rgba(180, 209, 212, 0.349);
+    background-color: rgba(143, 188, 197, 0.308); */
+    background-color: var(--desktop-hover);
+    border-radius: 10px;
+    transition: background-color 0.2s;
 }
 .label {
     text-align: center;
@@ -118,6 +127,21 @@ button {
     text-align: center;
     margin-right: 10px;
 }
+
+/* color mode toggle */
+#color-mode-toggle {
+    width: 30px;
+    border: none;
+    cursor: pointer;
+}
+#color-mode-toggle:hover {
+    background-color: var(--desktop-hover);
+    transition: background-color 0.2s;
+}
+.light-icon {
+    display: none;
+}
+/* start button */
 #start-button svg {
     margin: 5px 15px;
 }
@@ -127,7 +151,7 @@ button {
     transition: background-color 0.2s;
 }
 #start-button:hover #windows-logo path {
-    fill: rgb(241, 176, 187);
+    fill: var(--desktop-lowlight);
     transition: fill 0.3s ease;
 }
 .task-icon, #start {
@@ -200,16 +224,17 @@ button {
     left: 100px;
     z-index: 10;
     overflow: hidden;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.267);
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.267);
     transition: 
         opacity 0.5 ease,
         width 0.5 ease,
-        height 0.5 ease
-    ;
+        height 0.5 ease;
 }
 .window.open {
     visibility: visible;
 }
+
+/* window controls */
 .window-controls {
     display: flex;
     justify-content: flex-end;
@@ -224,17 +249,26 @@ button {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
     scale: 0.8;
+}
+.window-controls button:hover {
+    color: var(--window-control-hover);
 }
 .minimize-button,
 .maximize-button {
     transform: translate(4px, -4px);
 }
+.exit-icon {
+    height: 20px;
+    cursor: pointer;
+}
+.exit-icon:hover path {
+    stroke: var(--window-control-hover);
+}
 .resizer {
     width: 10px;
     height: 10px;
-    border: 1px solid rgba(128, 128, 128, 0.13);
+    border: 2px solid var(--desktop-lowlight);
     position: absolute;
     right: 0;
     bottom: 0;
@@ -249,7 +283,7 @@ button {
     left: 0px;
     height: 500px;
     width: 450px;
-    background-color: rgba(18, 12, 24, 0.603);
+    background-color: var(--desktop-base);
     backdrop-filter: blur(15px);
     z-index: 100;
 }
@@ -268,14 +302,15 @@ button {
  .start-icon {
     height: 120px;
     width: 100%;
-    background-color: var(--desktop-lowlight);
+    background-color: var(--desktop-hover);
+    filter: drop-shadow(0px 0px 5px rgba(66, 13, 13, 0.301));
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.7s ease;
 }
 
 .start-icon:hover {
-    background-color: var(--desktop-hover);
-    transition: all 0.3s ease;
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.233));
+    transition: all 0.7s ease;
 }
 .start-icon > * {
     position: relative;

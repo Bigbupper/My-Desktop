@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function setupOperaTabs(operaWindow) {
         const tabList = operaWindow.querySelector('.tab-list');
         const bookmarks = operaWindow.querySelectorAll('.bookmark');
-        const pages = operaWindow.querySelectorAll('.webpage');
+        const pages = operaWindow.querySelectorAll('.page');
 
         function addTab(bookmark, targetPageId) {
             const tab = document.createElement('button');

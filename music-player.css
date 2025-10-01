@@ -64,14 +64,6 @@
     display: inline-block;
 }
 
-#exit-spotify {
-    height: 20px;
-    cursor: pointer;
-}
-#exit-spotify:hover path {
-    stroke: rgb(192, 27, 27);
-}
-
 /* ------top nav bar------- */
 .top-menu-container {
     padding: 20px 40px;

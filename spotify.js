@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         playIcon = play.querySelector("div"),
         previous = document.querySelector(".button.back"),
         next = document.querySelector(".button.next"),
+        exitSpotify = document.querySelector(".spotify .exit-button"),
         // selected song display
         albumCover = document.querySelector(".album-cover"),
         baseGradient = document.querySelector(".spotify.base"),
@@ -74,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     currentVolume.addEventListener("input", changeVolume);
     durationSlider.addEventListener("input", whileDragging);
     durationSlider.addEventListener("change", seekTrack);
+    exitSpotify.addEventListener("click", pauseOnExit);
     track.addEventListener("timeupdate", updateDurationSlider);
     track.addEventListener("timeupdate", songTimeUpdate);
 
@@ -102,6 +104,16 @@ document.addEventListener('DOMContentLoaded', function () {
             trackIsPlaying = true;
             playIcon.classList.remove('play');
             playIcon.classList.add('pause'); 
+        }
+    }
+
+    //pause on exit
+    function pauseOnExit() {
+        if (trackIsPlaying) {
+            track.pause(); 
+            trackIsPlaying = false;
+            playIcon.classList.remove('pause');
+            playIcon.classList.add('play'); 
         }
     }
 

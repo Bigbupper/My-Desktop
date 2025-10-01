@@ -35,10 +35,6 @@
     width: 20px;
     cursor: pointer;
 }
-#window-controls button:hover {
-    background-color: var(--color-secondary);
-    border-radius: var(--border-radius-edges);
-}
 
 /*----- tabs -----*/
 .tab-list {

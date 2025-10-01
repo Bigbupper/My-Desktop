@@ -3,21 +3,21 @@
 <circle cx="64.5" cy="64.5" r="50.5" fill="#DFC4F3" stroke="#DFC4F3" stroke-width="4"/>
 </mask>
 <g mask="url(#mask0_10_89)">
-<circle cx="64.5" cy="64.5" r="50.5" fill="#DFC4F3" stroke="#DFC4F3" stroke-width="4"/>
+<circle cx="64.5" cy="64.5" r="52.5" fill="#FFB4C4"/>
 <g filter="url(#filter0_d_10_89)">
-<circle cx="64.5" cy="64.5" r="41.5" fill="#FAD7FF"/>
+<circle cx="64.5" cy="64.5" r="41.5" fill="#FFD1E6"/>
 </g>
 <g style="mix-blend-mode:color-burn">
 <path d="M49 149.585C102.615 127.976 135.702 94.3065 153.347 10" stroke="#B77777" stroke-opacity="0.37" stroke-width="80" stroke-linecap="square"/>
 </g>
 <g filter="url(#filter1_d_10_89)">
-<rect x="64.7122" y="67.7306" width="4.17614" height="39.9799" rx="2.08807" transform="rotate(-135.436 64.7122 67.7306)" fill="#DAFFD5"/>
+<rect x="64.7122" y="67.7306" width="4.17614" height="39.9799" rx="2.08807" transform="rotate(-135.436 64.7122 67.7306)" fill="#E6FFD9"/>
 </g>
 <g filter="url(#filter2_d_10_89)">
-<rect x="64" y="65" width="2" height="23" rx="1" fill="#DAFFD5"/>
+<rect x="64" y="65" width="2" height="23" rx="1" fill="#DCFFD5"/>
 </g>
 <g filter="url(#filter3_d_10_89)">
-<rect x="46.2632" y="51.6" width="4.17614" height="24.3622" rx="2.08807" transform="rotate(-48.4705 46.2632 51.6)" fill="#DAFFD5"/>
+<rect x="46.2632" y="51.6" width="4.17614" height="24.3622" rx="2.08807" transform="rotate(-48.4705 46.2632 51.6)" fill="#E6FFD9"/>
 </g>
 </g>
 <defs>
@@ -26,7 +26,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="3" dy="2"/>
 <feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.8875 0 0 0 0 0.740385 0 0 0 0 1 0 0 0 1 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.4 0"/>
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_10_89"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_10_89" result="shape"/>
 </filter>
@@ -35,7 +35,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="2"/>
 <feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_10_89"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_10_89" result="shape"/>
 </filter>
@@ -44,7 +44,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="1" dy="2"/>
 <feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_10_89"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_10_89" result="shape"/>
 </filter>
@@ -53,7 +53,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="2"/>
 <feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.948718 0 0 0 0 0.692308 0 0 0 0 1 0 0 0 0.34 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.4 0"/>
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_10_89"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_10_89" result="shape"/>
 </filter>

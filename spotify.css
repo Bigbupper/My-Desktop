@@ -69,15 +69,6 @@
     display: inline-block;
 }
 
-#exit-spotify {
-    margin: 10px;
-    height: 20px;
-    cursor: pointer;
-}
-#exit-spotify:hover path {
-    stroke: rgb(192, 27, 27);
-}
-
 /* ------top nav bar------- */
 .top-menu-container {
     margin: auto;

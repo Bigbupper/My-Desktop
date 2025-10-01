@@ -4,26 +4,62 @@
 </mask>
 <g mask="url(#mask0_9_63)">
 <g filter="url(#filter0_i_9_63)">
-<rect x="126.625" y="25" width="84.5868" height="122.625" rx="11" transform="rotate(89.9238 126.625 25)" fill="#DFC4F3"/>
+<rect x="126.625" y="25" width="84.5868" height="122.625" rx="11" transform="rotate(89.9238 126.625 25)" fill="#FFB4C4"/>
 </g>
 <g opacity="0.82" filter="url(#filter1_d_9_63)">
-<rect x="11" y="31" width="108" height="71" rx="3" fill="#FAD7FF"/>
+<rect x="11" y="31" width="108" height="71" rx="3" fill="#FFD1E6"/>
 </g>
 <g style="mix-blend-mode:color-burn">
 <path d="M53 144.633C109.408 131.096 146.939 102.459 175.83 21" stroke="#B77777" stroke-opacity="0.37" stroke-width="80" stroke-linecap="square"/>
 </g>
-<rect opacity="0.82" x="19" y="59" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="38" y="40" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="57" y="40" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="76" y="40" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="95" y="40" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="76" y="59" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="38" y="59" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="57" y="59" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="19" y="78" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="95" y="59" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="38" y="78" width="15" height="15" rx="3" fill="#DAFFD5"/>
-<rect opacity="0.82" x="57" y="78" width="15" height="15" rx="3" fill="#DAFFD5"/>
+<g opacity="0.82">
+<rect x="19" y="59" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="19.5" y="59.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="38" y="40" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="38.5" y="40.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="57" y="40" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="57.5" y="40.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="76" y="40" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="76.5" y="40.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="95" y="40" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="95.5" y="40.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="76" y="59" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="76.5" y="59.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="38" y="59" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="38.5" y="59.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="57" y="59" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="57.5" y="59.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="19" y="78" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="19.5" y="78.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="95" y="59" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="95.5" y="59.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="38" y="78" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="38.5" y="78.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
+<g opacity="0.82">
+<rect x="57" y="78" width="15" height="15" rx="3" fill="#E6FFD9"/>
+<rect x="57.5" y="78.5" width="14" height="14" rx="2.5" stroke="#AFDBB7" stroke-opacity="0.34"/>
+</g>
 </g>
 <g filter="url(#filter2_i_9_63)">
 <ellipse cx="100.523" cy="28.2447" rx="7" ry="2.5" transform="rotate(90.1882 100.523 28.2447)" fill="#D9D9D9"/>
@@ -44,7 +80,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-1" dy="-1"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.8875 0 0 0 0 0.740385 0 0 0 0 1 0 0 0 1 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.39 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_9_63"/>
 </filter>
 <filter id="filter1_d_9_63" x="11" y="31" width="110" height="73" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -52,7 +88,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="2" dy="2"/>
 <feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.8875 0 0 0 0 0.740385 0 0 0 0 1 0 0 0 1 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.822115 0 0 0 0 0.584967 0 0 0 0 0.707494 0 0 0 0.4 0"/>
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9_63"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9_63" result="shape"/>
 </filter>

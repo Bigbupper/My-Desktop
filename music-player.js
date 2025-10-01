@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const playIcon = play.querySelector("div");
     const previous = document.querySelector(".button.back");
     const next = document.querySelector(".button.next");
+    const exitSpotify = document.querySelector("#spotify-window .exit-button");
 
     // Selected song display
     const albumCover = document.querySelector(".album-cover");
@@ -84,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     durationSlider.addEventListener("change", seekTrack);
     track.addEventListener("timeupdate", updateDurationSlider);
     track.addEventListener("timeupdate", songTimeUpdate);
+    exitSpotify.addEventListener("click", pauseOnExit);
 
 
     // load track list
@@ -115,6 +117,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         updateVolumeSlider();
         changeVolume();
+    }
+
+       //pause on exit
+    function pauseOnExit() {
+        if (trackIsPlaying) {
+            track.pause(); 
+            trackIsPlaying = false;
+            playIcon.classList.remove('pause');
+            playIcon.classList.add('play'); 
+        }
     }
 
     // next song
@@ -254,15 +266,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // song list
     const songList = document.querySelector(".song-list");
-    const closeSongList = document.querySelector(".close-song-list");
     const songListButton = document.querySelector(".dot-menu");
 
-    songListButton.addEventListener("click", () => {
-        songList.classList.add("show");
-    });
-    closeSongList.addEventListener("click", () => {
-        songList.classList.remove("show");
-    });
+    songListButton.addEventListener("click", toggleSongList);
+
+    function toggleSongList() {
+        if (songList.classList.contains("show")) {
+            songList.classList.remove("show");
+        } else {
+            songList.classList.add("show");
+        }       
+    }
 
     trackList.forEach((song, index) => {
         const li = document.createElement("li");

@@ -2,7 +2,6 @@
 #calculator-window {
     background-color: var(--desktop-base);
     backdrop-filter: blur(15px);
-    border-radius: 10px;
     width: 300px;
     flex-direction: column;
     justify-content: space-between;
@@ -35,6 +34,7 @@
 .calc-buttons button {
     font-size: 1.5rem;
     background-color: var(--desktop-primary);
+    color: var(--text);
     border-radius: 10px;
     height: 40px;
     transition: 0.08s ease-in-out;

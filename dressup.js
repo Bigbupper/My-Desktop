@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('prev-bg').addEventListener('click', () => changeBackground(currentBg - 1));
     document.getElementById('next-bg').addEventListener('click', () => changeBackground(currentBg + 1));
 
-    // initialize background
+    // load background
     changeBackground(currentBg);
 
 });

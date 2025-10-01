@@ -1,9 +1,7 @@
 #todo-window {
     width: 300px;
-    padding: 10px;
     background-color: var(--desktop-base);
     backdrop-filter: blur(15px);
-    border-radius: 10px;
 }
 
 /* ----- base ----- */
@@ -22,7 +20,7 @@
 
 /* ----- input area ----- */
 #task-input input{
-    width: 215px;
+    width: 240px;
     height: 30px;
     border: none;
     border-radius: 5px;
@@ -37,7 +35,6 @@
 #task-input input:focus {
     outline: 2px solid var(--desktop-highlight);
 }
-
 #add-task-button {
     width: 30px;
     height: 30px;
@@ -82,12 +79,9 @@
 /* ----- clear ----- */
 
 #clear-tasklist {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+    align-self: flex-end;
     padding: 10px;
+    width: 70px;
     border-radius: 5px;
     background-color: var(--desktop-primary);
 }
-
-

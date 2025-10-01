@@ -19,6 +19,7 @@
 <body>
 
 <!----- desktop ----->
+<!-- need to add css for consistant hover transitions -->
     <div>
         <section class="desktop">
             <button id="files-icon" class="icon" title="Launch File Explorer">
@@ -46,19 +47,29 @@
                 <p class="label"><span class="nowrap">Recycle Bin</span></p>
             </button>
         </section>
-
+<!-- fix taskbar icon color mode toggle -->
         <section class="taskbar">
             <div class="left-align">
                 <button id="start-button">
                     <svg id="windows-logo" width="20px" height="20px" viewBox="-0.5 0 257 257" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M0 36.357L104.62 22.11l.045 100.914-104.57.595L0 36.358zm104.57 98.293l.08 101.002L.081 221.275l-.006-87.302 104.494.677zm12.682-114.405L255.968 0v121.74l-138.716 1.1V20.246zM256 135.6l-.033 121.191-138.716-19.578-.194-101.84L256 135.6z" fill="#ffffff"></path></g></svg>
                 </button>
-                <button class="search-container">
+                <!-- <button class="search-container">
                     <img src="media/search.png" alt="search icon">
                     <input type="search" id="search" placeholder="Type here to search"/> 
-                </button>
-                <div id="minimized-windows"></div>
+                </button> -->
+                <div id="minimized-windows">
+                    <!-- opened / minimized icons added here -->
+                </div>
             </div>
             <div class="right-align">
+                <button id="color-mode-toggle">
+                    <svg class="dark-icon" width="15" viewBox="0 0 222 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M49.6127 1.07793L211.957 0.366342C211.957 0.366342 221.323 303.329 221.62 315.823C222.202 339.913 216.085 359.161 193.321 359.727C157.362 360.621 95.7026 358.826 58.5267 359.75C36.4367 360.299 29.2507 348.92 28.3293 327.269C26.1686 276.595 24.8628 187.784 24.8628 187.784C24.8628 187.784 8.50363 95.5769 2.39679 72.0329C-3.7517 48.3383 5.56739 45.3901 14.5417 35.1766C30.6268 16.8808 49.6127 1.07793 49.6127 1.07793ZM54.0696 180.412L54.4995 329.048L191.643 328.967L186.794 170.471L167.755 61.2812L31.5127 61.3399L54.0696 180.412ZM113.796 162.198C55.5693 163.645 43.2799 81.3105 100.147 79.8972C162.409 78.3498 172.241 160.746 113.796 162.198ZM104.59 103.112C79.8397 103.727 85.1865 139.563 110.53 138.933C135.975 138.301 131.693 102.438 104.59 103.112ZM135.138 228.328L138.007 299.899L105.301 299.992L104.521 228.103L135.138 228.328Z" fill="white"/>
+                    </svg>
+                    <svg class="light-icon" width="15" viewBox="0 0 220 361" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.78152 290.334C8.68459 266.741 24.378 164.883 24.378 164.883C24.378 164.883 24.7522 85.5738 26.4617 34.8831C27.1962 13.2247 34.2731 1.78302 56.3713 2.13722C93.5582 2.73327 155.191 0.394425 191.161 0.970971C213.929 1.3359 220.216 20.5297 219.842 44.6236C219.65 57.1148 212.965 360.149 212.965 360.149L50.6214 360.873C50.6214 360.873 31.4926 345.239 15.251 327.081C6.1912 316.947 -3.15766 314.077 2.78152 290.334ZM114.071 43.4083C54.4155 42.4521 53.3396 132.96 111.602 133.894C175.391 134.916 173.954 44.3681 114.071 43.4083ZM82.3325 264.077L111.835 266.722L123.026 201.673L95.6656 201.235L82.3325 264.077ZM60.6657 336.644L188.311 334.559L191.731 172.716L186.015 172.018L172.51 302.091L26.6879 302.411L60.6657 336.644ZM112.729 111.888C82.8256 111.409 83.3806 64.9613 114 65.4521C144.729 65.9446 145.466 112.413 112.729 111.888Z" fill="white"/>
+                    </svg>
+                </button>
                 <time class="task-icon datetime" id="desktop-datetime">
                     <span class="time"></span><br>
                     <span class="date"></span>
@@ -69,7 +80,8 @@
         <section class="start-menu">
             <div class="start-icon-container">
                 <div class="start-icon" id="todolist-icon" title="To-Do List">
-                    <img src="media/icons-start-menu/todo-icon.svg" alt="todolist icon">
+                    <img class="dark-icon" src="media/icons-start-menu/todo-icon-dark.svg" alt="todolist icon">
+                    <img class="light-icon" src="media/icons-start-menu/todo-icon.svg" alt="todolist icon">
                 </div>
                 <div class="start-icon" id="mini-weather-icon" title="Weather Widget">
                     <div class="mini-weather-display">
@@ -79,13 +91,16 @@
                     <h2 id="mini-city">City Name</h2>
                 </div>
                 <div class="start-icon" id="calculator-icon" title="Calculator">
-                    <img src="media/icons-start-menu/calc-icon.svg" alt="calculator icon">
+                    <img class="dark-icon" src="media/icons-start-menu/calc-icon-dark.svg" alt="calculator icon">
+                    <img class="light-icon" src="media/icons-start-menu/calc-icon.svg" alt="calculator icon">
                 </div>
                 <div class="start-icon" id="clock-icon" title="Clock">
-                    <img src="media/icons-start-menu/clock-icon.svg" alt="clock icon">
+                    <img class="dark-icon" src="media/icons-start-menu/clock-icon-dark.svg" alt="clock icon">
+                    <img class="light-icon" src="media/icons-start-menu/clock-icon.svg" alt="clock icon">
                 </div>
                 <div class="start-icon" id="calander-icon" title="Calander">
-                    <img src="media/icons-start-menu/calander-icon.svg" alt="calander icon">
+                    <img class="dark-icon" src="media/icons-start-menu/calander-icon-dark.svg" alt="calander icon">
+                    <img class="light-icon" src="media/icons-start-menu/calander-icon.svg" alt="calander icon">
                 </div>
             </div>
         </section>
@@ -105,7 +120,7 @@
                 <button class="minimize-button">_</button>
                 <button class="maximize-button">🗖</button>
                 <button class="exit-button">
-                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </button>
             </div>
         </section>
@@ -146,7 +161,6 @@
     </div>
 
 <!----- spotify window ----->
-<!-- make song list toggle from dot menu and remove second exit button -->
     <div id="spotify-window" class="window">
         <section class="window-header" id="spotify-header">
             <button class="dot-menu">
@@ -158,7 +172,7 @@
                 <button class="minimize-button">_</button>
                 <button class="maximize-button">🗖</button>
                 <button class="exit-button">
-                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </button>
             </div>
         </section>
@@ -245,6 +259,7 @@
 
 <!----- Opera Window ----->
 <!-- audio is still playing when window is closed -->
+ <!-- fix iframe stacking -->
     <div id="opera-window" class="window">
         <section class="window-header" id="opera-header">
             <div class="tab-list"></div>
@@ -252,7 +267,7 @@
                 <button class="minimize-button">_</button>
                 <button class="maximize-button">🗖</button>
                 <button class="exit-button">
-                    <svg id="exit-opera" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </button>
             </div>
         </section>
@@ -292,10 +307,11 @@
                 <button class="minimize-button">_</button>
                 <button class="maximize-button">🗖</button>
                 <button class="exit-button">
-                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="2"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </button>
             </div>
         </section>
+        
         <div class="dressup base">
             <section class="options-container">
                 <section class="skin">
@@ -324,6 +340,10 @@
                         <button id="eyes11" data-eyes="eyes11"></button>
                         <button id="eyes12" data-eyes="eyes12"></button>
                         <button id="eyes13" data-eyes="eyes13"></button>
+                        <button id="eyes14" data-eyes="eyes14"></button>
+                        <button id="eyes15" data-eyes="eyes15"></button>
+                        <button id="eyes16" data-eyes="eyes16"></button>
+                        <button id="eyes17" data-eyes="eyes17"></button>
                     </div>
                 </section>
                 <section class="brows">
@@ -335,6 +355,7 @@
                         <button id="brows4" data-brows="brows4"></button>
                         <button id="brows5" data-brows="brows5"></button>
                         <button id="brows6" data-brows="brows6"></button>
+                        <button id="brows7" data-brows="brows7"></button>
                     </div>
                 </section>
                 <section class="lips">
@@ -347,6 +368,9 @@
                         <button id="lips5" data-lips="lips5"></button>
                         <button id="lips6" data-lips="lips6"></button>
                         <button id="lips7" data-lips="lips7"></button>
+                        <button id="lips8" data-lips="lips8"></button>
+                        <button id="lips9" data-lips="lips9"></button>
+                        <button id="lips10" data-lips="lips10"></button>
                     </div>
                 </section>
                 <section class="hair">
@@ -363,6 +387,10 @@
                         <button id="hair9" data-hair="hair9"></button>
                         <button id="hair10" data-hair="hair10"></button>
                         <button id="hair11" data-hair="hair11"></button>
+                        <button id="hair12" data-hair="hair12"></button>
+                        <button id="hair13" data-hair="hair13"></button>
+                        <button id="hair14" data-hair="hair14"></button>
+                        <button id="hair15" data-hair="hair15"></button>
                     </div>
                 </section>
                 <section class="hat">
@@ -372,6 +400,7 @@
                         <button id="hat2" data-hat="hat2"></button>
                         <button id="hat3" data-hat="hat3"></button>
                         <button id="hat4" data-hat="hat4"></button>
+                        <button id="hat5" data-hat="hat5"></button>
                     </div>
                 </section>
                 <section class="longsleeve">
@@ -383,6 +412,8 @@
                         <button id="longsleeve4" data-longsleeve="longsleeve4"></button>
                         <button id="longsleeve5" data-longsleeve="longsleeve5"></button>
                         <button id="longsleeve6" data-longsleeve="longsleeve6"></button>
+                        <button id="longsleeve7" data-longsleeve="longsleeve7"></button>
+                        <button id="longsleeve8" data-longsleeve="longsleeve8"></button>
                     </div>
                 </section>
                 <section class="shortsleeve">
@@ -395,6 +426,7 @@
                         <button id="shortsleeve5" data-shortsleeve="shortsleeve5"></button>
                         <button id="shortsleeve6" data-shortsleeve="shortsleeve6"></button>
                         <button id="shortsleeve7" data-shortsleeve="shortsleeve7"></button>
+                        <button id="shortsleeve8" data-shortsleeve="shortsleeve8"></button>
                     </div>
                 </section>
                 <section class="sleeveless">
@@ -402,6 +434,7 @@
                     <div class="item-options" id="sleeveless-options">
                         <button id="sleeveless1" data-sleeveless="sleeveless1"></button>
                         <button id="sleeveless2" data-sleeveless="sleeveless2"></button>
+                        <button id="sleeveless3" data-sleeveless="sleeveless3"></button>
                     </div>
                 </section>
                 <section class="skirt">
@@ -410,6 +443,10 @@
                         <button id="skirt1" data-skirt="skirt1"></button>
                         <button id="skirt2" data-skirt="skirt2"></button>
                         <button id="skirt3" data-skirt="skirt3"></button>
+                        <button id="skirt4" data-skirt="skirt4"></button>
+                        <button id="skirt5" data-skirt="skirt5"></button>
+                        <button id="skirt6" data-skirt="skirt6"></button>
+                        <button id="skirt7" data-skirt="skirt7"></button>
                     </div>
                 </section>
                 <section class="shorts">
@@ -436,6 +473,10 @@
                     <div class="item-options" id="socks-options">
                         <button id="socks1" data-socks="socks1"></button>
                         <button id="socks2" data-socks="socks2"></button>
+                        <button id="socks3" data-socks="socks3"></button>
+                        <button id="socks4" data-socks="socks4"></button>
+                        <button id="socks5" data-socks="socks5"></button>
+                        <button id="socks6" data-socks="socks6"></button>
                     </div>
                 </section>
                 <section class="shoes">
@@ -446,10 +487,21 @@
                         <button id="shoes3" data-shoes="shoes3"></button>
                         <button id="shoes4" data-shoes="shoes4"></button>
                         <button id="shoes5" data-shoes="shoes5"></button>
+                        <button id="shoes6" data-shoes="shoes6"></button>
+                        <button id="shoes7" data-shoes="shoes7"></button>
+                        <button id="shoes8" data-shoes="shoes8"></button>
                     </div>
                 </section>
             </section>
             <section id="character-container">
+                <section class="dressup-controls">
+                    <button class="dressup-control" id="settings-button">
+                        <img id="dressup-settings" src="media/pixel-game-assets/icons/dressup-settings.svg" alt="settings">
+                    </button>
+                    <button class="dressup-control" id="download-button">
+                        <img id="dressup-download" src="media/pixel-game-assets/icons/dressup-download.svg" alt="download">
+                    </button>
+                </section>
                 <div id="asset-stack">
                     <!-- bases -->
                     <img id="base0-img" src="media/pixel-game-assets/skintones/pixil-layer-base0.png" class="layer">
@@ -458,6 +510,7 @@
                     <img id="base3-img" src="media/pixel-game-assets/skintones/pixil-layer-base3.png" class="layer">
                     <img id="base4-img" src="media/pixel-game-assets/skintones/pixil-layer-base4.png" class="layer">
                     <img id="base5-img" src="media/pixel-game-assets/skintones/pixil-layer-base5.png" class="layer">
+                   
                     <!-- lips -->
                     <img id="lips1-img" src="media/pixel-game-assets/lips/pixil-layer-lips1.png" class="layer">
                     <img id="lips2-img" src="media/pixel-game-assets/lips/pixil-layer-lips2.png" class="layer">
@@ -466,6 +519,10 @@
                     <img id="lips5-img" src="media/pixel-game-assets/lips/pixil-layer-lips5.png" class="layer">
                     <img id="lips6-img" src="media/pixel-game-assets/lips/pixil-layer-lips6.png" class="layer">
                     <img id="lips7-img" src="media/pixel-game-assets/lips/pixil-layer-lips7.png" class="layer">
+                    <img id="lips8-img" src="media/pixel-game-assets/lips/pixil-layer-lips8.png" class="layer">
+                    <img id="lips9-img" src="media/pixel-game-assets/lips/pixil-layer-lips9.png" class="layer">
+                    <img id="lips10-img" src="media/pixel-game-assets/lips/pixil-layer-lips10.png" class="layer">
+                    
                     <!-- eyes -->
                     <img id="eyes1-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes1.png" class="layer">
                     <img id="eyes2-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes2.png" class="layer">
@@ -480,6 +537,11 @@
                     <img id="eyes11-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes11.png" class="layer">
                     <img id="eyes12-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes12.png" class="layer">
                     <img id="eyes13-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes13.png" class="layer">
+                    <img id="eyes14-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes14.png" class="layer">
+                    <img id="eyes15-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes15.png" class="layer">
+                    <img id="eyes16-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes16.png" class="layer">
+                    <img id="eyes17-img" src="media/pixel-game-assets/eyes/pixil-layer-eyes17.png" class="layer">
+                   
                     <!-- brows -->
                     <img id="brows1-img" src="media/pixel-game-assets/brows/pixil-layer-brows1.png" class="layer">
                     <img id="brows2-img" src="media/pixel-game-assets/brows/pixil-layer-brows2.png" class="layer">
@@ -487,53 +549,85 @@
                     <img id="brows4-img" src="media/pixel-game-assets/brows/pixil-layer-brows4.png" class="layer">
                     <img id="brows5-img" src="media/pixel-game-assets/brows/pixil-layer-brows5.png" class="layer">
                     <img id="brows6-img" src="media/pixel-game-assets/brows/pixil-layer-brows6.png" class="layer">
+                    <img id="brows7-img" src="media/pixel-game-assets/brows/pixil-layer-brows7.png" class="layer">
+                    
                     <!-- hair -->
-                    <img id="hair1-img" src="media/pixel-game-assets/hair/pixil-layer-hair1.png" class="layer">
-                    <img id="hair2-img" src="media/pixel-game-assets/hair/pixil-layer-hair2.png" class="layer">
-                    <img id="hair3-img" src="media/pixel-game-assets/hair/pixil-layer-hair3.png" class="layer">
-                    <img id="hair4-img" src="media/pixel-game-assets/hair/pixil-layer-hair4.png" class="layer">
-                    <img id="hair5-img" src="media/pixel-game-assets/hair/pixil-layer-hair5.png" class="layer">
-                    <img id="hair6-img" src="media/pixel-game-assets/hair/pixil-layer-hair6.png" class="layer">
-                    <img id="hair7-img" src="media/pixel-game-assets/hair/pixil-layer-hair7.png" class="layer">
-                    <img id="hair8-img" src="media/pixel-game-assets/hair/pixil-layer-hair8.png" class="layer">
-                    <img id="hair9-img" src="media/pixel-game-assets/hair/pixil-layer-hair9.png" class="layer">
-                    <img id="hair10-img" src="media/pixel-game-assets/hair/pixil-layer-hair10.png" class="layer">
-                    <img id="hair11-img" src="media/pixel-game-assets/hair/pixil-layer-hair11.png" class="layer">
-                    <!-- hat -->
-                    <img id="hat1-img" src="media/pixel-game-assets/hats/pixil-layer-hat1.png" class="layer">
-                    <img id="hat2-img" src="media/pixel-game-assets/hats/pixil-layer-hat2.png" class="layer">
-                    <img id="hat3-img" src="media/pixel-game-assets/hats/pixil-layer-hat3.png" class="layer">
-                    <img id="hat4-img" src="media/pixel-game-assets/hats/pixil-layer-hat4.png" class="layer">
+                    <div class="hair-options">
+                        <img id="hair1-img" src="media/pixel-game-assets/hair/pixil-layer-hair1.png" class="layer">
+                        <img id="hair2-img" src="media/pixel-game-assets/hair/pixil-layer-hair2.png" class="layer">
+                        <img id="hair3-img" src="media/pixel-game-assets/hair/pixil-layer-hair3.png" class="layer">
+                        <img id="hair4-img" src="media/pixel-game-assets/hair/pixil-layer-hair4.png" class="layer">
+                        <img id="hair5-img" src="media/pixel-game-assets/hair/pixil-layer-hair5.png" class="layer">
+                        <img id="hair6-img" src="media/pixel-game-assets/hair/pixil-layer-hair6.png" class="layer">
+                        <img id="hair7-img" src="media/pixel-game-assets/hair/pixil-layer-hair7.png" class="layer">
+                        <img id="hair8-img" src="media/pixel-game-assets/hair/pixil-layer-hair8.png" class="layer">
+                        <img id="hair9-img" src="media/pixel-game-assets/hair/pixil-layer-hair9.png" class="layer">
+                        <img id="hair10-img" src="media/pixel-game-assets/hair/pixil-layer-hair10.png" class="layer">
+                        <img id="hair11-img" src="media/pixel-game-assets/hair/pixil-layer-hair11.png" class="layer">
+                        <img id="hair12-img" src="media/pixel-game-assets/hair/pixil-layer-hair12.png" class="layer">
+                        <img id="hair13-img" src="media/pixel-game-assets/hair/pixil-layer-hair13.png" class="layer">
+                        <img id="hair14-img" src="media/pixel-game-assets/hair/pixil-layer-hair14.png" class="layer">
+                        <img id="hair15-img" src="media/pixel-game-assets/hair/pixil-layer-hair15.png" class="layer">
+                    </div>
+                    
+                    <!-- hats -->
+                    <div class="hat-options">
+                        <img id="hat1-img" src="media/pixel-game-assets/hats/pixil-layer-hat1.png" class="layer">
+                        <img id="hat2-img" src="media/pixel-game-assets/hats/pixil-layer-hat2.png" class="layer">
+                        <img id="hat3-img" src="media/pixel-game-assets/hats/pixil-layer-hat3.png" class="layer">
+                        <img id="hat4-img" src="media/pixel-game-assets/hats/pixil-layer-hat4.png" class="layer">
+                        <img id="hat5-img" src="media/pixel-game-assets/hats/pixil-layer-hat5.png" class="layer">
+                    </div>
+                    
                     <!-- longsleeve -->
-                    <img id="longsleeve1-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve1.png" class="layer">
-                    <img id="longsleeve2-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve2.png" class="layer">
-                    <img id="longsleeve3-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve3.png" class="layer">
-                    <img id="longsleeve4-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve4.png" class="layer">
-                    <img id="longsleeve5-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve5.png" class="layer">
-                    <img id="longsleeve6-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve6.png" class="layer">
+                    <div class="longsleeve-options">
+                        <img id="longsleeve1-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve1.png" class="layer">
+                        <img id="longsleeve2-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve2.png" class="layer">
+                        <img id="longsleeve3-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve3.png" class="layer">
+                        <img id="longsleeve4-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve4.png" class="layer">
+                        <img id="longsleeve5-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve5.png" class="layer">
+                        <img id="longsleeve6-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve6.png" class="layer">
+                        <img id="longsleeve7-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve7.png" class="layer">
+                        <img id="longsleeve8-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve8.png" class="layer">
+                    </div>
+                    
                     <!-- shortsleeve -->
-                    <img id="shortsleeve1-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve1.png" class="layer">
-                    <img id="shortsleeve2-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve2.png" class="layer">
-                    <img id="shortsleeve3-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve3.png" class="layer">
-                    <img id="shortsleeve4-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve4.png" class="layer">
-                    <img id="shortsleeve5-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve5.png" class="layer">
-                    <img id="shortsleeve6-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve6.png" class="layer">
-                    <img id="shortsleeve7-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve7.png" class="layer">
+                     <div class="shortsleeve-options">
+                        <img id="shortsleeve1-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve1.png" class="layer">
+                        <img id="shortsleeve2-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve2.png" class="layer">
+                        <img id="shortsleeve3-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve3.png" class="layer">
+                        <img id="shortsleeve4-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve4.png" class="layer">
+                        <img id="shortsleeve5-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve5.png" class="layer">
+                        <img id="shortsleeve6-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve6.png" class="layer">
+                        <img id="shortsleeve7-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve7.png" class="layer">
+                        <img id="shortsleeve8-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve8.png" class="layer">
+                    </div>
+                    
                     <!-- sleeveless -->
-                    <img id="sleeveless1-img" src="media/pixel-game-assets/sleeveless/pixil-layer-sleeveless1.png" class="layer">
-                    <img id="sleeveless2-img" src="media/pixel-game-assets/sleeveless/pixil-layer-sleeveless2.png" class="layer">
+                    <div class="sleeveless-options">
+                        <img id="sleeveless1-img" src="media/pixel-game-assets/sleeveless/pixil-layer-sleeveless1.png" class="layer">
+                        <img id="sleeveless2-img" src="media/pixel-game-assets/sleeveless/pixil-layer-sleeveless2.png" class="layer">
+                        <img id="sleeveless3-img" src="media/pixel-game-assets/sleeveless/pixil-layer-sleeveless3.png" class="layer">
+                    </div>
+                    
                     <!-- skirt -->
                     <div class="skirt-options">
                         <img id="skirt1-img" src="media/pixel-game-assets/skirts/pixil-layer-skirt1.png" class="layer">
                         <img id="skirt2-img" src="media/pixel-game-assets/skirts/pixil-layer-skirt2.png" class="layer">
                         <img id="skirt3-img" src="media/pixel-game-assets/skirts/pixil-layer-skirt3.png" class="layer">
+                        <img id="skirt4-img" src="media/pixel-game-assets/skirts/pixil-layer-skirt4.png" class="layer">
+                        <img id="skirt5-img" src="media/pixel-game-assets/skirts/pixil-layer-skirt5.png" class="layer">
+                        <img id="skirt6-img" src="media/pixel-game-assets/skirts/pixil-layer-skirt6.png" class="layer">
+                        <img id="skirt7-img" src="media/pixel-game-assets/skirts/pixil-layer-skirt7.png" class="layer">
                     </div>
+                    
                     <!-- shorts -->
                     <div class="shorts-options">
                         <img id="shorts1-img" src="media/pixel-game-assets/shorts/pixil-layer-shorts1.png" class="layer">
                         <img id="shorts2-img" src="media/pixel-game-assets/shorts/pixil-layer-shorts2.png" class="layer">
                         <img id="shorts3-img" src="media/pixel-game-assets/shorts/pixil-layer-shorts3.png" class="layer">
                     </div>
+                    
                     <!-- pants -->
                     <div class="pants-options">
                         <img id="pants1-img" src="media/pixel-game-assets/pants/pixil-layer-pants1.png" class="layer">
@@ -543,9 +637,15 @@
                         <img id="pants5-img" src="media/pixel-game-assets/pants/pixil-layer-pants5.png" class="layer">
                         <img id="pants6-img" src="media/pixel-game-assets/pants/pixil-layer-pants6.png" class="layer">
                     </div>
+                    
                     <!-- socks -->
                     <img id="socks1-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks1.png" class="layer">
                     <img id="socks2-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks2.png" class="layer">
+                    <img id="socks3-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks3.png" class="layer">
+                    <img id="socks4-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks4.png" class="layer">
+                    <img id="socks5-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks5.png" class="layer">
+                    <img id="socks6-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks6.png" class="layer">
+                    
                     <!-- shoes -->
                     <div class="shoes-options">
                         <img id="shoes1-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes1.png" class="layer">
@@ -553,6 +653,9 @@
                         <img id="shoes3-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes3.png" class="layer">
                         <img id="shoes4-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes4.png" class="layer">
                         <img id="shoes5-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes5.png" class="layer">
+                        <img id="shoes6-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes6.png" class="layer">
+                        <img id="shoes7-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes7.png" class="layer">
+                        <img id="shoes8-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes8.png" class="layer">
                     </div>
                 </div>
                 <div id="background-controls">
@@ -573,7 +676,7 @@
         <div class="weather base">
             <section class="window-header" id="weather-header">
                 <button class="exit-button">
-                    <svg id="exit-weather" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </button>
             </section>
             
@@ -615,7 +718,7 @@
                 <button class="minimize-button">_</button>
                 <button class="maximize-button">🗖</button>
                 <button class="exit-button">
-                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </button>
             </div>
         </section>
@@ -651,7 +754,7 @@
                 <button class="minimize-button">_</button>
                 <button class="maximize-button">🗖</button>
                 <button class="exit-button">
-                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </button>
             </div>
         </section>
@@ -676,26 +779,26 @@
                 <button class="minimize-button">_</button>
                 <button class="maximize-button">🗖</button>
                 <button class="exit-button">
-                    <svg id="exit-spotify" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </button>
             </div>
         </section>
         <div id="clock-tabs">
-            <button class="tab-button active" data-tab="clock">
+            <button class="clock-window-tab" data-tab="clock">
                 <img src="media/icons-start-menu/clock-tab-icons/clock-icon2.svg" alt="clock tab icon" title="clock">
             </button>
-            <button class="tab-button" data-tab="alarm">
+            <button class="clock-window-tab" data-tab="alarm">
                 <img src="media/icons-start-menu/clock-tab-icons/alarm.svg" alt="alarm tab icon" title="alarm">
             </button>
-            <button class="tab-button" data-tab="stopwatch">
+            <button class="clock-window-tab" data-tab="stopwatch">
                 <img src="media/icons-start-menu/clock-tab-icons/stopwatch-icon.svg" alt="stopwatch tab icon" title="stopwatch">
             </button>
-            <button class="tab-button" data-tab="timer">
+            <button class="clock-window-tab" data-tab="timer">
                 <img src="media/icons-start-menu/clock-tab-icons/timer-icon.svg" alt="timer tab icon" title="timer">
             </button>
         </div>
         <div class="clock base">
-            <div class="clock-app">
+            <div class="clock-window-page" id="clock-app" data-page="clock">
                 <div id="analog-clock">
                     <div class="hand hour"></div>
                     <div class="hand minute"></div>
@@ -707,7 +810,21 @@
                         <span class="date"></span>
                 </time>
             </div>
-            <div class="alarm-app">
+            <div class="clock-window-page" id="alarm-app" data-page="alarm">
+                <h2>Alarms</h2>
+                <ul id="alarm-list">
+                    <!-- Alarms will be listed here -->
+                </ul>
+                <div id="set-alarm">
+                    <input type="time" id="alarm-time" required>
+                    <button id="add-alarm-button">+</button>
+                </div>
+            </div>
+            <div class="clock-window-page" data-page="stopwatch">
+                <h2>Stopwatch</h2>
+            </div>
+            <div class="clock-window-page" data-page="timer">
+                <h2>Timer</h2>
             </div>
         </div>
 
@@ -721,5 +838,6 @@
 <script src="weather.js"></script>
 <script src="opera.js"></script>
 <script src="todolist.js"></script>
+<script src="clock.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"></script>
 </html> 
