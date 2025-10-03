@@ -36,7 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const image = document.getElementById(itemId);
 
                 if (image) {
-                    image.style.display = (image.style.display === 'block') ? 'none' : 'block';
+                    // use computed style so it respects default CSS visibility
+                    const currentlyVisible = window.getComputedStyle(image).display !== 'none';
+                    image.style.display = currentlyVisible ? 'none' : 'block';
                 }
 
                 // Toggle selected styling
@@ -49,10 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleButtons('#longsleeve-options button', 'longsleeve', 'data-longsleeve');
     toggleButtons('#shortsleeve-options button', 'shortsleeve', 'data-shortsleeve');
     toggleButtons('#sleeveless-options button', 'sleeveless', 'data-sleeveless');
+    toggleButtons('#outerwear-options button', 'outerwear', 'data-outerwear');
     toggleButtons('#skirt-options button', 'skirt', 'data-skirt');
     toggleButtons('#shorts-options button', 'shorts', 'data-shorts');
     toggleButtons('#pants-options button', 'pants', 'data-pants');
     toggleButtons('#socks-options button', 'socks', 'data-socks');
+    toggleButtons('#bags-options button', 'bags', 'data-bags');
+    toggleButtons('#plushy-options button', 'plushy', 'data-plushy');
 
     // background changer
     const backgrounds = [
@@ -76,4 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // load background
     changeBackground(currentBg);
 
+
+    /* ------- export character ------- */
+    const downloadBtn = document.getElementById("download-button");
+    const character = document.getElementById("asset-stack");
+
+    if (downloadBtn && character) {
+        downloadBtn.addEventListener("click", () => {
+        html2canvas(character, { backgroundColor: null }).then(canvas => {
+            const link = document.createElement("a");
+            link.download = "my-character.png";
+            link.href = canvas.toDataURL("image/png");
+            link.click();
+        });
+        });
+    }
 });

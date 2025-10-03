@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="todolist.css">
     <link rel="stylesheet" href="clock.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <body>
 
 <!----- desktop ----->
@@ -43,6 +44,7 @@
                 <p class="label">Dolly Cat</p>
             </button>
             <button id="recycle-icon" class="icon">
+                <!-- make recycle bin icon kirby and open mouth kirby when hovered -->
                 <img src="media/recycle.png" alt="recycle-bin">
                 <p class="label"><span class="nowrap">Recycle Bin</span></p>
             </button>
@@ -391,6 +393,9 @@
                         <button id="hair13" data-hair="hair13"></button>
                         <button id="hair14" data-hair="hair14"></button>
                         <button id="hair15" data-hair="hair15"></button>
+                        <button id="hair16" data-hair="hair16"></button>
+                        <button id="hair17" data-hair="hair17"></button>
+                        <button id="hair18" data-hair="hair18"></button>
                     </div>
                 </section>
                 <section class="hat">
@@ -401,6 +406,7 @@
                         <button id="hat3" data-hat="hat3"></button>
                         <button id="hat4" data-hat="hat4"></button>
                         <button id="hat5" data-hat="hat5"></button>
+                        <button id="hat6" data-hat="hat6"></button>
                     </div>
                 </section>
                 <section class="longsleeve">
@@ -414,6 +420,8 @@
                         <button id="longsleeve6" data-longsleeve="longsleeve6"></button>
                         <button id="longsleeve7" data-longsleeve="longsleeve7"></button>
                         <button id="longsleeve8" data-longsleeve="longsleeve8"></button>
+                        <button id="longsleeve9" data-longsleeve="longsleeve9"></button>
+                        <button id="longsleeve10" data-longsleeve="longsleeve10"></button>
                     </div>
                 </section>
                 <section class="shortsleeve">
@@ -427,6 +435,7 @@
                         <button id="shortsleeve6" data-shortsleeve="shortsleeve6"></button>
                         <button id="shortsleeve7" data-shortsleeve="shortsleeve7"></button>
                         <button id="shortsleeve8" data-shortsleeve="shortsleeve8"></button>
+                        <button id="shortsleeve9" data-shortsleeve="shortsleeve9"></button>
                     </div>
                 </section>
                 <section class="sleeveless">
@@ -435,6 +444,14 @@
                         <button id="sleeveless1" data-sleeveless="sleeveless1"></button>
                         <button id="sleeveless2" data-sleeveless="sleeveless2"></button>
                         <button id="sleeveless3" data-sleeveless="sleeveless3"></button>
+                    </div>
+                </section>
+                <section class="outerwear">
+                    <h2>Outerwear</h2>
+                    <div class="item-options" id="outerwear-options">
+                        <button id="outerwear1" data-outerwear="outerwear1"></button>
+                        <button id="outerwear2" data-outerwear="outerwear2"></button>
+                        <button id="outerwear3" data-outerwear="outerwear3"></button>
                     </div>
                 </section>
                 <section class="skirt">
@@ -466,6 +483,7 @@
                         <button id="pants4" data-pants="pants4"></button>
                         <button id="pants5" data-pants="pants5"></button>
                         <button id="pants6" data-pants="pants6"></button>
+                        <button id="pants7" data-pants="pants7"></button>
                     </div>
                 </section>
                 <section class="socks">
@@ -477,6 +495,7 @@
                         <button id="socks4" data-socks="socks4"></button>
                         <button id="socks5" data-socks="socks5"></button>
                         <button id="socks6" data-socks="socks6"></button>
+                        <button id="socks7" data-socks="socks7"></button>
                     </div>
                 </section>
                 <section class="shoes">
@@ -490,6 +509,20 @@
                         <button id="shoes6" data-shoes="shoes6"></button>
                         <button id="shoes7" data-shoes="shoes7"></button>
                         <button id="shoes8" data-shoes="shoes8"></button>
+                    </div>
+                </section>
+                <section class="bags">
+                    <h2>Bags</h2>
+                    <div class="item-options" id="bags-options">
+                        <button id="bags1" data-bags="bags1"></button>
+                        <button id="bags2" data-bags="bags2"></button>
+                    </div>
+                </section>
+                <section class="plushy">
+                    <h2>Plusies</h2>
+                    <div class="item-options" id="plushy-options">
+                        <button id="plushy1" data-plushy="plushy1"></button>
+                        <button id="plushy2" data-plushy="plushy2"></button>
                     </div>
                 </section>
             </section>
@@ -568,6 +601,9 @@
                         <img id="hair13-img" src="media/pixel-game-assets/hair/pixil-layer-hair13.png" class="layer">
                         <img id="hair14-img" src="media/pixel-game-assets/hair/pixil-layer-hair14.png" class="layer">
                         <img id="hair15-img" src="media/pixel-game-assets/hair/pixil-layer-hair15.png" class="layer">
+                        <img id="hair16-img" src="media/pixel-game-assets/hair/pixil-layer-hair16.png" class="layer">
+                        <img id="hair17-img" src="media/pixel-game-assets/hair/pixil-layer-hair17.png" class="layer">
+                        <img id="hair18-img" src="media/pixel-game-assets/hair/pixil-layer-hair18.png" class="layer">
                     </div>
                     
                     <!-- hats -->
@@ -577,6 +613,7 @@
                         <img id="hat3-img" src="media/pixel-game-assets/hats/pixil-layer-hat3.png" class="layer">
                         <img id="hat4-img" src="media/pixel-game-assets/hats/pixil-layer-hat4.png" class="layer">
                         <img id="hat5-img" src="media/pixel-game-assets/hats/pixil-layer-hat5.png" class="layer">
+                        <img id="hat6-img" src="media/pixel-game-assets/hats/pixil-layer-hat6.png" class="layer">
                     </div>
                     
                     <!-- longsleeve -->
@@ -589,6 +626,8 @@
                         <img id="longsleeve6-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve6.png" class="layer">
                         <img id="longsleeve7-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve7.png" class="layer">
                         <img id="longsleeve8-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve8.png" class="layer">
+                        <img id="longsleeve9-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve9.png" class="layer">
+                        <img id="longsleeve10-img" src="media/pixel-game-assets/longsleeve/pixil-layer-longsleeve10.png" class="layer">
                     </div>
                     
                     <!-- shortsleeve -->
@@ -601,6 +640,7 @@
                         <img id="shortsleeve6-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve6.png" class="layer">
                         <img id="shortsleeve7-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve7.png" class="layer">
                         <img id="shortsleeve8-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve8.png" class="layer">
+                        <img id="shortsleeve9-img" src="media/pixel-game-assets/shortsleeve/pixil-layer-shortsleeve9.png" class="layer">
                     </div>
                     
                     <!-- sleeveless -->
@@ -608,6 +648,13 @@
                         <img id="sleeveless1-img" src="media/pixel-game-assets/sleeveless/pixil-layer-sleeveless1.png" class="layer">
                         <img id="sleeveless2-img" src="media/pixel-game-assets/sleeveless/pixil-layer-sleeveless2.png" class="layer">
                         <img id="sleeveless3-img" src="media/pixel-game-assets/sleeveless/pixil-layer-sleeveless3.png" class="layer">
+                    </div>
+
+                    <!-- outerwear -->
+                    <div class="outerwear-options">
+                        <img id="outerwear1-img" src="media/pixel-game-assets/outerwear/pixil-layer-outerwear1.png" class="layer">
+                        <img id="outerwear2-img" src="media/pixel-game-assets/outerwear/pixil-layer-outerwear2.png" class="layer">
+                        <img id="outerwear3-img" src="media/pixel-game-assets/outerwear/pixil-layer-outerwear3.png" class="layer">
                     </div>
                     
                     <!-- skirt -->
@@ -636,6 +683,7 @@
                         <img id="pants4-img" src="media/pixel-game-assets/pants/pixil-layer-pants4.png" class="layer">
                         <img id="pants5-img" src="media/pixel-game-assets/pants/pixil-layer-pants5.png" class="layer">
                         <img id="pants6-img" src="media/pixel-game-assets/pants/pixil-layer-pants6.png" class="layer">
+                        <img id="pants7-img" src="media/pixel-game-assets/pants/pixil-layer-pants7.png" class="layer">
                     </div>
                     
                     <!-- socks -->
@@ -645,6 +693,7 @@
                     <img id="socks4-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks4.png" class="layer">
                     <img id="socks5-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks5.png" class="layer">
                     <img id="socks6-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks6.png" class="layer">
+                    <img id="socks7-img" src="media/pixel-game-assets/undergarments/pixil-layer-socks7.png" class="layer">
                     
                     <!-- shoes -->
                     <div class="shoes-options">
@@ -657,6 +706,19 @@
                         <img id="shoes7-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes7.png" class="layer">
                         <img id="shoes8-img" src="media/pixel-game-assets/shoes/pixil-layer-shoes8.png" class="layer">
                     </div>
+
+                    <!-- bags -->
+                    <div class="bags-options">
+                        <img id="bags1-img" src="media/pixel-game-assets/bags/pixil-layer-bags1.png" class="layer">
+                        <img id="bags2-img" src="media/pixel-game-assets/bags/pixil-layer-bags2.png" class="layer">
+                    </div>
+
+                    <!-- plushies -->
+                    <div class="plushy-options">
+                        <img id="plushy1-img" src="media/pixel-game-assets/plushy/pixil-layer-plushy1.png" class="layer">
+                        <img id="plushy2-img" src="media/pixel-game-assets/plushy/pixil-layer-plushy2.png" class="layer">
+                    </div>
+
                 </div>
                 <div id="background-controls">
                     <button id="prev-bg">◀</button>
@@ -830,6 +892,7 @@
 
     </div>
 <!-- add calander app and calander popup to datetime button on desktop -->
+ <!-- add recycle bin window -->
 
 </body>
 <script src="desktop.js"></script>

@@ -228,20 +228,29 @@ button.selected {
 .shortsleeve-options img {
     z-index: 4;
 }
+.sleeveless-options img {
+    z-index: 5;
+}
 .pants-options img {
     z-index: 4;
 }
 .shorts-options img {
-    z-index: 3;
+    z-index: 6;
+}
+.outerwear-options img {
+    z-index: 7;
 }
 .skirt-options img {
     z-index: 2;
 }
-#socks1-img {
+.socks-options img {
     z-index: 0;
 }
 .shoes-options img {
     z-index: 1;
+}
+.bags-options img {
+    z-index: 8;
 }
 
 /* ------- icon images ------- */
@@ -385,6 +394,27 @@ button.selected {
 #hair11 {
     background-image: url(media/pixel-game-assets/hair/icons/hairicon11.png);
 }
+#hair12 {
+    background-image: url(media/pixel-game-assets/hair/icons/hairicon12.png);
+}
+#hair13 {
+    background-image: url(media/pixel-game-assets/hair/icons/hairicon13.png);
+}
+#hair14 {
+    background-image: url(media/pixel-game-assets/hair/icons/hairicon14.png);
+}
+#hair15 {
+    background-image: url(media/pixel-game-assets/hair/icons/hairicon15.png);
+}
+#hair16 {
+    background-image: url(media/pixel-game-assets/hair/icons/hairicon16.png);
+}
+#hair17 {
+    background-image: url(media/pixel-game-assets/hair/icons/hairicon17.png);
+}
+#hair18 {
+    background-image: url(media/pixel-game-assets/hair/icons/hairicon18.png);
+}
 
 /* hat */
 
@@ -399,6 +429,12 @@ button.selected {
 }
 #hat4 {
     background-image: url(media/pixel-game-assets/hats/icons/haticon4.png);
+}
+#hat5 {
+    background-image: url(media/pixel-game-assets/hats/icons/haticon5.png);
+}
+#hat6 {
+    background-image: url(media/pixel-game-assets/hats/icons/haticon6.png);
 }
 
 /* longsleeve shirts */
@@ -419,6 +455,18 @@ button.selected {
 }
 #longsleeve6 {
     background-image: url(media/pixel-game-assets/longsleeve/icons/longsleeveicon6.png);
+}
+#longsleeve7 {
+    background-image: url(media/pixel-game-assets/longsleeve/icons/longsleeveicon7.png);
+}
+#longsleeve8 {
+    background-image: url(media/pixel-game-assets/longsleeve/icons/longsleeveicon8.png);
+}
+#longsleeve9 {
+    background-image: url(media/pixel-game-assets/longsleeve/icons/longsleeveicon9.png);
+}
+#longsleeve10 {
+    background-image: url(media/pixel-game-assets/longsleeve/icons/longsleeveicon10.png);
 }
 
 /* shortsleeve shirts */
@@ -443,6 +491,12 @@ button.selected {
 #shortsleeve7 {
     background-image: url(media/pixel-game-assets/shortsleeve/icons/shortsleeveicon7.png);
 }
+#shortsleeve8 {
+    background-image: url(media/pixel-game-assets/shortsleeve/icons/shortsleeveicon8.png);
+}
+#shortsleeve9 {
+    background-image: url(media/pixel-game-assets/shortsleeve/icons/shortsleeveicon9.png);
+}
 
 /* sleeveless shirts */
 #sleeveless1 {
@@ -450,6 +504,20 @@ button.selected {
 }
 #sleeveless2 {
     background-image: url(media/pixel-game-assets/sleeveless/icons/sleevelessicon2.png);
+}
+#sleeveless3 {
+    background-image: url(media/pixel-game-assets/sleeveless/icons/sleevelessicon3.png);
+}
+
+/* outerwear */
+#outerwear1 {
+    background-image: url(media/pixel-game-assets/outerwear/icons/outerwearicon1.png);
+}
+#outerwear2 {
+    background-image: url(media/pixel-game-assets/outerwear/icons/outerwearicon2.png);
+}
+#outerwear3 {
+    background-image: url(media/pixel-game-assets/outerwear/icons/outerwearicon3.png);
 }
 
 /* pants */
@@ -470,6 +538,9 @@ button.selected {
 }
 #pants6 {
     background-image: url(media/pixel-game-assets/pants/icons/pantsicon6.png);
+}
+#pants7 {
+    background-image: url(media/pixel-game-assets/pants/icons/pantsicon7.png);
 }
 
 /* shorts shirts */
@@ -493,6 +564,18 @@ button.selected {
 #skirt3 {
     background-image: url(media/pixel-game-assets/skirts/icons/skirticon3.png);
 }
+#skirt4 {
+    background-image: url(media/pixel-game-assets/skirts/icons/skirticon4.png);
+}
+#skirt5 {
+    background-image: url(media/pixel-game-assets/skirts/icons/skirticon5.png);
+}
+#skirt6 {
+    background-image: url(media/pixel-game-assets/skirts/icons/skirticon6.png);
+}
+#skirt7 {
+    background-image: url(media/pixel-game-assets/skirts/icons/skirticon7.png);
+}
 
 /* socks */
 #socks1 {
@@ -500,6 +583,21 @@ button.selected {
 }
 #socks2 {
     background-image: url(media/pixel-game-assets/undergarments/icons/socksicon2.png);
+}
+#socks3 {
+    background-image: url(media/pixel-game-assets/undergarments/icons/socksicon3.png);
+}
+#socks4 {
+    background-image: url(media/pixel-game-assets/undergarments/icons/socksicon4.png);
+}
+#socks5 {
+    background-image: url(media/pixel-game-assets/undergarments/icons/socksicon5.png);
+}
+#socks6 {
+    background-image: url(media/pixel-game-assets/undergarments/icons/socksicon6.png);
+}
+#socks7 {
+    background-image: url(media/pixel-game-assets/undergarments/icons/socksicon7.png);
 }
 
 /* shoes */
@@ -517,5 +615,21 @@ button.selected {
 }
 #shoes5 {
     background-image: url(media/pixel-game-assets/shoes/icons/shoesicon5.png);
+}
+
+/* bags */
+#bags1 {
+    background-image: url(media/pixel-game-assets/bags/icons/bagsicon1.png);
+}
+#bags2 {
+    background-image: url(media/pixel-game-assets/bags/icons/bagsicon2.png);
+}
+
+/* plushies */
+#plushy1 {
+    background-image: url(media/pixel-game-assets/plushy/icons/plushyicon1.png);
+}
+#plushy2 {
+    background-image: url(media/pixel-game-assets/plushy/icons/plushyicon2.png);
 }
 
