@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const backgrounds = [
         'media/pixel-game-assets/pixil-background1.png',
         'media/pixel-game-assets/pixil-background2.png',
-        'media/pixel-game-assets/pixil-background3.png'
+        'media/pixel-game-assets/pixil-background3.png',
+        'media/pixel-game-assets/pixil-background4.png'
     ];
 
     let currentBg = 0;

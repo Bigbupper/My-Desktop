@@ -8,15 +8,6 @@
 }
 
 /* variables */
-/* body {
-    --window-control-hover: rgba(255, 51, 51, 0.37);
-    --desktop-hover: rgba(195, 182, 218, 0.452);
-    --desktop-base: rgba(18, 12, 24, 0.774);
-    --desktop-primary: rgba(132, 145, 202, 0.562);
-    --desktop-highlight: rgba(182, 195, 255, 0.842);
-    --desktop-lowlight: rgba(40, 41, 102, 0.432);
-    --text: rgb(255, 255, 255);
-} */
 body {
     --window-control-hover: rgba(255, 51, 51, 0.37);
     --desktop-hover: rgba(228, 237, 255, 0.212);
@@ -42,7 +33,7 @@ body {
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
-    background-color: #6a5972;
+    background-color: var(--desktop-primary);
     background-image: url(media/dark-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -345,5 +336,37 @@ button {
 
 }
 
-
-
+/* boot up screen */
+#bootscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--desktop-primary);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+#load-icon {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1.5s linear infinite;
+ 
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
