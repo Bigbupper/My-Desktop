@@ -179,9 +179,12 @@ button.selected {
 #longsleeve-options button,
 #shortsleeve-options button,
 #sleeveless-options button,
+#outerwear-options button,
 #skirt-options button,
 #shorts-options button,
-#socks-options button {
+#socks-options button,
+#bags-options button,
+#plushy-options button {
     width: 80px;
     height: 80px; 
 }
