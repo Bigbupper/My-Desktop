@@ -184,14 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         icon.addEventListener('dblclick', (e) => {
             e.preventDefault();
-            
-            // reset position and size
-            windowElement.style.top = '100px';
-            windowElement.style.left = '100px';
-            windowElement.style.width = '';
-            windowElement.style.height = '';
             windowElement.classList.remove('maximized');
-
             windowElement.openWindow();
         });
     }

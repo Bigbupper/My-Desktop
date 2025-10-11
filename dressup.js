@@ -82,19 +82,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // load background
     changeBackground(currentBg);
 
+    /* randomizer */
+    
+    /* clear all */
+    const clearCharacterBtn = document.getElementById('clear-character-button');
+    clearCharacterBtn.addEventListener('click', () => {
+        if (confirm("Are you sure you want to clear your character? This cannot be undone."))
+                //hidse images inside character container
+                document.querySelectorAll('#character-container img').forEach(img => {
+                    img.style.display = 'none';
+                });
 
+                //removes "selected" button states
+                document.querySelectorAll('.selected').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+            });
+        
     /* ------- export character ------- */
     const downloadBtn = document.getElementById("download-button");
     const character = document.getElementById("asset-stack");
 
     if (downloadBtn && character) {
         downloadBtn.addEventListener("click", () => {
-        html2canvas(character, { backgroundColor: null }).then(canvas => {
-            const link = document.createElement("a");
-            link.download = "my-character.png";
-            link.href = canvas.toDataURL("image/png");
-            link.click();
-        });
+            html2canvas(character, { backgroundColor: null }).then(canvas => {
+                const link = document.createElement("a");
+                link.download = "my-character.png";
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+            });
         });
     }
-});
+    });

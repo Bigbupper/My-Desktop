@@ -370,3 +370,57 @@ button {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 600px) {
+    body {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 50px;
+        right: 0;
+        background-attachment: fixed;
+    }
+    .desktop {
+        grid-template-columns: repeat(11, 1fr);
+        grid-template-rows: repeat(22, 1fr);
+    }
+    .icon {
+        width: 60px;
+    }
+    .icon img {
+        height: 40px;
+        width: 40px;
+    }
+    .label {
+        font-size: 0.7rem;
+    }
+    #recycle-icon {
+        grid-column-start: 10;
+        grid-row-start: 19;
+    }
+    .taskbar {
+        height: 40px;
+    }
+    #desktop-datetime {
+        font-size: 0.6rem;
+        padding: 2px 5px;
+        height: 30px;
+    }
+    .minimize-icon {
+        height: 30px;
+        padding: 2px 5px;
+    }
+    .start-menu {
+        position: fixed;
+        height: 410px;
+        width: 350px;
+        background-color: var(--desktop-base);
+        backdrop-filter: blur(15px);
+        z-index: 100;
+    }
+    .window {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+    }
+}
