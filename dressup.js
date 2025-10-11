@@ -15,8 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         sleeveless: 3,
         outerwear: 3,
         skirt: 7,
-        shorts: 3,
-        pants: 10,
+        shorts: 2,
+        pants: 9,
+        overalls: 2,
         socks: 7,
         shoes: 8,
         bags: 4,
@@ -26,22 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // z-index map
     const layerMap = {
         base: 0,
-        socks: 1,
-        shoes: 2,
-        skirt: 3,
-        pants: 4,
-        shorts: 5,
-        longsleeve: 6,
-        shortsleeve: 6,
-        sleeveless: 7,
-        outerwear: 8,
-        hair: 9,
-        hat: 10,
-        bags: 11,
-        plushy: 12,
-        eyes: 13,
-        brows: 14,
-        lips: 15
+        lips: 1,
+        brows: 1,
+        hair: 2,
+        eyes: 3,
+        socks: 4,
+        shoes: 5,
+        skirt: 6,
+        shorts: 7,
+        pants: 8,
+        longsleeve: 9,
+        shortsleeve: 9,
+        sleeveless: 9,
+        overalls: 10,
+        outerwear: 11,
+        hat: 12,
+        bags: 13,
+        plushy: 14,
     };
 
     // generate icons + layers
@@ -129,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleItem('#skirt-options button', 'data-skirt');
     toggleItem('#shorts-options button', 'data-shorts');
     toggleItem('#pants-options button', 'data-pants');
+    toggleItem('#overalls-options button', 'data-overalls');
     toggleItem('#socks-options button', 'data-socks');
     toggleItem('#bags-options button', 'data-bags');
     toggleItem('#plushy-options button', 'data-plushy');
@@ -175,16 +178,23 @@ document.addEventListener('DOMContentLoaded', () => {
         
     /* ------- export character ------- */
     const downloadBtn = document.getElementById("download-button");
-    const character = document.getElementById("asset-stack");
 
-    if (downloadBtn && character) {
-        downloadBtn.addEventListener("click", () => {
-            html2canvas(character, { backgroundColor: null }).then(canvas => {
-                const link = document.createElement("a");
-                link.download = "my-character.png";
-                link.href = canvas.toDataURL("image/png");
-                link.click();
+    if (downloadBtn && characterContainer) {
+        downloadBtn.addEventListener("click", async () => {
+            // Use device pixel ratio for crisp captures on mobile
+            const scale = window.devicePixelRatio > 1 ? window.devicePixelRatio : 2;
+
+            const canvas = await html2canvas(characterContainer, {
+                backgroundColor: null, // keeps transparency around the character
+                scale: scale,
+                useCORS: true,
+                logging: false
             });
+
+            const link = document.createElement("a");
+            link.download = "my-character.png";
+            link.href = canvas.toDataURL("image/png");
+            link.click();
         });
     }
     });

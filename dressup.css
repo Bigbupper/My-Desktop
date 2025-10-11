@@ -188,7 +188,8 @@ button.selected {
     width: 80px;
     height: 80px; 
 }
-#pants-options button {
+#pants-options button,
+#overalls-options button {
     width: 80px;
     height: 100px; 
 }
@@ -340,62 +341,4 @@ button.selected {
         overflow-x: hidden;
     }
 }
-
-
-
-/* ------- asset layering ------- */
-.hat-options img {
-    z-index: 5;
-}
-.longsleeve-options img {
-    z-index: 5;
-}
-.shortsleeve-options img {
-    z-index: 5;
-}
-.sleeveless-options img {
-    z-index: 6;
-}
-.pants-options img {
-    z-index: 4;
-}
-.shorts-options img {
-    z-index: 7;
-}
-.outerwear-options img {
-    z-index: 8;
-}
-.skirt-options img {
-    z-index: 2;
-}
-.socks-options img {
-    z-index: 0;
-}
-.shoes-options img {
-    z-index: 1;
-}
-.bags-options img {
-    z-index: 8;
-}
-
-/* ------- icon images ------- */
-
-/* skin */
-#base1 {
-    background-color: #4d2f26;
-}
-#base2 {
-    background-color: #8a4f38;
-}
-#base3 {
-    background-color: #ab857d;
-}
-#base4 {
-    background-color: #e3bdb1;
-}
-#base5 {
-    background-color: #f7d2d0;
-}
-
-
 
