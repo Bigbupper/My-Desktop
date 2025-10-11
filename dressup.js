@@ -1,63 +1,137 @@
-    /* ----- dressup game ----- */
 document.addEventListener('DOMContentLoaded', () => {
 
-    // single choice options (skin, eyes, lips, hair, hat)
-    function optionButtons(buttonSelector, imagePrefix, dataAttr) {
-        const images = document.querySelectorAll(`#character-container img[id^="${imagePrefix}"]`);
+    const assetStack = document.getElementById("asset-stack");
 
-        document.querySelectorAll(buttonSelector).forEach(button => {
+    // asset counts per category
+    const assetConfig = {
+        base: 5,
+        eyes: 19,
+        brows: 7,
+        lips: 15,
+        hair: 20,
+        hat: 6,
+        longsleeve: 10,
+        shortsleeve: 9,
+        sleeveless: 3,
+        outerwear: 3,
+        skirt: 7,
+        shorts: 3,
+        pants: 10,
+        socks: 7,
+        shoes: 8,
+        bags: 4,
+        plushy: 2
+    };
+
+    // z-index map
+    const layerMap = {
+        base: 0,
+        socks: 1,
+        shoes: 2,
+        skirt: 3,
+        pants: 4,
+        shorts: 5,
+        longsleeve: 6,
+        shortsleeve: 6,
+        sleeveless: 7,
+        outerwear: 8,
+        hair: 9,
+        hat: 10,
+        bags: 11,
+        plushy: 12,
+        eyes: 13,
+        brows: 14,
+        lips: 15
+    };
+
+    // generate icons + layers
+    Object.entries(assetConfig).forEach(([category, count]) => {
+        const container = document.getElementById(`${category}-options`);
+        if (!container) return;
+
+        for (let i = 1; i <= count; i++) {
+            const layerSrc = `media/pixel-game-assets/${category}/pixil-layer-${category}${i}.png`;
+            const iconSrc = `media/pixel-game-assets/${category}/icons/${category}icon${i}.png`;
+
+            // create button
+            const btn = document.createElement("button");
+            btn.dataset[category] = `${category}${i}`;
+            btn.style.backgroundImage = `url(${iconSrc})`;
+            container.appendChild(btn);
+
+            // create hidden image layer
+            const img = document.createElement("img");
+            img.id = `${category}${i}-img`;
+            img.src = layerSrc;
+            img.classList.add("layer");
+            img.style.display = "none";
+
+            // assign z-index from the layer map
+            img.style.zIndex = layerMap[category] ?? 0;
+
+            assetStack.appendChild(img);
+        }
+    });
+
+    function showSingleItem(buttonSelector, dataAttr) {
+        const buttons = document.querySelectorAll(buttonSelector);
+
+        buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const selectedId = button.getAttribute(dataAttr) + '-img';
+                const allImages = Array.from(assetStack.querySelectorAll('img'))
+                    .filter(img => img.id.startsWith(dataAttr.replace('data-', '')));
+                
+                // hide all images in this category
+                allImages.forEach(img => img.style.display = 'none');
 
-                images.forEach(img => img.style.display = 'none');
-
+                // show the selected one
                 const activeImage = document.getElementById(selectedId);
                 if (activeImage) activeImage.style.display = 'block';
 
-                // Add selected/remove styling
-                document.querySelectorAll(buttonSelector).forEach(btn => btn.classList.remove('selected'));
+                // button selected state
+                buttons.forEach(btn => btn.classList.remove('selected'));
                 button.classList.add('selected');
             });
         });
     }
 
-    optionButtons('#skin-options button', 'base', 'data-skin');
-    optionButtons('#brows-options button', 'brows', 'data-brows');
-    optionButtons('#eye-options button', 'eyes', 'data-eyes');
-    optionButtons('#lips-options button', 'lips', 'data-lips');
-    optionButtons('#hair-options button', 'hair', 'data-hair');
-    optionButtons('#shoes-options button', 'shoes', 'data-shoes');
+    function toggleItem(buttonSelector, dataAttr) {
+        const buttons = document.querySelectorAll(buttonSelector);
 
-    // toggle options (clothing items that can be layered)
-    function toggleButtons(buttonSelector, imagePrefix, dataAttr) {
-        document.querySelectorAll(buttonSelector).forEach(button => {
+        buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const itemId = button.getAttribute(dataAttr) + '-img';
                 const image = document.getElementById(itemId);
 
                 if (image) {
-                    // use computed style so it respects default CSS visibility
-                    const currentlyVisible = window.getComputedStyle(image).display !== 'none';
-                    image.style.display = currentlyVisible ? 'none' : 'block';
+                    const visible = window.getComputedStyle(image).display !== 'none';
+                    image.style.display = visible ? 'none' : 'block';
                 }
 
-                // Toggle selected styling
                 button.classList.toggle('selected');
             });
         });
     }
 
-    toggleButtons('#hat-options button', 'hat', 'data-hat');
-    toggleButtons('#longsleeve-options button', 'longsleeve', 'data-longsleeve');
-    toggleButtons('#shortsleeve-options button', 'shortsleeve', 'data-shortsleeve');
-    toggleButtons('#sleeveless-options button', 'sleeveless', 'data-sleeveless');
-    toggleButtons('#outerwear-options button', 'outerwear', 'data-outerwear');
-    toggleButtons('#skirt-options button', 'skirt', 'data-skirt');
-    toggleButtons('#shorts-options button', 'shorts', 'data-shorts');
-    toggleButtons('#pants-options button', 'pants', 'data-pants');
-    toggleButtons('#socks-options button', 'socks', 'data-socks');
-    toggleButtons('#bags-options button', 'bags', 'data-bags');
-    toggleButtons('#plushy-options button', 'plushy', 'data-plushy');
+    showSingleItem('#base-options button', 'data-base');
+    showSingleItem('#brows-options button', 'data-brows');
+    showSingleItem('#eyes-options button', 'data-eyes');
+    showSingleItem('#lips-options button', 'data-lips');
+    showSingleItem('#hair-options button', 'data-hair');
+    showSingleItem('#shoes-options button', 'data-shoes');
+
+    toggleItem('#hat-options button', 'data-hat');
+    toggleItem('#longsleeve-options button', 'data-longsleeve');
+    toggleItem('#shortsleeve-options button', 'data-shortsleeve');
+    toggleItem('#sleeveless-options button', 'data-sleeveless');
+    toggleItem('#outerwear-options button', 'data-outerwear');
+    toggleItem('#skirt-options button', 'data-skirt');
+    toggleItem('#shorts-options button', 'data-shorts');
+    toggleItem('#pants-options button', 'data-pants');
+    toggleItem('#socks-options button', 'data-socks');
+    toggleItem('#bags-options button', 'data-bags');
+    toggleItem('#plushy-options button', 'data-plushy');
 
     // background changer
     const backgrounds = [
