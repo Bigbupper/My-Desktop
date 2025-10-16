@@ -309,3 +309,34 @@ input[type="range"]:hover {
     gap: 20px;
     padding: 10px 0;
 }
+@media (max-width: 600px) {
+    #spotify-window {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 80px); /* leave room for taskbar */
+        min-width: auto;
+        min-height: auto;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    /* smaller header */
+    #spotify-header {
+        height: 30px;
+    }
+
+    /* main game area - vertical stack */
+    .spotify.base {
+        flex: 1;
+        display: flex;
+        border: 5px solid black;
+        border-bottom: 10px solid black;
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+

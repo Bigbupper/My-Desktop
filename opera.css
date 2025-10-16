@@ -15,6 +15,7 @@
     --color-background: #140310;
     --color-highlight: rgb(168, 84, 136);
     --color-secondary: rgba(255, 155, 217, 0.144);
+    --color-text: rgba(255, 255, 255, 0.747);
 }
 .opera.base {
     display: flex;
@@ -22,14 +23,36 @@
     height: 100%;
     width: 100%;
 }
+#border-gradient {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    padding: 2px;
+    background: linear-gradient(
+        to bottom right,
+        var(--color-highlight) 0%,
+        var(--color-highlight) 15%,
+        var(--color-background) 45%,
+        var(--color-background) 100%
+    );
 
+}
+#background {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 4px;
+    background-color: var(--color-background);
+}
 /* -------window header------- */
 #opera-header {
     display: flex;
     height: 35px;
     justify-content: space-between;
     align-items: center;
-    border-bottom:  2px solid var(--color-highlight);
+}
+#opera-header .window-controls {
+    color: var(--color-highlight) !important;
 }
 #exit-opera {
     width: 20px;
@@ -45,26 +68,37 @@
 .tab {
     display: flex;
     align-items: center;
-    background-color: var(--color-secondary);
-    border-radius: var(--border-radius-edges) var(--border-radius-edges) 0px 0px ;
+    border-radius: 4px;
     height: 30px;
+    width: 200px;
+    gap: 10px;
     padding: 0px 10px;
     margin-right: 5px;
-    cursor: pointer;
     font-size: 14px;
-    color: white;
+    color: var(--color-highlight)
+}
+.tab:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+}
+.tab.active{
+    background-color: var(--color-highlight);
+    font-weight: bold;
 }
 .close-tab {
+    scale: 0.75;
     margin-left: 0.5em;
-    cursor: pointer;
-    color: #999;
-    font-weight: bold;
-    font-size: 1em;
+    padding: 3px;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: transparent;
+    margin-left: auto;
 }
 
 .close-tab:hover {
-    color: #e75a4d;
+    background-color: var(--color-highlight);
 }
+
 
 
 /*----- url bar -----*/
@@ -99,7 +133,6 @@
     display: flex;
     align-content: center;
     background-color: transparent;
-    cursor: pointer;
     color: var(--color-highlight);
     padding: 5px 10px;
     border-radius: var(--border-radius-edges);
@@ -121,6 +154,48 @@
     background: white;
     display: block;
     border: none;
-
+    height: 100%;
 }
+
+@media (max-width: 600px) {
+    #opera-window {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 80px); /* leave room for taskbar */
+        min-width: auto;
+        min-height: auto;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    /* smaller header */
+    #opera-header {
+        height: 30px;
+    }
+
+    /* main game area - vertical stack */
+    .opera.base {
+        flex: 1;
+        display: flex;
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+    }
+    .webpage {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 0; 
+        margin-top: 5px;
+    }
+    .webpage iframe {  
+        flex: 1 1 auto;
+        background: var(--color-background);
+        display: block;
+        border: none;
+    }
+}
+
 

@@ -21,8 +21,7 @@
     background-color: var(--color-primary);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center;
-    background-blend-mode: overlay;
+    background-position: center;
     border-radius: 10px;
     padding: 10px;
 
