@@ -18,7 +18,7 @@ body {
     --text: rgb(255, 255, 255);
 }
 .light-mode {
-    --window-control-hover: #f897a4;
+    --window-control-hover: #ff8999;
     --desktop-hover: rgba(255, 227, 236, 0.233);
     --desktop-base: rgba(212, 156, 165, 0.761);
     --desktop-primary: #e9b6b9;
@@ -245,10 +245,10 @@ button {
 .window-controls button:hover {
     color: var(--window-control-hover);
 }
-.minimize-button,
+/* .minimize-button,
 .maximize-button {
     transform: translate(4px, -4px);
-}
+} */
 .exit-icon {
     height: 20px;
     cursor: pointer;
@@ -257,8 +257,8 @@ button {
     stroke: var(--window-control-hover);
 }
 .resizer {
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
     border: 2px solid var(--desktop-lowlight);
     position: absolute;
     right: 0;

@@ -8,20 +8,23 @@
     min-height: 350px;
     max-width: 100vw;
     max-height: calc(100vh - 39px);
-    border:  5px solid var(--color-background);
+    border: 2px solid var(--color-background);
+    border-bottom-width: 8px;
 
     /* variables */
-    --border-radius-edges: 5px;
-    --color-background: #140310;
+    --border-radius-edges: 4px;
+    --color-background: rgb(20, 3, 16);
     --color-highlight: rgb(168, 84, 136);
-    --color-secondary: rgba(255, 155, 217, 0.144);
-    --color-text: rgba(255, 255, 255, 0.747);
+    --color-secondary: rgb(83, 40, 73);
+    --color-text: rgba(255, 255, 255, 0.6);
+    --color-text-highlight: rgba(255, 255, 255, 0.7);
 }
 .opera.base {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 #border-gradient {
     width: 100%;
@@ -35,110 +38,175 @@
         var(--color-background) 45%,
         var(--color-background) 100%
     );
-
 }
 #background {
     width: 100%;
     height: 100%;
-    border-radius: 5px;
     padding: 4px;
+    border-radius: var(--border-radius-edges);
     background-color: var(--color-background);
 }
 /* -------window header------- */
 #opera-header {
     display: flex;
-    height: 35px;
+    height: 40px;
     justify-content: space-between;
     align-items: center;
 }
 #opera-header .window-controls {
     color: var(--color-highlight) !important;
 }
-#exit-opera {
-    width: 20px;
-    cursor: pointer;
+
+/* window controls */
+#opera-window-controls button {
+    margin: 0;
+}
+#home-page-button, #opera-window-controls button {
+    width: 35px;
+    height: 35px;
+}
+#home-page-button {
+    margin-left: 5px;
+}
+#home-page-button svg {
+    height: 16px;
+    width: 16px;
+    margin: auto;
+    fill: var(--color-highlight);
 }
 
 /*----- tabs -----*/
 .tab-list {
+    flex: 1;
     display: flex;
     align-items: center;
-    flex: 1; 
+    overflow: hidden;
 }
 .tab {
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    height: 30px;
-    width: 200px;
-    gap: 10px;
-    padding: 0px 10px;
+    flex: 1 1 0;
+    position: relative;
+    min-width: 60px;
+    max-width: 200px;
+    padding-left: 10px;
+    border-radius: var(--border-radius-edges);
+    color: var(--color-highlight);
+    font-size: .9rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.tab svg {
+    height: 16px;
+    width: 16px;
     margin-right: 5px;
-    font-size: 14px;
-    color: var(--color-highlight)
+}
+.tab span {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: left;
+}
+.tab span::before,
+.tab span::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1.5em;
+    pointer-events: none;
+    transition: opacity .35s ease;
+}
+.tab span::before {
+    background: linear-gradient(
+        to right, 
+        transparent 60%, 
+        var(--color-background) 100%
+        );
+    opacity: 1;
+}
+.tab span::after {
+    background: linear-gradient(
+        to right, 
+        transparent 60%, 
+        var(--color-secondary) 100%
+        );
+    opacity: 0;
+}
+.tab:hover span::after {
+    opacity: 1;
+}
+.tab:hover span::before {
+    opacity: 0;
+}
+.tab.active {
+    background-color: var(--color-highlight);
+    color: var(--color-background);
+    font-weight: bold;
 }
 .tab:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-text);
+    color: var(--color-text-highlight);
 }
 .tab.active{
     background-color: var(--color-highlight);
     font-weight: bold;
 }
+/* close tab */
 .close-tab {
-    scale: 0.75;
-    margin-left: 0.5em;
-    padding: 3px;
+    display: none;
     border-radius: 4px;
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    margin: 5px;
     color: #ffffff;
     background-color: transparent;
-    margin-left: auto;
+    box-sizing: border-box;
+    line-height: 0;
+}
+.tab:hover .close-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-tab svg {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 0;
 }
 
 .close-tab:hover {
     background-color: var(--color-highlight);
 }
 
-
-
 /*----- url bar -----*/
 #url-bar {
     height: 30px;
     width: 100%;
-    margin: 5px 0px;
-    padding: 0px 10px;
-    border-radius: var(--border-radius-edges);
     border: none;
     color: white;
     font-size: 10px;
-    background-color: transparent;
-    transition: ease-in 0.2s;
-}
-#url-bar:hover {
-    background-color: var(--color-secondary);
+    margin-bottom: 3px;
 }
 
 /*----- bookmark -----*/
 .bookmarks {
     display: flex;
+    margin-bottom: 3px;
 }
 .bookmark svg, .tab svg {
     height: 16px;
 }
 .bookmark span {
-    font-size: 16px;
+    font-size: 0.9rem;
     margin-left: 5px;
 }
 .bookmark {
-    display: flex;
-    align-content: center;
-    background-color: transparent;
     color: var(--color-highlight);
-    padding: 5px 10px;
-    border-radius: var(--border-radius-edges);
-}
-.bookmark:hover {
-    background-color: var(--color-secondary);
+    padding: 0 10px;
 }
 
 /*----- base page settings -----*/
@@ -146,15 +214,25 @@
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    min-height: 0; 
-    margin-top: 10px;
 }
 .webpage iframe {
     flex: 1 1 auto;
-    background: white;
-    display: block;
+    background: var(--color-background);
     border: none;
-    height: 100%;
+    overflow-x: hidden;
+}
+/* hover transitions/common styling */
+.bookmark, .tab, #home-page-button, #url-bar, #opera-window-controls button {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    border-radius: var(--border-radius-edges);
+    background-color: transparent;
+    transition: background-color ease-in 0.15s;
+}
+
+.bookmark:hover, .tab:hover, #home-page-button:hover, #url-bar:hover, #opera-window-controls button:hover {
+    background-color: var(--color-secondary);
 }
 
 @media (max-width: 600px) {
@@ -184,17 +262,10 @@
         width: 100%;
     }
     .webpage {
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        min-height: 0; 
         margin-top: 5px;
     }
-    .webpage iframe {  
-        flex: 1 1 auto;
+    .webpage iframe {
         background: var(--color-background);
-        display: block;
-        border: none;
     }
 }
 

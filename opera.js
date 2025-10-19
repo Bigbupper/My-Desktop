@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const tab = document.createElement('button');
             tab.classList.add('tab');
 
-            // Clone the bookmark's SVG and span
+            // clone the bookmark's SVG and span
             const svgClone = bookmark.querySelector('svg').cloneNode(true);
             const spanClone = bookmark.querySelector('span').cloneNode(true);
 
@@ -85,7 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Email': 'email-page',
                 'Github': 'github-page',
                 'Noise Mixer': 'noise-mixer-page',
-                'Youtube': 'youtube-page'
+                'Youtube': 'youtube-page',
+                'Home': 'home-page'
             };
             return map[tabLabel] || null;
         }
