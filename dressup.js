@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
         brows: 7,
         lips: 15,
         hair: 20,
-        hat: 10,
-        longsleeve: 10,
-        shortsleeve: 11,
+        hat: 11,
+        longsleeve: 14,
+        shortsleeve: 12,
         sleeveless: 3,
         outerwear: 4,
         skirt: 9,
@@ -19,8 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         pants: 9,
         overalls: 4,
         socks: 7,
-        shoes: 8,
+        shoes: 9,
         bags: 4,
+        decal: 8,
         plushy: 2
     };
 
@@ -38,12 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
         pants: 8,
         longsleeve: 9,
         shortsleeve: 9,
-        sleeveless: 9,
-        overalls: 10,
-        outerwear: 11,
-        hat: 12,
-        bags: 13,
-        plushy: 14,
+        decal: 10,
+        sleeveless: 11,
+        overalls: 12,
+        outerwear: 13,
+        hat: 14,
+        bags: 15,
+        plushy: 16,
     };
 
     // generate icons + layers
@@ -121,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showSingleItem('#eyes-options button', 'data-eyes');
     showSingleItem('#lips-options button', 'data-lips');
     showSingleItem('#hair-options button', 'data-hair');
+    showSingleItem('#decal-options button', 'data-decal');
     showSingleItem('#shoes-options button', 'data-shoes');
 
     toggleItem('#hat-options button', 'data-hat');
