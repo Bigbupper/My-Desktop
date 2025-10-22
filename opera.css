@@ -19,6 +19,13 @@
     --color-text: rgba(255, 255, 255, 0.6);
     --color-text-highlight: rgba(255, 255, 255, 0.7);
 }
+.light-mode #opera-window {
+    --color-background: rgb(224, 182, 198);
+    --color-highlight: rgba(177, 72, 121, 0.829);
+    --color-secondary: rgb(212, 141, 162);
+    --color-text: rgba(48, 8, 32, 0.637);
+    --color-text-highlight: rgb(109, 10, 56);
+}
 .opera.base {
     display: flex;
     flex-direction: column;

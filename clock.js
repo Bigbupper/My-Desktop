@@ -5,7 +5,6 @@ function updateDateTime() {
 
     let hours = now.getHours();
     const minutes = String(now.getMinutes()).padStart(2, '0');
-
     const amPm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12 || 12;
     const timeString = `${hours}:${minutes} ${amPm}`;
@@ -20,7 +19,7 @@ function updateDateTime() {
         el.querySelector(".date").textContent = dateString;
     });
 
-    return timeString;
+    currentTimeString = timeString;
 }
 
 updateDateTime();
@@ -71,6 +70,8 @@ updateAnalogClock();
 
 
 /* alarms */
+const alarms = [];
+
 const addAlarmButton = document.getElementById("add-alarm-button");
 const alarmTimeInput = document.getElementById("alarm-time");
 
@@ -78,21 +79,74 @@ addAlarmButton.addEventListener("click", setAlarm);
 
 function setAlarm() {
     const alarmTime = alarmTimeInput.value;
-
-    if (alarmTime !== "") {
-        // alarmTime is in "HH:MM" 24hr format
-        const [hourStr, minuteStr] = alarmTime.split(":");
-        let hour = parseInt(hourStr, 10);
-        const minute = minuteStr;
-        const amPm = hour >= 12 ? "PM" : "AM";
-        hour = hour % 12 || 12;
-        const formattedTime = `${hour}:${minute.padStart(2, "0")} ${amPm}`;
-
-        const alarmList = document.getElementById("alarm-list");
-        const listItem = document.createElement("li");
-        listItem.textContent = formattedTime;
-        alarmList.appendChild(listItem);
-    } else {
+    if (!alarmTime) {
         alert("Please select a valid time for the alarm.");
+        return;
     }
+
+    const [hourStr, minuteStr] = alarmTime.split(":");
+    const tempDate = new Date();
+    tempDate.setHours(hourStr, minuteStr);
+    const formattedTime = tempDate.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+
+    alarms.push(formattedTime);
+
+    const listItem = document.createElement("li");
+    listItem.textContent = formattedTime;
+    document.getElementById("alarm-list").appendChild(listItem);
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "X";
+    deleteButton.className = "delete-alarm-button";
+    listItem.appendChild(deleteButton);
+};
+
+document.getElementById("alarm-list").addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete-alarm-button")) {
+        const li = e.target.closest("li"); // grab the closest parent <li>
+        const alarmTime = li.dataset.time; // use stored value
+        li.remove();
+        alarms.splice(alarms.indexOf(alarmTime), 1);
+    }
+});
+
+const alarmSound = new Audio("media/clock-assets/mixkit-alarm.wav");
+
+function alarmRing() {
+    const alarmList = document.getElementById("alarm-list");
+    if (currentTimeString === alarmList) return;
+
+    const items = Array.from(alarmList.children);
+    items.forEach(li => {
+        if (li.dataset.disabled === 'true') return;
+
+        const timeText = li.firstChild && li.firstChild.nodeValue
+            ? li.firstChild.nodeValue.trim()
+            : li.textContent.trim();
+
+        if (timeText === currentTimeString) {
+            if (li.classList.contains('ringing')) return;
+
+            alarmSound.loop = true;
+            alarmSound.play().catch(() => {});
+
+            li.classList.add('ringing');
+
+            const stopBtn = document.createElement('button');
+            stopBtn.type = 'button';
+            stopBtn.className = 'end-alarm-button';
+            stopBtn.textContent = 'End Alarm';
+
+            stopBtn.addEventListener('click', () => {
+                li.classList.remove('ringing');
+                li.dataset.disabled = 'true';
+                alarmSound.pause();
+                stopBtn.remove();
+            });
+
+            li.appendChild(stopBtn);
+        }
+    });
 }
+
+setInterval(alarmRing, 1000);
