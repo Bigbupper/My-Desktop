@@ -215,6 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
     openFromDesktop('files-icon', 'files-window');
     openFromDesktop('dressup-icon', 'dressup-window');
     openFromDesktop('opera-icon', 'opera-window');
+    openFromDesktop('vscode-icon', 'vscode-window');
 
     // open from start menu
     openFromStart('mini-weather-icon', 'weather-window');

@@ -43,6 +43,12 @@
     padding: 10px;
     border-radius: var(--border-radius-edges);
 }
+.light-mode #spotify-window {
+    --color-primary: #f0a8be;
+    --color-secondary: #ffafca;
+    --color-text-icon: #ffffff;
+    --color-text-muted: rgba(255, 255, 255, 0.596);
+}
 .spotify.base {
     background-image: linear-gradient(grey, var(--color-secondary));
     border-radius: var(--border-radius-edges);

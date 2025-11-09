@@ -1,0 +1,93 @@
+#vscode-window {
+    height: 700px;
+    width: 600px;
+    background-color: var(--vs-background);
+
+    /* variables */
+    --vs-background: rgb(24, 24, 24);
+    --vs-secondary: rgb(39, 39, 39);
+    --vs-highlight: rgb(119, 119, 119);
+    --vs-text: rgb(255, 255, 255);
+}
+
+/* header */
+#vscode-header {
+    border-bottom: 1px solid var(--vs-secondary);
+    height: 40px;
+}
+
+/* window controls */
+#vscode-window-controls button {
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#vscode-window-controls button svg{
+    width: 15px;
+}
+#vscode-window-controls button:hover {
+    background-color: var(--vs-highlight);
+}
+
+/* base */
+.vscode.base {
+    display: grid;
+    grid-template-areas:
+    "sidebar tabs"
+    "sidebar editor";
+    height: 100%;
+}
+
+/* tabs */
+.editor-tabs {
+    grid-area: tabs;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 30px;
+}
+.vs-tab {
+    border-left: 1px solid var(--vs-secondary);
+    border-right: 1px solid var(--vs-secondary);
+    padding: 10px;
+}
+.vs-tab svg {
+    height: 10px;
+    width: 13px;
+    margin-left: 8px;
+    cursor: pointer;
+    fill: var(--vs-text);
+}
+.vs-tab svg:hover {
+    fill: var(--vs-highlight);
+}
+
+/* sidebar */
+.sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    width: 60px;
+    padding-top: 10px;
+    gap: 25px;
+    border: 1px solid var(--vs-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* code editor */
+#code-editor {
+    grid-area: editor;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+.monaco-editor {
+  outline: none !important;
+}
