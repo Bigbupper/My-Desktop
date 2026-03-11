@@ -26,14 +26,26 @@ function addTask() {
         const textSpan = document.createElement('span');
         textSpan.textContent = taskText;
 
+        // Create a delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'x';
+        deleteButton.classList.add('delete-task-button');
+        deleteButton.addEventListener('click', function() {
+            taskList.removeChild(listItem);
+        });
+        
+
         // Add checkbox and text to the list item
         listItem.appendChild(checkbox);
         listItem.appendChild(textSpan);
+        listItem.appendChild(deleteButton); // Add delete 'x' button
         taskList.appendChild(listItem);
 
         taskInput.value = '';
     }
 };
+
+
 
 // clear all button
 const clearButton = document.getElementById('clear-tasklist');

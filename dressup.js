@@ -123,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showSingleItem('#eyes-options button', 'data-eyes');
     showSingleItem('#lips-options button', 'data-lips');
     showSingleItem('#hair-options button', 'data-hair');
-    showSingleItem('#decal-options button', 'data-decal');
     showSingleItem('#shoes-options button', 'data-shoes');
 
     toggleItem('#hat-options button', 'data-hat');
@@ -138,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleItem('#socks-options button', 'data-socks');
     toggleItem('#bags-options button', 'data-bags');
     toggleItem('#plushy-options button', 'data-plushy');
+    toggleItem('#decal-options button', 'data-decal');
 
     // background changer
     const backgrounds = [

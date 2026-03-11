@@ -1,91 +1,147 @@
 #vscode-window {
-    height: 700px;
-    width: 600px;
     background-color: var(--vs-background);
+
+    /* resizing constraints */
+    min-width: 570px;
+    min-height: 350px;
+    max-width: 100vw;
+    max-height: calc(100vh - 39px);
+    
 
     /* variables */
     --vs-background: rgb(24, 24, 24);
-    --vs-secondary: rgb(39, 39, 39);
-    --vs-highlight: rgb(119, 119, 119);
-    --vs-text: rgb(255, 255, 255);
+    --vs-border: rgb(39, 39, 39);
+    --vs-highlight: rgb(141, 141, 141);
+    --vs-hover: rgb(50, 50, 50);
+    --vs-dimtext: rgb(104, 104, 104);
+    --vs-brighttext: rgba(255, 255, 255, 0.863);
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* header */
 #vscode-header {
-    border-bottom: 1px solid var(--vs-secondary);
+    outline: 1px solid var(--vs-border);
     height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* window controls */
 #vscode-window-controls button {
     background-color: transparent;
-    border: none;
-    height: 30px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #vscode-window-controls button svg{
     width: 15px;
+    stroke: var(--vs-brighttext);
 }
 #vscode-window-controls button:hover {
-    background-color: var(--vs-highlight);
+    background-color: var(--vs-hover);
 }
 
 /* base */
 .vscode.base {
     display: grid;
     grid-template-areas:
-    "sidebar tabs"
-    "sidebar editor";
+    "sidebar popout tabs"
+    "sidebar popout editor";
     height: 100%;
 }
 
 /* tabs */
 .editor-tabs {
     grid-area: tabs;
-    height: 40px;
-    width: 100%;
+    height: 41px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding-left: 30px;
 }
 .vs-tab {
-    border-left: 1px solid var(--vs-secondary);
-    border-right: 1px solid var(--vs-secondary);
-    padding: 10px;
+    outline: 1px solid var(--vs-border);
+    color: var(--vs-dimtext);
+    padding: 8px 10px;
 }
 .vs-tab svg {
     height: 10px;
     width: 13px;
     margin-left: 8px;
-    cursor: pointer;
-    fill: var(--vs-text);
-}
-.vs-tab svg:hover {
-    fill: var(--vs-highlight);
 }
 
 /* sidebar */
 .sidebar {
     grid-area: sidebar;
-    height: 100%;
-    width: 60px;
-    padding-top: 10px;
-    gap: 25px;
-    border: 1px solid var(--vs-secondary);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    padding-top: 10px;
+    border: 1px solid var(--vs-border);
+    padding: 15px 0;
+}
+.sidebar-button {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar-button svg,
+.sidebar-button svg * {
+    cursor: pointer;
+    stroke: var(--vs-highlight);
+    scale: 0.96;
+}
+.sidebar-button:hover svg,
+.sidebar-button:hover svg * {
+    stroke: var(--vs-brighttext);
+}
+#upper-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+#lower-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* sidebar sections */
+.sidebar-popout {
+    grid-area: popout;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+.sidebar-header {
+    color: var(--vs-brighttext);
+    font-size: 12px;
+    font-weight: normal;
+    padding: 15px;
+}
+.file {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+    padding-left: 15px;
+    color: var(--vs-brighttext);
+}
+.file:hover {
+    background-color: var(--vs-hover);
 }
 
 /* code editor */
 #code-editor {
     grid-area: editor;
-    height: 100%;
-    width: 100%;
+    min-width: 0;
+    min-height: 0;
     font-size: 16px;
 }
 .monaco-editor {

@@ -234,7 +234,6 @@ button {
     padding: 10px;
 }
 .window-controls button {
-    margin: 0 5px;
     font-size: 1.45rem;
     display: flex;
     align-items: center;

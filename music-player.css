@@ -333,7 +333,7 @@ input[type="range"]:hover {
         height: 30px;
     }
 
-    /* main game area - vertical stack */
+    /* main area - vertical stack */
     .spotify.base {
         flex: 1;
         display: flex;

@@ -31,7 +31,7 @@ const display = document.getElementById("display");
 
     function calculate() {
         try {
-            if (display.value === "800815") {
+            if (display.value === "8008135") {
                 display.value = "BOOBIES";
             } else if (display.value === "80085") {
                 display.value = "You pervert...";
@@ -43,7 +43,7 @@ const display = document.getElementById("display");
                 display.value = "Drugs are bad for you...";
             }
             else {
-                display.value = math.evaluate(display.value);
+                display.value = eval(display.value);
             }
         } catch (error) {
             display.value = "Invalid Expression";
