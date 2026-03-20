@@ -8,7 +8,7 @@
 #todo-label {
     color: var(--text);
     text-shadow: var(--color-shadow) 0px 0px 3px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .todo.base {
@@ -19,15 +19,23 @@
 }
 
 /* ----- input area ----- */
-#task-input input{
-    width: 240px;
-    height: 30px;
+#task-input input,
+#add-task-button {
     border: none;
     border-radius: 5px;
-    padding: 5px;
     font-size: 1.2rem;
     color: var(--text);
     background-color: var(--desktop-primary);
+}
+#task-input input {
+    width: 245px;
+    height: 30px;
+    padding: 5px;
+}
+#add-task-button {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
 #task-input input::placeholder {
     font-size: 1rem;
@@ -35,22 +43,11 @@
 #task-input input:focus {
     outline: 2px solid var(--desktop-highlight);
 }
-#add-task-button {
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    color: var(--text);
-    background-color: var(--desktop-primary);
-    cursor: pointer;
-}
 
 /* ----- task list ----- */
 #task-list {
     height: 200px;
     overflow-y: auto;
-    padding-right: 10px;
 }
 #task-list li {
     display: flex;
@@ -73,21 +70,21 @@
     font-size: 1.2rem;
     cursor: pointer;
     translate: 0px -2px;
+    transition: color 0.2s ease-in-out;
 }
 .delete-task-button:hover {
     color: red;
-    transition: color 0.1s ease-in-out;
 }
 
 /* scroll bar styling */
-#task-list::-webkit-scrollbar {
+#task-list::-webkit-scrollbar, #alarm-list::-webkit-scrollbar {
     width: 10px;
 }
-#task-list::-webkit-scrollbar-thumb {
+#task-list::-webkit-scrollbar-thumb, #alarm-list::-webkit-scrollbar-thumb {
     background-color: var(--desktop-highlight);
     border-radius: 4px;
 }
-#task-list::-webkit-scrollbar-track {
+#task-list::-webkit-scrollbar-track, #alarm-list::-webkit-scrollbar-track {
     background-color: var(--desktop-lowlight);
     border-radius: 4px;
 }

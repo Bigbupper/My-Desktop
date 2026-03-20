@@ -95,14 +95,4 @@ document.addEventListener('DOMContentLoaded', function () {
     const operaWindow = document.getElementById('opera-window');
     setupOperaTabs(operaWindow);
 
-    window.addEventListener('message', (event) => {
-        // find whichever iframe sent this message
-        const iframe = [...document.querySelectorAll('.webpage iframe')]
-            .find(f => f.contentWindow === event.source);
-        
-        if (iframe && event.data.height) {
-            iframe.style.height = event.data.height + 'px';
-        }
-    });
-
 });

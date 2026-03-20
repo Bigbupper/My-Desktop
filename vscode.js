@@ -91,8 +91,8 @@ require(['vs/editor/editor.main'], function () {
                     </div>
                 </body>
             </html> `,
-        language: "html",
-        theme: "vs-dark",
+        language: 'html',
+        theme: 'vs-dark',
         fontSize: 15,
         roundedSelection: false,
         scrollBeyondLastLine: false,

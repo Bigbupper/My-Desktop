@@ -5,7 +5,7 @@ let taskList = document.getElementById('task-list');
 
 addButton.addEventListener('click', addTask);
 
-addEventListener('keypress', function(event) {
+taskInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         addTask();
     }

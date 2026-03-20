@@ -1,4 +1,3 @@
-
 /* --------pop-up windows---------- */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -11,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const base = windowElement.querySelector('.base');
         const resizer = windowElement.querySelector('.resizer');
         const taskbar = document.getElementById('minimized-windows');
+
+        let hasBeenOpened = false;
         let savedState = null;
 
         // Create taskbar icon
@@ -30,8 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 windowElement.style.left = savedState.left;
                 windowElement.style.top = savedState.top;
                 base.style.height = savedState.baseHeight;
+            } else if (!hasBeenOpened) {
+                const pos = getNextPosition();
+                windowElement.style.left = pos.left + 'px';
+                windowElement.style.top = pos.top + 'px';
+                hasBeenOpened = true;
             }
             minimizedIcon.style.display = 'flex';
+            windowElement._minimizedIcon = minimizedIcon;
             bringToFront(windowElement);
         }
 
@@ -50,14 +57,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             windowElement.classList.remove('open');
             windowElement.classList.add('minimized');
+            minimizedIcon.classList.remove('active-icon');
         }
         if (minimizeButton) {
             minimizeButton.addEventListener('click', minimizeWindow);
         }
 
         // Toggle minimize from taskbar icon
+        // Windows-style: if this window is the active (top) window, minimize it
+        // if open but not active, bring to front; if minimized, restore it
         minimizedIcon.addEventListener('click', () => {
-            if (windowElement.classList.contains('open')) {
+            const isActive = parseInt(windowElement.style.zIndex) === zCounter - 1;
+            if (windowElement.classList.contains('open') && isActive) {
                 minimizeWindow();
             } else {
                 openWindow();
@@ -101,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
             exitButton.addEventListener('click', () => {
                 windowElement.classList.remove('open', 'minimized');
                 minimizedIcon.style.display = 'none'
+                minimizedIcon.classList.remove('active-icon');
             });
         }
 
@@ -139,6 +151,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (e.target.classList.contains('resizer')) {
                     e.preventDefault();
 
+                    startDragProtection('nwse-resize');
+
                     let startX = e.clientX;
                     let startY = e.clientY;
                     let startWidth = parseInt(document.defaultView.getComputedStyle(windowElement).width, 10);
@@ -160,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     function stopDrag() {
                         document.removeEventListener('mousemove', doDrag);
                         document.removeEventListener('mouseup', stopDrag);
+                        stopDragProtection();
                     }
 
                     document.addEventListener('mousemove', doDrag);
@@ -204,11 +219,48 @@ document.addEventListener('DOMContentLoaded', function () {
         
     }
 
-    function bringToFront(window) {
-        const windows = document.querySelectorAll('.window');
-        windows.forEach(w => w.style.zIndex = 1);
-        window.style.zIndex = 10;
+    // window positioning
+    let zCounter = 1;
+    function bringToFront(windowEl) {
+        windowEl.style.zIndex = zCounter++;
+        updateActiveIcon();
     }
+
+    function updateActiveIcon() {
+        // clear active from all icons, then mark only the top window's icon
+        document.querySelectorAll('.minimize-icon').forEach(i => i.classList.remove('active-icon'));
+        let topZ = 0, topWindow = null;
+        document.querySelectorAll('.window.open').forEach(w => {
+            const z = parseInt(w.style.zIndex) || 0;
+            if (z > topZ) { topZ = z; topWindow = w; }
+        });
+        if (topWindow) topWindow._minimizedIcon?.classList.add('active-icon');
+    }
+
+    let cascadeOffset = 0;
+    function getNextPosition() {
+        const offset = cascadeOffset;
+        cascadeOffset = (cascadeOffset + 30) % 180;
+        return { top: 80 + offset, left: 80 + offset };
+    }
+
+    const iframeOverlay = document.createElement('div');
+    iframeOverlay.style.cssText = `
+        display: none; position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: 99999;
+    `;
+    document.body.appendChild(iframeOverlay);
+
+    function startDragProtection(cursor) {
+        iframeOverlay.style.display = 'block';
+        iframeOverlay.style.cursor = cursor || 'default';
+    }
+    function stopDragProtection() {
+        iframeOverlay.style.display = 'none';
+        iframeOverlay.style.cursor = 'default';
+    }
+
 
     // double-click to open
     openFromDesktop('spotify-icon', 'spotify-window');

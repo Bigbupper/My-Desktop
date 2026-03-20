@@ -20,22 +20,26 @@
     --color-text-highlight: rgba(255, 255, 255, 0.7);
 }
 .light-mode #opera-window {
-    --color-background: rgb(224, 182, 198);
+    --color-background: rgb(230, 186, 199);
     --color-highlight: rgba(177, 72, 121, 0.829);
     --color-secondary: rgb(212, 141, 162);
     --color-text: rgba(48, 8, 32, 0.637);
     --color-text-highlight: rgb(109, 10, 56);
 }
 .opera.base {
-    display: block;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
     width: 100%;
     overflow: hidden;
 }
 #border-gradient {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     width: 100%;
-    height: auto;
-    min-height: 100%;
+    height: 100%;
     border-radius: 4px;
     padding: 2px;
     background: linear-gradient(
@@ -47,9 +51,12 @@
     );
 }
 #background {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-height: 0;
     width: 100%;
-    height: auto;
-    min-height: 100%;
     padding: 4px;
     border-radius: var(--border-radius-edges);
     background-color: var(--color-background);
@@ -220,12 +227,17 @@
 /*----- base page settings -----*/
 .webpage {
     flex: 1 1 auto;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
-    height: 100%;
+    min-height: 0;
+}
+#opera-window ::-webkit-scrollbar {
+    display: none;
 }
 .webpage iframe {
     width: 100%;
+    height: 800px;      /* natural height of the Noise Mixer content */
+    flex-shrink: 0;     /* don't let flex squash it */
     background: var(--color-background);
     border: none;
     display: block;

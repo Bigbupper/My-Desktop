@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const assetStack = document.getElementById("asset-stack");
+    const assetStack = document.getElementById('asset-stack');
 
     // asset counts per category
     const assetConfig = {
@@ -58,17 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const iconSrc = `media/pixel-game-assets/${category}/icons/${category}icon${i}.png`;
 
             // create button
-            const btn = document.createElement("button");
+            const btn = document.createElement('button');
             btn.dataset[category] = `${category}${i}`;
             btn.style.backgroundImage = `url(${iconSrc})`;
             container.appendChild(btn);
 
             // create hidden image layer
-            const img = document.createElement("img");
+            const img = document.createElement('img');
             img.id = `${category}${i}-img`;
             img.src = layerSrc;
-            img.classList.add("layer");
-            img.style.display = "none";
+            img.classList.add('layer');
+            img.style.display = 'none';
 
             // assign z-index from the layer map
             img.style.zIndex = layerMap[category] ?? 0;
@@ -167,23 +167,23 @@ document.addEventListener('DOMContentLoaded', () => {
     /* clear all */
     const clearCharacterBtn = document.getElementById('clear-character-button');
     clearCharacterBtn.addEventListener('click', () => {
-        if (confirm("Are you sure you want to clear your character? This cannot be undone."))
+        if (confirm('Are you sure you want to clear your character? This cannot be undone.'))
                 //hidse images inside character container
                 document.querySelectorAll('#character-container img').forEach(img => {
                     img.style.display = 'none';
                 });
 
-                //removes "selected" button states
+                //removes 'selected' button states
                 document.querySelectorAll('.selected').forEach(btn => {
                     btn.classList.remove('selected');
                 });
             });
         
     /* ------- export character ------- */
-    const downloadBtn = document.getElementById("download-button");
+    const downloadBtn = document.getElementById('download-button');
 
     if (downloadBtn && characterContainer) {
-        downloadBtn.addEventListener("click", async () => {
+        downloadBtn.addEventListener('click', async () => {
             // Use device pixel ratio for crisp captures on mobile
             const scale = window.devicePixelRatio > 1 ? window.devicePixelRatio : 2;
 
@@ -194,9 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 logging: false
             });
 
-            const link = document.createElement("a");
-            link.download = "my-character.png";
-            link.href = canvas.toDataURL("image/png");
+            const link = document.createElement('a');
+            link.download = 'my-character.png';
+            link.href = canvas.toDataURL('image/png');
             link.click();
         });
     }

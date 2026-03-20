@@ -54,19 +54,15 @@
 <!-- fix taskbar icon color mode toggle for mobile -->
         <section class="taskbar">
             <div class="left-align">
-                <button id="start-button">
+                <button class="task-icon" id="start-button">
                     <svg id="windows-logo" width="20px" height="20px" viewBox="-0.5 0 257 257" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M0 36.357L104.62 22.11l.045 100.914-104.57.595L0 36.358zm104.57 98.293l.08 101.002L.081 221.275l-.006-87.302 104.494.677zm12.682-114.405L255.968 0v121.74l-138.716 1.1V20.246zM256 135.6l-.033 121.191-138.716-19.578-.194-101.84L256 135.6z" fill="#ffffff"></path></g></svg>
                 </button>
-                <!-- <button class="search-container">
-                    <img src="media/search.png" alt="search icon">
-                    <input type="search" id="search" placeholder="Type here to search"/> 
-                </button> -->
                 <div id="minimized-windows">
                     <!-- opened / minimized icons added here -->
                 </div>
             </div>
             <div class="right-align">
-                <button id="color-mode-toggle">
+                <button class= "task-icon" id="color-mode-toggle">
                     <svg class="dark-icon" width="15" viewBox="0 0 222 360" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M49.6127 1.07793L211.957 0.366342C211.957 0.366342 221.323 303.329 221.62 315.823C222.202 339.913 216.085 359.161 193.321 359.727C157.362 360.621 95.7026 358.826 58.5267 359.75C36.4367 360.299 29.2507 348.92 28.3293 327.269C26.1686 276.595 24.8628 187.784 24.8628 187.784C24.8628 187.784 8.50363 95.5769 2.39679 72.0329C-3.7517 48.3383 5.56739 45.3901 14.5417 35.1766C30.6268 16.8808 49.6127 1.07793 49.6127 1.07793ZM54.0696 180.412L54.4995 329.048L191.643 328.967L186.794 170.471L167.755 61.2812L31.5127 61.3399L54.0696 180.412ZM113.796 162.198C55.5693 163.645 43.2799 81.3105 100.147 79.8972C162.409 78.3498 172.241 160.746 113.796 162.198ZM104.59 103.112C79.8397 103.727 85.1865 139.563 110.53 138.933C135.975 138.301 131.693 102.438 104.59 103.112ZM135.138 228.328L138.007 299.899L105.301 299.992L104.521 228.103L135.138 228.328Z" fill="white"/>
                     </svg>
@@ -130,15 +126,6 @@
         </section>
 
         <section class="files-menu-bar">
-            <div class="menu-bar-icon">
-                <svg id="arrow-left" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512"><path d="M189.3 128.4 89 233.4c-6 5.8-9 13.7-9 22.4s3 16.5 9 22.4l100.3 105.4c11.9 12.5 31.3 12.5 43.2 0 11.9-12.5 11.9-32.7 0-45.2L184.4 288h217c16.9 0 30.6-14.3 30.6-32s-13.7-32-30.6-32h-217l48.2-50.4c11.9-12.5 11.9-32.7 0-45.2-12-12.5-31.3-12.5-43.3 0z" fill="#6e6e6e" class="fill-000000"></path></svg>
-                <svg id="arrow-right" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512"><path d="m322.7 128.4 100.3 105c6 5.8 9 13.7 9 22.4s-3 16.5-9 22.4L322.7 383.6c-11.9 12.5-31.3 12.5-43.2 0-11.9-12.5-11.9-32.7 0-45.2l48.2-50.4h-217c-17 0-30.7-14.3-30.7-32s13.7-32 30.6-32h217l-48.2-50.4c-11.9-12.5-11.9-32.7 0-45.2 12-12.5 31.3-12.5 43.3 0z" fill="#6e6e6e" class="fill-000000"></path></svg>
-                <svg id="chevron-arrow-down" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><path d="M81.846 25.388a6.024 6.024 0 0 0-8.45.767L48 56.625l-25.396-30.47a5.999 5.999 0 1 0-9.211 7.689l30.001 36.001a5.997 5.997 0 0 0 9.212 0l30.001-36.002a6.008 6.008 0 0 0-.761-8.455Z" fill="#6e6e6e" id="fill-000000"></path></svg>
-                <svg id="arrow-up" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512"><path d="M128.4 189.3 233.4 89c5.8-6 13.7-9 22.4-9s16.5 3 22.4 9l105.4 100.3c12.5 11.9 12.5 31.3 0 43.2-12.5 11.9-32.7 11.9-45.2 0L288 184.4v217c0 16.9-14.3 30.6-32 30.6s-32-13.7-32-30.6v-217l-50.4 48.2c-12.5 11.9-32.7 11.9-45.2 0-12.5-12-12.5-31.3 0-43.3z" fill="#6e6e6e" class="fill-000000"></path></svg>
-            </div>
-            <div>
-                <svg class= "refresh" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"><path d="m20.3 3.7-1.9 1.9c-3.5-3.5-9.2-3.5-12.7 0s-3.5 9.2 0 12.7c1.7 1.8 4 2.7 6.3 2.7s4.6-.9 6.4-2.6c.8-.8.8-2 0-2.8s-2-.8-2.8 0c-1.9 2-5.1 1.9-7.1 0-1-1-1.5-2.3-1.5-3.6s.5-2.6 1.5-3.5c1.9-2 5.1-2 7.1 0l-1.8 1.8c-.6.6-.2 1.7.7 1.7H21c.6 0 1-.4 1-1V4.4c0-.9-1.1-1.3-1.7-.7z" fill="#6e6e6e" class="fill-000000"></path></svg>
-            </div>
             <div class="files-search-container">
                 <img src="media/search.png" alt="magnifier-icon">
                 <input type="search" class="files-search" placeholder="Search Pictures"></input> 
@@ -152,16 +139,51 @@
                 </div>
                 <p class="file-label">kirby-wallpaper</p>
             </div>
+            <div class="file-icon">
+                <div class="file-image-container">
+                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
+                </div>
+                <p class="file-label">kirby-wallpaper</p>
+            </div>
+            <div class="file-icon">
+                <div class="file-image-container">
+                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
+                </div>
+                <p class="file-label">kirby-wallpaper</p>
+            </div>
+            <div class="file-icon">
+                <div class="file-image-container">
+                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
+                </div>
+                <p class="file-label">kirby-wallpaper</p>
+            </div>
+            <div class="file-icon">
+                <div class="file-image-container">
+                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
+                </div>
+                <p class="file-label">kirby-wallpaper</p>
+            </div>
+            <div class="file-icon">
+                <div class="file-image-container">
+                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
+                </div>
+                <p class="file-label">kirby-wallpaper</p>
+            </div>
+            <div class="file-icon">
+                <div class="file-image-container">
+                    <img src="media/dark-bg.png" alt="Kirby 2K Wallpaper">
+                </div>
+                <p class="file-label">teddy-dark-wallpaper</p>
+            </div>
+            <div class="file-icon">
+                <div class="file-image-container">
+                    <img src="media/light-bg.jpg" alt="Kirby 2K Wallpaper">
+                </div>
+                <p class="file-label">teddy-light-wallpaper</p>
+            </div>
         </section>
 
-        <section class="navigation-sidebar">
-            
-        </section>
-
-        <section class="item-bar">
-            <p>5 items &nbsp; |</p>
-            
-        </section>
+        <div class="resizer"></div>
     </div>
 
 <!----- spotify window ----->
@@ -606,9 +628,17 @@
     <div id="weather-window" class="window">
         <div class="weather base">
             <section class="window-header" id="weather-header">
-                <button class="exit-button">
-                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                 <div class="window-controls">
+                <button class="minimize-button">
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.499997 16.5L0.5 0.5" stroke="white" stroke-opacity="0.01" stroke-linecap="round"/><path d="M0.5 0.5H16.5" stroke="black" stroke-opacity="0.01" stroke-linecap="round"/><path d="M16.5 0.5V16.5" stroke="black" stroke-opacity="0.01" stroke-linecap="round"/><path d="M0.499996 16.5L16.5 16.5" stroke="white" stroke-linecap="round"/></svg>
                 </button>
+                <button class="maximize-button">
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="16" height="16" stroke="white"/></svg>
+                </button>
+                <button class="exit-button">
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0.5L16.5 16.5" stroke="white" stroke-linecap="round"/><path d="M16.5 0.499998L0.5 16.5" stroke="white" stroke-linecap="round"/></svg>
+                </button>
+            </div>
             </section>
             
             <section class="weather">
@@ -645,11 +675,15 @@
 <!----- calculator ----->
     <div id="calculator-window" class="window">
         <section class="window-header" id="calc-header">
-            <div class="window-controls">
-                <button class="minimize-button">_</button>
-                <button class="maximize-button">🗖</button>
+             <div class="window-controls">
+                <button class="minimize-button">
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.499997 16.5L0.5 0.5" stroke="white" stroke-opacity="0.01" stroke-linecap="round"/><path d="M0.5 0.5H16.5" stroke="black" stroke-opacity="0.01" stroke-linecap="round"/><path d="M16.5 0.5V16.5" stroke="black" stroke-opacity="0.01" stroke-linecap="round"/><path d="M0.499996 16.5L16.5 16.5" stroke="white" stroke-linecap="round"/></svg>
+                </button>
+                <button class="maximize-button">
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="16" height="16" stroke="white"/></svg>
+                </button>
                 <button class="exit-button">
-                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0.5L16.5 16.5" stroke="white" stroke-linecap="round"/><path d="M16.5 0.499998L0.5 16.5" stroke="white" stroke-linecap="round"/></svg>
                 </button>
             </div>
         </section>
@@ -682,10 +716,14 @@
     <div id="todo-window" class="window">
         <section class="window-header" id="todo-header">
             <div class="window-controls">
-                <button class="minimize-button">_</button>
-                <button class="maximize-button">🗖</button>
+                <button class="minimize-button">
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.499997 16.5L0.5 0.5" stroke="white" stroke-opacity="0.01" stroke-linecap="round"/><path d="M0.5 0.5H16.5" stroke="black" stroke-opacity="0.01" stroke-linecap="round"/><path d="M16.5 0.5V16.5" stroke="black" stroke-opacity="0.01" stroke-linecap="round"/><path d="M0.499996 16.5L16.5 16.5" stroke="white" stroke-linecap="round"/></svg>
+                </button>
+                <button class="maximize-button">
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="16" height="16" stroke="white"/></svg>
+                </button>
                 <button class="exit-button">
-                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0.5L16.5 16.5" stroke="white" stroke-linecap="round"/><path d="M16.5 0.499998L0.5 16.5" stroke="white" stroke-linecap="round"/></svg>
                 </button>
             </div>
         </section>
@@ -700,7 +738,6 @@
             </ul>
             <button id="clear-tasklist">clear all</button>
         </div>
-
     </div>
 
 <!-- clock app with timer, alarm, stopwatch, and world clock -->
@@ -708,11 +745,15 @@
  <!-- convert layout to grid -->
      <div id="clock-window" class="window">
         <section class="window-header" id="clock-header">
-            <div class="window-controls">
-                <button class="minimize-button">_</button>
-                <button class="maximize-button">🗖</button>
+             <div class="window-controls">
+                <button class="minimize-button">
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.499997 16.5L0.5 0.5" stroke="white" stroke-opacity="0.01" stroke-linecap="round"/><path d="M0.5 0.5H16.5" stroke="black" stroke-opacity="0.01" stroke-linecap="round"/><path d="M16.5 0.5V16.5" stroke="black" stroke-opacity="0.01" stroke-linecap="round"/><path d="M0.499996 16.5L16.5 16.5" stroke="white" stroke-linecap="round"/></svg>
+                </button>
+                <button class="maximize-button">
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="16" height="16" stroke="white"/></svg>
+                </button>
                 <button class="exit-button">
-                    <svg class="exit-icon" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 21.32L21 3.32001" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 3.32001L21 21.32" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0.5L16.5 16.5" stroke="white" stroke-linecap="round"/><path d="M16.5 0.499998L0.5 16.5" stroke="white" stroke-linecap="round"/></svg>
                 </button>
             </div>
         </section>
@@ -738,8 +779,8 @@
                     <div class="hand second"></div>
                     <div class="center-point"></div>
                 </div>
-                <time class="datetime" id="clock-datetime">
-                        <span class="time"></span><br>
+                <time id="clock-datetime">
+                        <span class="timeSeconds"></span><br>
                         <span class="date"></span>
                 </time>
             </div>
@@ -753,14 +794,34 @@
                     <button id="add-alarm-button">+</button>
                 </div>
             </div>
-            <div class="clock-window-page" data-page="stopwatch">
+            <div class="clock-window-page" id="stopwatch-app" data-page="stopwatch">
                 <h2>Stopwatch</h2>
+                <p id="stopwatch-display">00:00:00.0</p>
+                <div class="clock-button-row">
+                    <button class="stopwatch-button" id="stopwatch-start">Start</button>
+                    <button class="stopwatch-button" id="stopwatch-pause">Pause</button>
+                    <button class="stopwatch-button" id="stopwatch-reset">Reset</button>
+                </div>
+                <ul id="lap-list"></ul>
+                <button class="stopwatch-button" id="stopwatch-lap">Lap</button>
             </div>
-            <div class="clock-window-page" data-page="timer">
+            <div class="clock-window-page" id="timer-app" data-page="timer">
                 <h2>Timer</h2>
+                <div class="clock-button-row">
+                    <input id="timer-hours"   type="number" min="0" max="23" placeholder="HH" />
+                    <span>:</span>
+                    <input id="timer-minutes" type="number" min="0" max="59" placeholder="MM" />
+                    <span>:</span>
+                    <input id="timer-seconds" type="number" min="0" max="59" placeholder="SS" />
+                </div>
+                <p id="timer-display">00:00:00</p>
+                <div class="clock-button-row">
+                    <button id="timer-start">Start</button>
+                    <button id="timer-pause">Pause</button>
+                    <button id="timer-reset">Reset</button>
+                </div>
             </div>
         </div>
-
     </div>
 <!-- add calander app and calander popup to datetime button on desktop -->
  <!-- add recycle bin window -->

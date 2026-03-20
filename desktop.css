@@ -133,11 +133,12 @@ button {
     display: none;
 }
 /* start button */
-#start-button svg {
-    margin: 5px 15px;
+.task-icon, #start-button, .minimize-icon {
+    background-color: transparent;
+    transition: background-color 0.5s
 }
 #start-button:hover,
-.task-icon:hover {
+.task-icon:hover, .minimize-icon:hover {
     background-color: var(--desktop-hover);
     transition: background-color 0.2s;
 }
@@ -145,10 +146,7 @@ button {
     fill: var(--desktop-lowlight);
     transition: fill 0.3s ease;
 }
-.task-icon, #start {
-    background-color: transparent;
-    transition: background-color 0.5s
-}
+
 
 /* minimize icons */
 #minimized-windows {
@@ -157,7 +155,7 @@ button {
     justify-content: center;
     height: 100%;
 }
-.minimize-icon {
+.minimize-icon, #start-button {
     display: flex;
     height: 40px;
     padding: 5px 10px;
@@ -165,10 +163,10 @@ button {
     background-color: transparent;
     transition: background-color 0.5s;
 }
-.minimize-icon:hover {
-    background-color: var(--desktop-hover);
-    transition: background-color 0.2s;
+.minimize-icon.active-icon {
+    border-bottom: 2px solid var(--desktop-highlight);
 }
+
 
 
 /* date/time display */
@@ -230,35 +228,33 @@ button {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 30px;
-    padding: 10px;
+    padding: 5px;
 }
 .window-controls button {
-    font-size: 1.45rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     scale: 0.8;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: transparent;
+    transition: background-color 0.2s;
 }
 .window-controls button:hover {
-    color: var(--window-control-hover);
+    background-color: var(--desktop-primary);
+    transition: background-color 0.2s;
 }
-/* .minimize-button,
-.maximize-button {
-    transform: translate(4px, -4px);
-} */
 .exit-icon {
     height: 20px;
     cursor: pointer;
+    transform: translateY(4px);
 }
-.exit-icon:hover path {
-    stroke: var(--window-control-hover);
-}
+
 .resizer {
-    width: 5px;
-    height: 5px;
-    border: 2px solid var(--desktop-lowlight);
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.185);
     position: absolute;
     right: 0;
     bottom: 0;
