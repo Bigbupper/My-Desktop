@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 windowElement.style.left = savedState.left;
                 windowElement.style.top = savedState.top;
                 base.style.height = savedState.baseHeight;
-            } else if (!hasBeenOpened) {
+            } /* else if (!hasBeenOpened) {
                 const pos = getNextPosition();
                 windowElement.style.left = pos.left + 'px';
                 windowElement.style.top = pos.top + 'px';
                 hasBeenOpened = true;
-            }
+            } */
             minimizedIcon.style.display = 'flex';
             windowElement._minimizedIcon = minimizedIcon;
             bringToFront(windowElement);
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     };
                     windowElement.classList.add('maximized');
                     windowElement.style.width = '100%';
-                    windowElement.style.height = 'calc(100% - 40px)'; // Adjust for taskbar height
+                    windowElement.style.height = '100%'; // Adjust for taskbar height
                     windowElement.style.left = '0';
                     windowElement.style.top = '0';
                     base.style.height = 'calc(100% - 85px)'; // Adjust base height

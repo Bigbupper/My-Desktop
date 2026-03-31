@@ -22,7 +22,9 @@
     <svg id="load-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none" class="hds-flight-icon--animation-loading" transform="rotate(270)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g fill="#ffffff" fill-rule="evenodd" clip-rule="evenodd"> <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8z" opacity=".2"></path> <path d="M7.25.75A.75.75 0 018 0a8 8 0 018 8 .75.75 0 01-1.5 0A6.5 6.5 0 008 1.5a.75.75 0 01-.75-.75z"></path> </g> </g></svg>
 </div>
 <!----- desktop ----->
-<!-- need to add css for consistant hover transitions -->
+<!-- notes -->
+<!-- stopwatch needs to round up decimals -->
+ <!-- open window taskbar icons not swapping with light/dark mode -->
     <div>
         <section class="desktop">
             <button id="files-icon" class="icon" title="Launch File Explorer">
@@ -125,62 +127,23 @@
             </div>
         </section>
 
-        <section class="files-menu-bar">
-            <div class="files-search-container">
+        <section id="files-menu-bar">
+            <div id="files-back-button">
+                <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 7.41803C0 7.41803 15 7.41803 17 7.41803C19 7.41803 19 9.41803 17 9.41803C15 9.41803 0 9.41803 0 9.41803V7.41803Z" fill="#D9D9D9"/>
+                <path d="M0 7.41803C0 7.41803 5 2.41803 6 1.41803C7 0.41803 9 1.41803 6 4.41803C4.82843 5.5896 3 7.41803 3 7.41803L0 7.41803Z" fill="#D9D9D9"/>
+                <path d="M0 9.35706C0 9.35706 5 14.3571 6 15.3571C7 16.3571 9 15.3571 6 12.3571C4.82843 11.1855 3 9.35706 3 9.35706L0 9.35706Z" fill="#D9D9D9"/>
+                </svg>
+            </div>
+            <div id="files-breadcrumb"> <!-- file path --></div>
+            <div id="files-search-container">
                 <img src="media/search.png" alt="magnifier-icon">
-                <input type="search" class="files-search" placeholder="Search Pictures"></input> 
+                <input type="search" id="files-search" placeholder="Search Pictures"></input> 
             </div>
         </section>
 
-        <section class="file-container">
-            <div class="file-icon">
-                <div class="file-image-container">
-                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
-                </div>
-                <p class="file-label">kirby-wallpaper</p>
-            </div>
-            <div class="file-icon">
-                <div class="file-image-container">
-                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
-                </div>
-                <p class="file-label">kirby-wallpaper</p>
-            </div>
-            <div class="file-icon">
-                <div class="file-image-container">
-                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
-                </div>
-                <p class="file-label">kirby-wallpaper</p>
-            </div>
-            <div class="file-icon">
-                <div class="file-image-container">
-                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
-                </div>
-                <p class="file-label">kirby-wallpaper</p>
-            </div>
-            <div class="file-icon">
-                <div class="file-image-container">
-                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
-                </div>
-                <p class="file-label">kirby-wallpaper</p>
-            </div>
-            <div class="file-icon">
-                <div class="file-image-container">
-                    <img src="files-window-assets/kirby-2k-wallpaper-uhdpaper.com-799@0@i.jpg" alt="Kirby 2K Wallpaper">
-                </div>
-                <p class="file-label">kirby-wallpaper</p>
-            </div>
-            <div class="file-icon">
-                <div class="file-image-container">
-                    <img src="media/dark-bg.png" alt="Kirby 2K Wallpaper">
-                </div>
-                <p class="file-label">teddy-dark-wallpaper</p>
-            </div>
-            <div class="file-icon">
-                <div class="file-image-container">
-                    <img src="media/light-bg.jpg" alt="Kirby 2K Wallpaper">
-                </div>
-                <p class="file-label">teddy-light-wallpaper</p>
-            </div>
+        <section id="file-container">
+            <!-- folder/file icons go here -->
         </section>
 
         <div class="resizer"></div>
@@ -742,7 +705,6 @@
 
 <!-- clock app with timer, alarm, stopwatch, and world clock -->
  <!-- add notification popup for alarms with dismiss option (bottom right) -->
- <!-- convert layout to grid -->
      <div id="clock-window" class="window">
         <section class="window-header" id="clock-header">
              <div class="window-controls">
@@ -828,6 +790,7 @@
 
 </body>
 <script src="desktop.js"></script>
+<script src="files.js"></script>
 <script src="dressup.js"></script>
 <script src="music-player.js"></script>
 <script src="weather.js"></script>

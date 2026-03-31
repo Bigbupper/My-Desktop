@@ -365,6 +365,8 @@ button {
   }
 }
 
+
+
 @media (max-width: 600px) {
     body {
         position: fixed;
@@ -394,15 +396,6 @@ button {
     }
     .taskbar {
         height: 40px;
-    }
-    #desktop-datetime {
-        font-size: 0.6rem;
-        padding: 2px 5px;
-        height: 30px;
-    }
-    .minimize-icon {
-        height: 30px;
-        padding: 2px 5px;
     }
     .start-menu {
         position: fixed;
