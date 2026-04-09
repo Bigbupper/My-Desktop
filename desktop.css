@@ -20,8 +20,8 @@ body {
 .light-mode {
     --window-control-hover: #ff8999;
     --desktop-hover: rgba(255, 227, 236, 0.233);
-    --desktop-base: rgba(212, 156, 165, 0.761);
-    --desktop-primary: #e9b6b9;
+    --desktop-base: rgba(229, 155, 167, 0.664);
+    --desktop-primary: #fab8c1;
     --desktop-highlight: rgb(250, 211, 213);
     --desktop-lowlight: #d17c8896;
     --text: rgb(255, 255, 255);
@@ -328,6 +328,67 @@ button {
     justify-content: center;
     align-items: center;
 
+}
+
+#notification-tray{
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* recycle bin */
+/* ----- kirby recycle bin ----- */
+#kirby-open {
+    display: none;
+}
+
+#recycle-icon:hover #kirby-closed {
+    display: none;
+}
+#recycle-icon:hover #kirby-open {
+    display: block;
+}
+#recycle-icon.kirby-hungry #kirby-closed {
+    display: none;
+}
+#recycle-icon.kirby-hungry #kirby-open {
+    display: block;
+}
+#recycle-icon img {
+    height: 50px;
+    width: 55px;
+}
+
+
+/* ----- draggable stars ----- */
+.star {
+    position: absolute; /* taken out of grid flow so they can be freely dragged */
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.1s ease;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+}
+.star img {
+    height: 50px;
+    width: 50px;
+}
+.star:active {
+    cursor: grabbing;
+}
+.star.eaten {
+    display: none; /* hidden after being dropped on Kirby */
+}
+#star-1 {
+    filter: drop-shadow(0px 0px 10px rgba(254, 255, 204, 0.288));
 }
 
 /* boot up screen */

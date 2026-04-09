@@ -16,9 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Create taskbar icon
         const minimizedIcon = document.createElement('img');
-        minimizedIcon.src = icon.querySelector('img').src;
         minimizedIcon.classList.add('minimize-icon');
         minimizedIcon.style.display = 'none';
+        const visibleImg = icon.querySelector('img:not([style*="display: none"])');
+        minimizedIcon.src = visibleImg ? visibleImg.src : icon.querySelector('img').src;
+        minimizedIcon.dataset.windowId = icon.id; // store which icon this came from
         taskbar.appendChild(minimizedIcon);
 
         // Show taskbar icon when window is opened
@@ -298,7 +300,17 @@ document.addEventListener('DOMContentLoaded', function () {
             lightIcons.forEach(icon => icon.style.display = "none");
             isDarkMode = true;
         }
-    }  /* -------start menu------- */
+
+        document.querySelectorAll('.minimize-icon').forEach(taskbarIcon => {
+            const windowId = taskbarIcon.dataset.windowId;
+            if (!windowId) return;
+            const sourceIcon = document.getElementById(windowId);
+            if (!sourceIcon) return;
+            const visibleImg = sourceIcon.querySelector('img:not([style*="display: none"])');
+            if (visibleImg) taskbarIcon.src = visibleImg.src;
+        });
+    }
+    /* -------start menu------- */
 
     const startButton = document.getElementById('start-button');
     const startMenu = document.querySelector('.start-menu');
@@ -317,4 +329,10 @@ document.addEventListener('DOMContentLoaded', function () {
     startMenu.addEventListener('click', function (e) {
         e.stopPropagation();
     });
+
+    /* kirby recycle bin */
+
+    const recycleBin = document.getElementById('recycle-icon');
+    
+
 });

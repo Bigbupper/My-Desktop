@@ -115,11 +115,14 @@ document.getElementById('alarm-list').addEventListener('click', (e) => {
         const li = e.target.closest('li');
         const alarmTime = li.dataset.time;
         li.remove();
+        alarmSound.pause();
+        alarmPopup.remove();
         alarms.splice(alarms.indexOf(alarmTime), 1);
     }
 });
 
 const alarmSound = new Audio('media/clock-assets/mixkit-alarm.wav');
+const notificationTray = document.getElementById('notification-tray');
 
 function alarmRing() {
     const alarmList = document.getElementById('alarm-list');
@@ -139,19 +142,37 @@ function alarmRing() {
 
             li.classList.add('ringing');
 
-            const stopBtn = document.createElement('button');
-            stopBtn.type = 'button';
-            stopBtn.className = 'end-alarm-button';
-            stopBtn.textContent = 'End Alarm';
-
-            stopBtn.addEventListener('click', () => {
+            function stopAlarm() {
                 li.classList.remove('ringing');
                 li.dataset.disabled = 'true';
                 alarmSound.pause();
-                stopBtn.remove();
-            });
+                alarmPopup.remove();
+                listStopBtn.remove();
+            }
 
-            li.appendChild(stopBtn);
+            const listStopBtn = document.createElement('button');
+            listStopBtn.type = 'button';
+            listStopBtn.className = 'end-alarm-button';
+            listStopBtn.id = 'list-stop-btn';
+            listStopBtn.textContent = 'End Alarm';
+            listStopBtn.addEventListener('click', stopAlarm);
+
+            const popupStopBtn = document.createElement('button');
+            popupStopBtn.type = 'button';
+            popupStopBtn.className = 'end-alarm-button';
+            popupStopBtn.id = 'popup-stop-btn';
+            popupStopBtn.textContent = 'End Alarm';
+            popupStopBtn.addEventListener('click', stopAlarm);
+
+            /* alarm popup */
+            const alarmPopup = document.createElement('li');
+            alarmPopup.className = 'alarm-popup';
+            alarmPopup.textContent = `Alarm: ${timeText}`;
+            alarmPopup.appendChild(popupStopBtn);
+            notificationTray.appendChild(alarmPopup);
+            
+            /* stop button on alarm list */
+            li.appendChild(listStopBtn);
         }
     });
 }
@@ -165,7 +186,7 @@ let swInterval = null;
 let swRunning = false;
 
 function formatStopwatch(ms) {
-    const miliseconds = Math.floor(ms % 1000) / 100;
+    const milliseconds = Math.floor(ms % 1000 / 100);
     const seconds = Math.floor((ms / 1000) % 60);
     const minutes = Math.floor((ms / 60000) % 60);
     const hours = Math.floor(ms / 3600000);
@@ -173,8 +194,9 @@ function formatStopwatch(ms) {
     const ss = String(seconds).padStart(2, '0');
     const mm = String(minutes).padStart(2, '0');
     const hh = String(hours).padStart(2, '0');
+    const mil = String(milliseconds).padStart(1, '0');
 
-    return `${hh}:${mm}:${ss}.${miliseconds}`;
+    return `${hh}:${mm}:${ss}.${mil}`;
 }
 
 function swTick() {
@@ -211,7 +233,10 @@ document.getElementById('stopwatch-lap').addEventListener('click', () => {
     const now = Date.now();
     const total = swElapsed + (now - swStartTime);
     const lapItem = document.createElement('li');
-    lapItem.textContent = formatStopwatch(total);
+    lapItem.textContent = `Lap ${document.getElementById('lap-list').children.length + 1}: ${formatStopwatch(total)}`;
     document.getElementById('lap-list').appendChild(lapItem);
 });
+
+/* timer */
+
 

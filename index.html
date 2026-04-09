@@ -47,13 +47,31 @@
                 <img src="media/dollycat-icon.png" alt="pixelart game logo" >
                 <p class="label">Dolly Cat</p>
             </button>
+            
             <button id="recycle-icon" class="icon">
                 <!-- make recycle bin icon kirby and open mouth kirby when hovered -->
-                <img src="media/recycle.png" alt="recycle-bin">
-                <p class="label"><span class="nowrap">Recycle Bin</span></p>
+                <!-- <img src="media/recycle.png" alt="recycle-bin"> -->
+                <img src="media/icons-desktop/kirby-closed.png" alt="kirby" id="kirby-closed">
+                <img src="media/icons-desktop/kirby-open.png" alt="kirby" id="kirby-open">
+                <p class="label"><span>Feed Me</span></p>
             </button>
         </section>
-<!-- fix taskbar icon color mode toggle for mobile -->
+
+        <section id="floating-icons">
+            <button class="star icon" id="star-1">
+                <img src="media/icons-desktop/star.png" alt="star">
+                <p class="label"><span>star-cookie</span></p>
+            </button>
+            <button class="star icon" id="cake-1">
+                <img src="media/icons-desktop/cake.png" alt="cake">
+                <p class="label"><span>cake</span></p>
+            </button>
+        </section>
+
+        <section id="notification-tray">
+            <!-- alarm notifs go here -->
+        </section>
+
         <section class="taskbar">
             <div class="left-align">
                 <button class="task-icon" id="start-button">
@@ -703,8 +721,7 @@
         </div>
     </div>
 
-<!-- clock app with timer, alarm, stopwatch, and world clock -->
- <!-- add notification popup for alarms with dismiss option (bottom right) -->
+<!-- clock -->
      <div id="clock-window" class="window">
         <section class="window-header" id="clock-header">
              <div class="window-controls">
@@ -759,7 +776,7 @@
             <div class="clock-window-page" id="stopwatch-app" data-page="stopwatch">
                 <h2>Stopwatch</h2>
                 <p id="stopwatch-display">00:00:00.0</p>
-                <div class="clock-button-row">
+                <div>
                     <button class="stopwatch-button" id="stopwatch-start">Start</button>
                     <button class="stopwatch-button" id="stopwatch-pause">Pause</button>
                     <button class="stopwatch-button" id="stopwatch-reset">Reset</button>
@@ -769,18 +786,18 @@
             </div>
             <div class="clock-window-page" id="timer-app" data-page="timer">
                 <h2>Timer</h2>
-                <div class="clock-button-row">
-                    <input id="timer-hours"   type="number" min="0" max="23" placeholder="HH" />
+                <div>
+                    <input id="timer-hours" class="timer-input" type="number" min="0" max="23" placeholder="HH" />
                     <span>:</span>
-                    <input id="timer-minutes" type="number" min="0" max="59" placeholder="MM" />
+                    <input id="timer-minutes" class="timer-input" type="number" min="0" max="59" placeholder="MM" />
                     <span>:</span>
-                    <input id="timer-seconds" type="number" min="0" max="59" placeholder="SS" />
+                    <input id="timer-seconds" class="timer-input" type="number" min="0" max="59" placeholder="SS" />
                 </div>
                 <p id="timer-display">00:00:00</p>
-                <div class="clock-button-row">
-                    <button id="timer-start">Start</button>
-                    <button id="timer-pause">Pause</button>
-                    <button id="timer-reset">Reset</button>
+                <div>
+                    <button class="timer-button" id="timer-start">Start</button>
+                    <button class="timer-button" id="timer-pause">Pause</button>
+                    <button class="timer-button" id="timer-reset">Reset</button>
                 </div>
             </div>
         </div>
@@ -799,5 +816,6 @@
 <script src="clock.js"></script>
 <script src="calculator.js"></script>
 <script src="vscode.js"></script>
+<script src="recycle-bin.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.5.0/math.min.js"></script>
 </html> 
